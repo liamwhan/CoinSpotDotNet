@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CoinSpotDotNet</name>
+    </assembly>
+    <members>
+        <member name="T:CoinSpotDotNet.Responses.CoinBalance">
+            <summary>
+            Represents a balance for a CoinSpot currency
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinBalance.Balance">
+            <summary>
+            Balance in currency units
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinBalance.AudBalance">
+            <summary>
+            Balance in AUD approx.
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinBalance.Rate">
+            <summary>
+            Rate
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.CoinSpotResponse">
+            <summary>
+            Base class for all CoinSpot API responses
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinSpotResponse.Status">
+            <summary>
+            Response status e.g. "ok"
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.MyBalancesResponse">
+            <summary>
+            Response model for /ro/my/balances
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.MyBalancesResponse.Balances">
+            <summary>
+            Array of currency balances identified with currency identifier
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.MyBalancesResponse.BalancedFlattened">
+            <summary>
+            Helper getter to flatten the Balances that CoinSpot returns
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.SignUtility">
+            <summary>
+            Static helper methods to generate request signatures
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.SignUtility.CreatePostData(System.Nullable{System.Int64},System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Creates standard CoinSpot POST body with a single JSON property "nonce"
+            </summary>
+            <param name="nonceValue">Optional. Provide a custom nonce value to use. If omitted Unix timestamp is used</param>
+            <param name="jsonOptions">Optional. Provide custom <see cref="T:System.Text.Json.JsonSerializerOptions"/>. If omitted the best case options are used.</param>
+            <returns><see cref="T:System.String"/> containing the serialised JSON to include in the POST body. This value is also used for the signature.</returns>
+        </member>
+        <member name="M:CoinSpotDotNet.SignUtility.Sign(System.String,System.String)">
+            <summary>
+            Sign the <paramref name="postData"/> and return the HMACSHA512 hash encoded in hexadecimal (and forced to lowercase, which CoinSpot requires)
+            </summary>
+            <param name="postData">The JSON string to sign</param>
+            <param name="secret">Your CoinSpot Secret Key</param>
+            <returns>The HMACSHA512 hash of <paramref name="postData"/> encoded in hexadecimal</returns>
+        </member>
+        <member name="M:CoinSpotDotNet.SignUtility.ComputeHash(System.String,System.String)">
+            <summary>
+            Compute the hash of <paramref name="payload"/> using HMACSHA512 and the <paramref name="secret"/> as a signing key
+            </summary>
+            <param name="payload">The <see cref="T:System.String"/> to hash</param>
+            <param name="secret">The secret key used for signature</param>
+            <returns>A <see cref="T:System.Byte"/> array representing the hash</returns>
+        </member>
+        <member name="M:CoinSpotDotNet.SignUtility.ComputeHash(System.Byte[],System.String)">
+            <summary>
+            Compute the hash of <paramref name="bytes"/> using HMACSHA512 and the <paramref name="secret"/> as a signing key
+            </summary>
+            <param name="bytes">The <see cref="T:System.Byte"/> array to hash</param>
+            <param name="secret">The secret key used for signature</param>
+            <returns>A <see cref="T:System.Byte"/> array representing the hash</returns>
+        </member>
+        <member name="M:CoinSpotDotNet.SignUtility.CreateHmac(System.String)">
+            <inheritdoc cref="M:System.Security.Cryptography.HMACSHA512.#ctor(System.Byte[])"/>
+        </member>
+    </members>
+</doc>

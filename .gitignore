@@ -1,0 +1,6 @@
+**/obj/*
+**/bin/*
+*.suo
+!**/appsettings.json
+**/appsettings.*.json
+out/
