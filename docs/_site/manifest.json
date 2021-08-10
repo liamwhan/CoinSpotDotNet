@@ -1,0 +1,474 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/BitBucket/Trader/CoinSpotDotNet/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.BaseClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.BaseClient.html",
+          "hash": "+J39aVDLQ5HZuVW7JPeX7K6BhLJxqmE7MUTqiWvBLSg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.CoinSpotClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.CoinSpotClient.html",
+          "hash": "CN3sCI3RTVJGWDFtcuUY+/TwRyET5WGOuCKBl99BAs0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.CoinSpotClientV2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.CoinSpotClientV2.html",
+          "hash": "dAdnJY+XdjagLiKBfuk7RPY+GCFVnQXJjGXfVRae2wo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.ICoinSpotClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.ICoinSpotClient.html",
+          "hash": "liQUARgO7ouZp7dJseePpQj4wUqgPblP1ZZ5YcA8U3g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.ICoinSpotClientV2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.ICoinSpotClientV2.html",
+          "hash": "kv3D5DzIBaq7SGmhYoMwRKFpshWaJx8Sr0jMS/BMO70="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Requests.CoinSpotRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Requests.CoinSpotRequest.html",
+          "hash": "rk9ReCbKptzS64b1YVijSpqWLNSJ1PTIi1vLhL3Ecj4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Requests.MyDepositsRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Requests.MyDepositsRequest.html",
+          "hash": "eStNmTqBHnv7Xpvc594OTFqJgAR6JeM1T2EC4QUxP9U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Requests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Requests.html",
+          "hash": "vhGMP7UhCyrhBZOuMRJSApA7AUIkI0YhOKsZru4j6Mo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.CoinBalance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.CoinBalance.html",
+          "hash": "56cTtFs6qnM+MdmqSZ8BfIWspgrVN5YI88ad2phr590="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.CoinPrice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.CoinPrice.html",
+          "hash": "GK7IEYHwYurEsKMzjf5MG/oIf/TtRF1HCbNAtd+ZcLQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.CoinSpotResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.CoinSpotResponse.html",
+          "hash": "6BJThqP0zW1wy2t6w9C34A39MkHtwj1Rj1R/G7qh+oY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.Deposit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.Deposit.html",
+          "hash": "flo1yMyCr2goZ64IjNdktxN0T+pccpEAWvVkI66kUHE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.LatestPricesResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.LatestPricesResponse.html",
+          "hash": "nv5ildqqTx/2cwusaTf9oI/FgxP/AKGksV4SFwa3QHM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.MyBalancesResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.MyBalancesResponse.html",
+          "hash": "U0KjUIShSMUYce3l6uIqeyAaTT2H/I4r3EE0I1uUUgs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.MyDepositsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.MyDepositsResponse.html",
+          "hash": "9bYDxnxAjnd+ZvCjz23eWnHHShnaxdwwmLq8BrfX53o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.MyWithdrawalsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.MyWithdrawalsResponse.html",
+          "hash": "zYcFh8kl0mJ6wjqVxxM6glJLrIa0XlIRfYvBcLaS8V0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.Transaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.Transaction.html",
+          "hash": "pDF9RwXyQaM0bA9NvJ2ypA9p2vLaJmCcLIfSlRcuw/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.V2.CoinSpotV2Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.V2.CoinSpotV2Response.html",
+          "hash": "FOCtJqMiPXY2yGo3dLIp8B6jAq6Q+TGfnqpU2PIbjek="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.V2.LatestPricesV2Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.V2.LatestPricesV2Response.html",
+          "hash": "D6DYgkxqLtWUnldM7FCHQPbgVPW2gH607vRzu1G1nZo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.V2.MyBalancesV2Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.V2.MyBalancesV2Response.html",
+          "hash": "dSrn4pFSBUbfVddUrAJiFW8rMxMSSCSRt5LB0r+e6ME="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.V2.MyDepositsV2Response.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.V2.MyDepositsV2Response.html",
+          "hash": "64PK6rghFTVcYCYORddYz6P1E7RhMPtct3eMUxllZQQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.V2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.V2.html",
+          "hash": "yskA5xbvJUt08iE3pDwBca6+VztiLsBHHH7hF2H0qWM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.Withdrawal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.Withdrawal.html",
+          "hash": "4E3PAz89AxKHNJNEBhGdiBnUl+rKT82i7p1pKPERVHg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.html",
+          "hash": "5Z04shnEpRqSBy5ZoaJep+zFAlpun69u91FPvIScOg8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.ServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.ServiceCollectionExtensions.html",
+          "hash": "y2SSNGhUaXYNanU47SDZSnfHBQ7cYulHncJ+StJAqDA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Settings.CoinSpotSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Settings.CoinSpotSettings.html",
+          "hash": "vdcqtqyCNqNJBEIdVYxGjkDdPsGTxmPoFc8fe3hA/3o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Settings.html",
+          "hash": "8JB4jstif8PAwQE3X7zn0XZQlh5dM2CrVcMKRJFr4tA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.SignUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.SignUtility.html",
+          "hash": "3yxlnTDoMGoFlTV2padf7qtUP5c3CSN7Heo033wZbjo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.html",
+          "hash": "MkJ5AHlcIyU13wZGslUFth4x0AwTU4oBa2xkMGu+fH4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "Rb4fDT8lwXjNqFN0WLB11m1sr5Y5UChojAqtSNd+bc4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "K+PCN23R05lFGi2cUDdqyxxLhDezJxyE+LY0HbLf9l8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "T9I7gfPthY+yJ4ojvyobGa9NtNiej5PNipCJgJm9Fpw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "1p8q5FYda3mcDBLpaRcFYwPpvL9ozEWdHqXNRl9e0Nc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 29,
+          "skipped_file_count": 29
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
