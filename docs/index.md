@@ -1,8 +1,9 @@
 # CoinSpotDotNet
+![Nuget Version Badge](https://img.shields.io/nuget/v/CoinSpotDotNet?style=plastic)
 > A .NET Standard 2.0 compatible class library for CoinSpot API. Supports API versions 1 and 2
 
 ## Disclaimer
-This library is in a pre-alpha state and currently only support the read-only <a href="https://coinspot.com.au/api#rosummary" target="_blank">v1 API</a> and <a href="https://coinspot.com.au/v2/api#rosummary" target="_blank">v2 API</a>.
+This library is in a pre-alpha state and currently only supports the read-only <a href="https://coinspot.com.au/api#rosummary" target="_blank">v1 API</a> and <a href="https://coinspot.com.au/v2/api#rosummary" target="_blank">v2 API</a>.
 
 ## Getting Started
 
