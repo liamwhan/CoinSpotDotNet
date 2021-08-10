@@ -7,7 +7,14 @@ This library is in a pre-alpha state and currently only support the read-only <a
 ## Getting Started
 
 ### Nuget Install
-**TODO**: Add Nuget info once published
+```pwsh
+Install-Package CoinSpotDotNet -Version 0.0.1
+```
+
+### `dotnet` CLI Install
+```bat
+dotnet add package CoinSpotDotNet --version 0.0.1
+```
 
 
 ### ASP.NET Web Application
