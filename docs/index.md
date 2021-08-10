@@ -1,5 +1,5 @@
 # CoinSpotDotNet
-[![Nuget Badge](https://img.shields.io/nuget/v/CoinSpotDotNet?style=plastic)](https://www.nuget.org/packages/CoinSpotDotNet/0.0.1)
+[![Nuget Badge](https://img.shields.io/nuget/v/CoinSpotDotNet?style=plastic)](https://www.nuget.org/packages/CoinSpotDotNet)
 > A .NET Standard 2.0 compatible class library for CoinSpot API. Supports API versions 1 and 2
 
 ## Disclaimer
