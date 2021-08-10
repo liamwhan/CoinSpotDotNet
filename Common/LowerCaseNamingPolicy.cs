@@ -5,9 +5,13 @@ namespace CoinSpotDotNet.Common
     /// <summary>
     /// Lowercase Naming Policy for <see cref="System.Text.Json"/> serialiser
     /// </summary>
-    public sealed class LowerCaseNamingPolicy : JsonNamingPolicy
+    internal sealed class LowerCaseNamingPolicy : JsonNamingPolicy
     {
-        /// <inheritdoc />
+        /// <summary>
+        /// Converts the property name
+        /// </summary>
+        /// <param name="name">The property name passed in my the serialiser</param>
+        /// <returns>The converted property name</returns>
         public override string ConvertName(string name) => name.ToLowerInvariant();
     }
 }

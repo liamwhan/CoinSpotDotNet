@@ -4,6 +4,167 @@
         <name>CoinSpotDotNet</name>
     </assembly>
     <members>
+        <member name="T:CoinSpotDotNet.BaseClient">
+            <summary>
+            Base class from which <see cref="T:CoinSpotDotNet.CoinSpotClient"/> and <see cref="T:CoinSpotDotNet.CoinSpotClientV2"/> inherit.
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.ICoinSpotClient">
+            <summary>
+            A typed <see cref="T:System.Net.Http.HttpClient"/> that abstracts CoinSpot API v1 calls and handles request signing.
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyBalances">
+            <summary>
+            Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/balances</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#romybalances"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.MyBalancesResponse"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Calls CoinSpot read-only API v1 Endpoint: <code>/api/ro/my/deposits</code> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rodeposit"/>
+            </para>
+            </summary>
+            <param name="startDate">Optional. Start of date range</param>
+            <param name="endDate">Optional. End of date range</param>
+            <returns><see cref="T:CoinSpotDotNet.Responses.MyDepositsResponse"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.LatestPrices">
+            <summary>
+            Get Latest Prices from the CoinSpot public API v1
+            <para>
+            See <see href="https://www.coinspot.com.au/api#latestprices"/>
+            </para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CoinSpotDotNet.CoinSpotClient">
+            <summary>
+            A typed <see cref="T:System.Net.Http.HttpClient"/> that abstracts CoinSpot API v1 calls and handles request signing. 
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClient.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{CoinSpotDotNet.Settings.CoinSpotSettings},Microsoft.Extensions.Logging.ILogger{CoinSpotDotNet.CoinSpotClient},System.Net.Http.HttpClient)">
+            <summary>
+            Constructor. Requires a registered <see cref="T:Microsoft.Extensions.Options.IOptions`1"/> where TOptions == <see cref="T:CoinSpotDotNet.Settings.CoinSpotSettings"/> containing your CoinSpot API credentials
+            </summary>
+            <param name="options">An <see cref="T:Microsoft.Extensions.Options.IOptionsMonitor`1"/> where TOptions == <see cref="T:CoinSpotDotNet.Settings.CoinSpotSettings"/></param>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> for error logging</param>
+            <param name="client">The <see cref="T:System.Net.Http.HttpClient"/> injected by the ServiceProvider when registering this class with <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.AddHttpClient&lt;TInterface, TImplementation&gt;() </param>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClient.LatestPrices">
+            <inheritdoc />
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyBalances">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <inheritdoc/>
+        </member>
+        <member name="T:CoinSpotDotNet.ICoinSpotClientV2">
+            <summary>
+            A typed <see cref="T:System.Net.Http.HttpClient"/> that abstracts CoinSpot API v2 calls and handles request signing.
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListMyBalances">
+            <summary>
+            Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/balances</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#romybalances"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.MyBalancesV2Response"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/deposits</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rodeposit"/>
+            </para>
+            </summary>
+            <param name="startDate">Optional. Start of date range</param>
+            <param name="endDate">Optional. End of date range</param>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.MyDepositsV2Response"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.LatestPrices">
+            <summary>
+            Get Latest Prices from the CoinSpot public API v2
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#latestprices"/>
+            </para>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CoinSpotDotNet.CoinSpotClientV2">
+            <summary>
+            A typed <see cref="T:System.Net.Http.HttpClient"/> that abstracts CoinSpot API v2 calls and handles request signing. 
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{CoinSpotDotNet.Settings.CoinSpotSettings},Microsoft.Extensions.Logging.ILogger{CoinSpotDotNet.CoinSpotClientV2},System.Net.Http.HttpClient)">
+            <summary>
+            Constructor. Requires a registered <see cref="T:Microsoft.Extensions.Options.IOptions`1"/> where TOptions == <see cref="T:CoinSpotDotNet.Settings.CoinSpotSettings"/> containing your CoinSpot API key and secret
+            </summary>
+            <param name="options">An <see cref="T:Microsoft.Extensions.Options.IOptionsMonitor`1"/> where TOptions == <see cref="T:CoinSpotDotNet.Settings.CoinSpotSettings"/></param>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger`1"/> for error logging</param>
+            <param name="client">The HttpClient injected by the ServiceProvider when registering this class with <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.AddHttpClient </param>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.LatestPrices">
+            <inheritdoc />
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListMyBalances">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <inheritdoc/>
+        </member>
+        <member name="T:CoinSpotDotNet.Common.LowerCaseNamingPolicy">
+            <summary>
+            Lowercase Naming Policy for <see cref="N:System.Text.Json"/> serialiser
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Common.LowerCaseNamingPolicy.ConvertName(System.String)">
+            <summary>
+            Converts the property name
+            </summary>
+            <param name="name">The property name passed in my the serialiser</param>
+            <returns>The converted property name</returns>
+        </member>
+        <member name="T:CoinSpotDotNet.Requests.CoinSpotRequest">
+            <summary>
+            Base class for the body content of all CoinSpot API requests
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Requests.CoinSpotRequest.Nonce">
+            <summary>
+            The nonce to include. Defaults to Unix timestamp (seconds) of UTC now.
+            <para>
+            <see href="https://www.coinspot.com.au/api#security"/> for more information
+            </para>
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Requests.MyDepositsRequest">
+            <summary>
+            Request body for CoinSpot read-only API endpoint:
+            <code>
+            /api/ro/my/deposits
+            </code>
+            See <see href="https://www.coinspot.com.au/api#rodeposit"/>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Requests.MyDepositsRequest.StartDate">
+            <summary>
+            Optional. Start of date range for results
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Requests.MyDepositsRequest.EndDate">
+            <summary>
+            Optional. End of date range for results
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.CoinBalance">
             <summary>
             Represents a balance for a CoinSpot currency
@@ -24,6 +185,26 @@
             Rate
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.CoinPrice">
+            <summary>
+            Coin price
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinPrice.Bid">
+            <summary>
+            Latest bid price
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinPrice.Ask">
+            <summary>
+            Latest ask price
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinPrice.Last">
+            <summary>
+            Latest price
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.CoinSpotResponse">
             <summary>
             Base class for all CoinSpot API responses
@@ -31,7 +212,35 @@
         </member>
         <member name="P:CoinSpotDotNet.Responses.CoinSpotResponse.Status">
             <summary>
-            Response status e.g. "ok"
+            Response status e.g. "ok", "error"
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.Deposit">
+            <summary>
+            Record of a deposit to CoinSpot
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.Deposit.Type">
+            <summary>
+            Deposit type. e.g. "PayID", "POLi"
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.Deposit.Reference">
+            <summary>
+            Deposit reference id.
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.LatestPricesResponse">
+            <summary>
+            Public API Latest Prices response
+            <para>
+            See <see href="https://www.coinspot.com.au/api#latestprices"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.LatestPricesResponse.Prices">
+            <summary>
+            Dictionary of prices where the key is the coin indentifier
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.Responses.MyBalancesResponse">
@@ -44,9 +253,203 @@
             Array of currency balances identified with currency identifier
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.MyBalancesResponse.BalancedFlattened">
+        <member name="P:CoinSpotDotNet.Responses.MyBalancesResponse.BalancesFlattened">
             <summary>
             Helper getter to flatten the Balances that CoinSpot returns
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.MyDepositsResponse">
+            <summary>
+            CoinSpot read-only API List Deposit History response
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rodeposit"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.MyDepositsResponse.Deposits">
+            <summary>
+            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Deposit"/> history
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.MyWithdrawalsResponse">
+            <summary>
+            CoinSpot read-only API v1 My Withdrawl History response <c>/api/ro/my/withdrawals</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rowithdrawal"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.MyWithdrawalsResponse.Withdrawals">
+            <summary>
+            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Withdrawal"/> history
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.Transaction">
+            <summary>
+            Base model for Deposits and Withdrawal API response types
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.Transaction.Amount">
+            <summary>
+            Deposit amount
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.Transaction.Created">
+            <summary>
+            Deposit date
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.Transaction.Status">
+            <summary>
+            Deposit status. e.g. "completed"
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.CoinSpotV2Response">
+            <summary>
+            Base class for CoinSpot API v2 Responses
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.CoinSpotV2Response.Message">
+            <summary>
+            Status message e.g. "ok" / description of error if error occurred
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.LatestPricesV2Response">
+            <summary>
+            CoinSpot v2 API Latest Prices response
+            <para>
+            See <see href="https://coinspot.com.au/v2/api#latestprices"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.LatestPricesV2Response.Prices">
+            <summary>
+            Dictionary of prices where the key is the coin indentifier
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.MyBalancesV2Response">
+            <summary>
+            Response model for <c>v2/ro/my/balances</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#romybalances"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.MyBalancesV2Response.Balances">
+            <summary>
+            Array of currency balances identified with currency identifier
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.MyBalancesV2Response.BalancesFlattened">
+            <summary>
+            Helper getter to flatten the Balances that CoinSpot returns into a single dictionary
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.MyDepositsV2Response">
+            <summary>
+            CoinSpot read-only API v2 List Deposit History response
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rodeposit"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.MyDepositsV2Response.Deposits">
+            <summary>
+            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Deposit"/> history
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.Withdrawal">
+            <summary>
+            Record of a withdrawal from CoinSpot
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.ServiceCollectionExtensions">
+            <summary>
+            Contains helper methods to register CoinSpotDotNet services for .NET Dependency Injection
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.ServiceCollectionExtensions.AddCoinSpotV1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Registers CoinSpot API v1 Services in the DI Container.
+            
+            <para>
+            CoinSpotDotNet expects your API credentials to be available in the <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> object under a section named either "CoinSpot" or "CoinSpotSettings" (case-insensitive). This section will then register an <see cref="T:Microsoft.Extensions.Options.IOptions`1"/> object 
+            using <c>services.Configure&lt;CoinSpotSettings&gt;(IConfigurationSection)</c> and utilised by the <see cref="T:CoinSpotDotNet.ICoinSpotClient"/> when making requests against the API
+            </para>
+            <para>
+            This method registers the following typed <see cref="T:System.Net.Http.HttpClient"/> instances in the container using <c>services.AddHttpClient&lt;ICoinSpotClient, CoinSpotClient&gt;</c>:
+            <list type="bullet">
+            <item>
+            <description>
+                <see cref="T:CoinSpotDotNet.ICoinSpotClient"/>
+            </description>
+            </item>
+            </list>
+            </para>
+            </summary>
+            <example>
+            In Startup.ConfigureServices()
+            <code>
+            services.AddCoinSpotV1(Configuration);
+            </code>
+            </example>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> into which the services will be registered</param>
+            <param name="configuration">The <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> object for this application</param>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder"/> to enable consumers to add Policy Handlers if required</returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ServiceCollectionExtensions.AddCoinSpotV2(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Registers CoinSpot API v2 Services in the DI Container.
+            <para>
+            CoinSpotDotNet expects your API credentials to be available in the <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> object under a section named either "CoinSpot" or "CoinSpotSettings" (case-insensitive). This section will then register an <see cref="T:Microsoft.Extensions.Options.IOptions`1"/> object 
+            using <c>services.Configure&lt;CoinSpotSettings&gt;(IConfigurationSection)</c> and utilised by the <see cref="T:CoinSpotDotNet.ICoinSpotClient"/> when making requests against the API
+            </para>
+            <para>
+            This method registers the following typed <see cref="T:System.Net.Http.HttpClient"/> instances in the container using <c>services.AddHttpClient&lt;ICoinSpotClient, CoinSpotClient&gt;</c>:
+            <list type="bullet">
+            <item>
+            <description>
+                <see cref="T:CoinSpotDotNet.ICoinSpotClientV2"/>
+            </description>
+            </item>
+            </list>
+            </para>
+            </summary>
+            <example>
+            In Startup.ConfigureServices()
+            <code>
+            services.AddCoinSpotV2(Configuration);
+            </code>
+            </example>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> into which the services will be registered</param>
+            <param name="configuration">The <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> object for this application</param>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder"/> to enable consumers to add Policy Handlers if required</returns>
+        </member>
+        <member name="T:CoinSpotDotNet.Settings.CoinSpotSettings">
+            <summary>
+            CoinSpot Credentials. Common usage would be to configure this type as an <see cref="T:Microsoft.Extensions.Options.IOptionsMonitor`1"/> 
+            </summary>
+            <example>
+            In Startup.cs
+            <code>
+                services.Configure&lt;CoinSpotSettings&gt;(Configuration.GetSection("CoinSpotSettings"));
+            </code>
+            </example>
+        </member>
+        <member name="P:CoinSpotDotNet.Settings.CoinSpotSettings.ReadOnlyKey">
+            <summary>
+            Your CoinSpot read-only API Key
+            <para>
+            See <see href="https://www.coinspot.com.au/my/api"/>
+            </para>
+            </summary> 
+        </member>
+        <member name="P:CoinSpotDotNet.Settings.CoinSpotSettings.ReadOnlySecret">
+            <summary>
+            Your CoinSpot read-only API Secret
+            <para>
+            See <see href="https://www.coinspot.com.au/my/api"/>
+            </para>
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.SignUtility">
@@ -57,14 +460,33 @@
         <member name="M:CoinSpotDotNet.SignUtility.CreatePostData(System.Nullable{System.Int64},System.Text.Json.JsonSerializerOptions)">
             <summary>
             Creates standard CoinSpot POST body with a single JSON property "nonce"
+            <para>
+            See <see href="https://www.coinspot.com.au/api#security"/>
+            </para>
             </summary>
             <param name="nonceValue">Optional. Provide a custom nonce value to use. If omitted Unix timestamp is used</param>
             <param name="jsonOptions">Optional. Provide custom <see cref="T:System.Text.Json.JsonSerializerOptions"/>. If omitted the best case options are used.</param>
             <returns><see cref="T:System.String"/> containing the serialised JSON to include in the POST body. This value is also used for the signature.</returns>
         </member>
+        <member name="M:CoinSpotDotNet.SignUtility.CreatePostData``1(``0,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Creates standard CoinSpot POST body with a single JSON property "nonce"
+            <para>
+            See <see href="https://www.coinspot.com.au/api#security"/>
+            </para>
+            </summary>
+            <param name="request">The request body object to serialise</param>
+            <param name="jsonOptions">Optional. Provide custom <see cref="T:System.Text.Json.JsonSerializerOptions"/>. If omitted the best case options are used.</param>
+            <returns><see cref="T:System.String"/> containing the serialised JSON to include in the POST body. This value is also used for the signature.</returns>
+        </member>
         <member name="M:CoinSpotDotNet.SignUtility.Sign(System.String,System.String)">
             <summary>
+            <para>
             Sign the <paramref name="postData"/> and return the HMACSHA512 hash encoded in hexadecimal (and forced to lowercase, which CoinSpot requires)
+            </para>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#security"/>
+            </para>
             </summary>
             <param name="postData">The JSON string to sign</param>
             <param name="secret">Your CoinSpot Secret Key</param>

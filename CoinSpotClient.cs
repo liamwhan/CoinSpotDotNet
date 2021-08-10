@@ -1,7 +1,6 @@
 ﻿using CoinSpotDotNet.Common;
 using CoinSpotDotNet.Requests;
 using CoinSpotDotNet.Responses;
-using CoinSpotDotNet.Responses.V2;
 using CoinSpotDotNet.Settings;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -14,22 +13,23 @@ using System.Threading.Tasks;
 
 namespace CoinSpotDotNet
 {
+
     /// <summary>
-    /// A typed <see cref="HttpClient"/> that abstracts CoinSpot API calls and handles request signing. Requires a registered <see cref="IOptions{TOptions}"/> where TOptions == <see cref="CoinSpotSettings"/> containing your CoinSpot API key and secret
+    /// A typed <see cref="HttpClient"/> that abstracts CoinSpot API v1 calls and handles request signing.
     /// </summary>
     public interface ICoinSpotClient
     {
         /// <summary>
-        /// Calls CoinSpot read-only API Endpoint: <code>/api/ro/my/balances</code> 
+        /// Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/balances</c> 
         /// <para>
         /// See <see href="https://www.coinspot.com.au/api#romybalances"/>
         /// </para>
         /// </summary>
         /// <returns><see cref="MyBalancesResponse"/></returns>
         Task<MyBalancesResponse> ListMyBalances();
-        
+
         /// <summary>
-        /// Calls CoinSpot read-only API Endpoint: <code>/api/ro/my/deposits</code> 
+        /// Calls CoinSpot read-only API v1 Endpoint: <code>/api/ro/my/deposits</code> 
         /// <para>
         /// See <see href="https://www.coinspot.com.au/api#rodeposit"/>
         /// </para>
@@ -41,78 +41,43 @@ namespace CoinSpotDotNet
 
 
         /// <summary>
-        /// Get Latest Prices from the CoinSpot public API
+        /// Get Latest Prices from the CoinSpot public API v1
         /// <para>
         /// See <see href="https://www.coinspot.com.au/api#latestprices"/>
         /// </para>
         /// </summary>
         /// <returns></returns>
         Task<LatestPricesResponse> LatestPrices();
-        
-        /// <summary>
-        /// Get Latest Prices from the CoinSpot v2 Public API
-        /// <para>
-        /// See <see href="https://www.coinspot.com.au/v2/api#latestprices"/>
-        /// </para>
-        /// </summary>
-        /// <returns></returns>
-        Task<LatestPricesV2Response> LatestPricesV2();
     }
 
-    /// <inheritdoc cref="ICoinSpotClient"/>
-    public class CoinSpotClient : ICoinSpotClient
+    /// <summary>
+    /// A typed <see cref="HttpClient"/> that abstracts CoinSpot API v1 calls and handles request signing. 
+    /// </summary>
+    public class CoinSpotClient : BaseClient, ICoinSpotClient
     {
-        private readonly IOptionsMonitor<CoinSpotSettings> options;
-        private readonly ILogger<CoinSpotClient> logger;
-        private readonly HttpClient client;
-        private readonly JsonSerializerOptions jsonOptions;
         private const string PathMyBalances = "/api/ro/my/balances";
         private const string PathMyDeposits = "/api/ro/my/deposits";
 
         private const string PublicPathLatestPrices = "/pubapi/latest";
-        private const string PublicPathLatestPricesV2 = "/pubapi/v2/latest";
-
+        
         /// <summary>
-        /// Constructor
+        /// Constructor. Requires a registered <see cref="IOptions{TOptions}"/> where TOptions == <see cref="CoinSpotSettings"/> containing your CoinSpot API credentials
         /// </summary>
         /// <param name="options">An <see cref="IOptionsMonitor{TOptions}"/> where TOptions == <see cref="CoinSpotSettings"/></param>
         /// <param name="logger"><see cref="ILogger{TCategoryName}"/> for error logging</param>
-        /// <param name="client">The HttpClient injected by the ServiceProvider when registering this class with <see cref="IServiceCollection"/>.AddHttpClient </param>
-        /// <param name="jsonOptions">Optional. Inject custom <see cref="JsonSerializerOptions"/></param>
-        public CoinSpotClient(IOptionsMonitor<CoinSpotSettings> options, ILogger<CoinSpotClient> logger, HttpClient client, JsonSerializerOptions jsonOptions = null)
-        {
-            client.BaseAddress = new Uri("https://www.coinspot.com.au", UriKind.Absolute);
-            this.options = options;
-            this.logger = logger;
-            this.client = client;
-            this.jsonOptions = jsonOptions ?? new JsonSerializerOptions
-            {
-                AllowTrailingCommas = true,
-                IgnoreNullValues = true,
-                PropertyNameCaseInsensitive = true,
-                PropertyNamingPolicy = new LowerCaseNamingPolicy(),
-                WriteIndented = false,
-                Converters =
-                {
-                    new CoinSpotDateTimeJsonConverter(),
-                    new CoinSpotStringToDoubleJsonConverter()
-                }
-            };
+        /// <param name="client">The <see cref="HttpClient"/> injected by the ServiceProvider when registering this class with <see cref="IServiceCollection"/>.AddHttpClient&lt;TInterface, TImplementation&gt;() </param>
+        public CoinSpotClient(IOptionsMonitor<CoinSpotSettings> options, ILogger<CoinSpotClient> logger, HttpClient client) : base(options, logger, client)
+        { 
         }
+        
         /// <inheritdoc />
         public async Task<LatestPricesResponse> LatestPrices()
         {
-            using var request = new HttpRequestMessage
-            {
-                RequestUri = new Uri(PublicPathLatestPrices, UriKind.Relative),
-                Method = HttpMethod.Get
-            };
 
-            using var response = await client.SendAsync(request);
+            using var response = await Get(new Uri(PublicPathLatestPrices, UriKind.Relative), null, null);
+
             if (!response.IsSuccessStatusCode)
             {
-                var responseBody = await response.Content.ReadAsStringAsync();
-                logger.LogError("CoinSpot error response {statusCode}, message: {message}", response.StatusCode, responseBody);
                 return null;
             }
 
@@ -121,28 +86,6 @@ namespace CoinSpotDotNet
 
         }
         
-        /// <inheritdoc />
-        public async Task<LatestPricesV2Response> LatestPricesV2()
-        {
-            using var request = new HttpRequestMessage
-            {
-                RequestUri = new Uri(PublicPathLatestPricesV2, UriKind.Relative),
-                Method = HttpMethod.Get
-            };
-
-            using var response = await client.SendAsync(request);
-            if (!response.IsSuccessStatusCode)
-            {
-                var responseBody = await response.Content.ReadAsStringAsync();
-                logger.LogError("CoinSpot error response {statusCode}, message: {message}", response.StatusCode, responseBody);
-                return null;
-            }
-
-            var prices = await JsonSerializer.DeserializeAsync<LatestPricesV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
-            return prices;
-        }
-
-       
         /// <inheritdoc/>
         public async Task<MyBalancesResponse> ListMyBalances()
         {
@@ -150,7 +93,7 @@ namespace CoinSpotDotNet
             var postData = SignUtility.CreatePostData(new CoinSpotRequest());
             var sign = SignUtility.Sign(postData, options.CurrentValue.ReadOnlySecret);
 
-            using var response = await Send(path, postData, sign);
+            using var response = await Post(path, postData, sign);
 
             var balance = await JsonSerializer.DeserializeAsync<MyBalancesResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return balance;
@@ -167,32 +110,11 @@ namespace CoinSpotDotNet
             });
             var sign = SignUtility.Sign(postData, options.CurrentValue.ReadOnlySecret);
 
-            using var response = await Send(path, postData, sign);
+            using var response = await Post(path, postData, sign);
 
             var deposits = await JsonSerializer.DeserializeAsync<MyDepositsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return deposits;
 
-        }
-
-        private async Task<HttpResponseMessage> Send(Uri requestUri, string postData, string sign)
-        {
-            var request = new HttpRequestMessage
-            {
-                RequestUri = requestUri,
-                Method = HttpMethod.Post,
-                Content = new StringContent(postData, Encoding.UTF8, "application/json")
-            };
-            request.Headers.Add("key", options.CurrentValue.ReadOnlyKey);
-            request.Headers.Add("sign", sign);
-
-            var response = await client.SendAsync(request);
-            if (!response.IsSuccessStatusCode)
-            {
-                var responseBody = await response.Content.ReadAsStringAsync();
-                logger.LogError("CoinSpot error response on path '{path}'. Status: {statusCode}, message: {message}", requestUri.OriginalString, response.StatusCode, responseBody);
-            }
-
-            return response;
         }
 
 

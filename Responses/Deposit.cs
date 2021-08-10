@@ -3,31 +3,15 @@ using System.Text.Json.Serialization;
 
 namespace CoinSpotDotNet.Responses
 {
+
     /// <summary>
     /// Record of a deposit to CoinSpot
     /// </summary>
-    public class Deposit
+    public class Deposit : Transaction
     {
-        /// <summary>
-        /// Deposit amount
-        /// </summary>
-        [JsonPropertyName("amount")]
-        public double Amount { get; set; }
 
         /// <summary>
-        /// Deposit date
-        /// </summary>
-        [JsonPropertyName("created")]
-        public DateTime Created { get; set; }
-
-        /// <summary>
-        /// Deposit status. e.g. "completed"
-        /// </summary>
-        [JsonPropertyName("status")]
-        public string Status { get; set; }
-
-        /// <summary>
-        /// Deposit type. e.g. "PayID"
+        /// Deposit type. e.g. "PayID", "POLi"
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }
