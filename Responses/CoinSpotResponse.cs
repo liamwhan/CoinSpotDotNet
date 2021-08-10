@@ -5,7 +5,7 @@ namespace CoinSpotDotNet.Responses
     /// <summary>
     /// Base class for all CoinSpot API responses
     /// </summary>
-    public abstract class CoinSpotResponse
+    public class CoinSpotResponse
     {
         /// <summary>
         /// Response status e.g. "ok", "error"

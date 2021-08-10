@@ -21,8 +21,7 @@
     
     
     
-  </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -86,6 +85,12 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="CoinSpotDotNet.BaseClient.html#CoinSpotDotNet_BaseClient_Settings">BaseClient.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="CoinSpotDotNet.BaseClient.html#CoinSpotDotNet_BaseClient_settings">BaseClient.settings</a>
+    </div>
+    <div>
       <a class="xref" href="CoinSpotDotNet.BaseClient.html#CoinSpotDotNet_BaseClient_options">BaseClient.options</a>
     </div>
     <div>
@@ -114,14 +119,51 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2__ctor_CoinSpotDotNet_Settings_CoinSpotSettings_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.%23ctor(CoinSpotDotNet.Settings.CoinSpotSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L85">View Source</a>
+  </span>
+  <a id="CoinSpotDotNet_CoinSpotClientV2__ctor_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor*"></a>
+  <h4 id="CoinSpotDotNet_CoinSpotClientV2__ctor_CoinSpotDotNet_Settings_CoinSpotSettings_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor(CoinSpotDotNet.Settings.CoinSpotSettings)">CoinSpotClientV2(CoinSpotSettings)</h4>
+  <div class="markdown level1 summary"><p>Constructor for use in non-ASP.NET and/or integration and unit testing scenarios where Dependency Injection is not available and this class must be manually constructed. Requires only a <a class="xref" href="CoinSpotDotNet.Settings.CoinSpotSettings.html">CoinSpotSettings</a> object initialised with your API Credentials</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoinSpotClientV2(CoinSpotSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoinSpotDotNet.Settings.CoinSpotSettings.html">CoinSpotSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>An <a class="xref" href="CoinSpotDotNet.Settings.CoinSpotSettings.html">CoinSpotSettings</a> containing your CoinSpot API credentials</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2__ctor_Microsoft_Extensions_Options_IOptionsMonitor_CoinSpotDotNet_Settings_CoinSpotSettings__Microsoft_Extensions_Logging_ILogger_CoinSpotDotNet_CoinSpotClientV2__System_Net_Http_HttpClient_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.%23ctor(Microsoft.Extensions.Options.IOptionsMonitor%7BCoinSpotDotNet.Settings.CoinSpotSettings%7D%2CMicrosoft.Extensions.Logging.ILogger%7BCoinSpotDotNet.CoinSpotClientV2%7D%2CSystem.Net.Http.HttpClient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L69">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L98">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2__ctor_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2__ctor_Microsoft_Extensions_Options_IOptionsMonitor_CoinSpotDotNet_Settings_CoinSpotSettings__Microsoft_Extensions_Logging_ILogger_CoinSpotDotNet_CoinSpotClientV2__System_Net_Http_HttpClient_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{CoinSpotDotNet.Settings.CoinSpotSettings},Microsoft.Extensions.Logging.ILogger{CoinSpotDotNet.CoinSpotClientV2},System.Net.Http.HttpClient)">CoinSpotClientV2(IOptionsMonitor&lt;CoinSpotSettings&gt;, ILogger&lt;CoinSpotClientV2&gt;, HttpClient)</h4>
   <div class="markdown level1 summary"><p>Constructor. Requires a registered <span class="xref">Microsoft.Extensions.Options.IOptions`1</span> where TOptions == <a class="xref" href="CoinSpotDotNet.Settings.CoinSpotSettings.html">CoinSpotSettings</a> containing your CoinSpot API key and secret</p>
+<p>If you use the <span class="xref">Microsoft.Extensions.DependencyInjection.IServiceCollection</span> extension <a class="xref" href="CoinSpotDotNet.ServiceCollectionExtensions.html#CoinSpotDotNet_ServiceCollectionExtensions_AddCoinSpotV1_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_">AddCoinSpotV1(IServiceCollection, IConfiguration)</a>
+or <a class="xref" href="CoinSpotDotNet.ServiceCollectionExtensions.html#CoinSpotDotNet_ServiceCollectionExtensions_AddCoinSpotV2_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_">AddCoinSpotV2(IServiceCollection, IConfiguration)</a> this constructor will automatically be selected
+</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -165,7 +207,7 @@
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestPrices.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestPrices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L74">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L119">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestPrices_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestPrices*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestPrices" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestPrices">LatestPrices()</h4>
@@ -190,7 +232,8 @@ See <a href="https://www.coinspot.com.au/v2/api#latestprices">https://www.coinsp
     <tbody>
       <tr>
         <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="CoinSpotDotNet.Responses.V2.LatestPricesV2Response.html">LatestPricesV2Response</a>&gt;</td>
-        <td></td>
+        <td><p><a class="xref" href="CoinSpotDotNet.Responses.V2.LatestPricesV2Response.html">LatestPricesV2Response</a></p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -199,7 +242,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestprices">https://www.coinsp
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ListMyBalances.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ListMyBalances%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L87">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L143">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_ListMyBalances_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListMyBalances*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_ListMyBalances" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListMyBalances">ListMyBalances()</h4>
@@ -234,7 +277,7 @@ See <a href="https://www.coinspot.com.au/v2/api#romybalances">https://www.coinsp
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ListMyDeposits_System_Nullable_System_DateTime__System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ListMyDeposits(System.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L100">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L159">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_ListMyDeposits_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListMyDeposits*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_ListMyDeposits_System_Nullable_System_DateTime__System_Nullable_System_DateTime__" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">ListMyDeposits(Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;)</h4>
@@ -288,6 +331,140 @@ See <a href="https://www.coinspot.com.au/v2/api#rodeposit">https://www.coinspot.
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ListMyWithdrawals_System_Nullable_System_DateTime__System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ListMyWithdrawals(System.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L179">View Source</a>
+  </span>
+  <a id="CoinSpotDotNet_CoinSpotClientV2_ListMyWithdrawals_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListMyWithdrawals*"></a>
+  <h4 id="CoinSpotDotNet_CoinSpotClientV2_ListMyWithdrawals_System_Nullable_System_DateTime__System_Nullable_System_DateTime__" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">ListMyWithdrawals(Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;MyWithdrawalsV2Response&gt; ListMyWithdrawals(DateTime? startDate = default(DateTime? ), DateTime? endDate = default(DateTime? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td><span class="parametername">startDate</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td><span class="parametername">endDate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="CoinSpotDotNet.Responses.V2.MyWithdrawalsV2Response.html">MyWithdrawalsV2Response</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_MyCoinBalance_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.MyCoinBalance(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L130">View Source</a>
+  </span>
+  <a id="CoinSpotDotNet_CoinSpotClientV2_MyCoinBalance_" data-uid="CoinSpotDotNet.CoinSpotClientV2.MyCoinBalance*"></a>
+  <h4 id="CoinSpotDotNet_CoinSpotClientV2_MyCoinBalance_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.MyCoinBalance(System.String)">MyCoinBalance(String)</h4>
+  <div class="markdown level1 summary"><p>Calls CoinSpot read-only API v2 Endpoint: <code>/api/v2/ro/my/balance/{cointype}</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;MyCoinBalanceV2Response&gt; MyCoinBalance(string coinShortName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">coinShortName</span></td>
+        <td><p>Coin short name e.g. &quot;ETH&quot;, &quot;BTC&quot; etc. used as the <code>cointype</code> url parameter</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="CoinSpotDotNet.Responses.V2.MyCoinBalanceV2Response.html">MyCoinBalanceV2Response</a>&gt;</td>
+        <td><p><a class="xref" href="CoinSpotDotNet.Responses.V2.MyCoinBalanceV2Response.html">MyCoinBalanceV2Response</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ReadOnlyStatusCheck.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L104">View Source</a>
+  </span>
+  <a id="CoinSpotDotNet_CoinSpotClientV2_ReadOnlyStatusCheck_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck*"></a>
+  <h4 id="CoinSpotDotNet_CoinSpotClientV2_ReadOnlyStatusCheck" data-uid="CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck">ReadOnlyStatusCheck()</h4>
+  <div class="markdown level1 summary"><p>Calls the status check endpoint for the read-only API. Useful to validate your API Key / Secret values are correct</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;CoinSpotResponse&gt; ReadOnlyStatusCheck()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="CoinSpotDotNet.Responses.CoinSpotResponse.html">CoinSpotResponse</a>&gt;</td>
+        <td><p><a class="xref" href="CoinSpotDotNet.Responses.CoinSpotResponse.html">CoinSpotResponse</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="CoinSpotDotNet.ICoinSpotClientV2.html">ICoinSpotClientV2</a>
@@ -303,13 +480,27 @@ See <a href="https://www.coinspot.com.au/v2/api#rodeposit">https://www.coinspot.
                     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L55" class="contribution-link">View Source</a>
+                    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotClientV2.cs/#L69" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <div></div>
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
               </nav>
             </div>
           </div>
@@ -323,12 +514,26 @@ See <a href="https://www.coinspot.com.au/v2/api#rodeposit">https://www.coinspot.
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            
-            <span>Generated by <strong>DocFX</strong></span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
+        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
+      </footer>    </div>
     
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>

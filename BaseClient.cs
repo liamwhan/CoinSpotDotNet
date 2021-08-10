@@ -1,5 +1,6 @@
 ﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 using CoinSpotDotNet.Common;
+using CoinSpotDotNet.Internal;
 using CoinSpotDotNet.Settings;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -16,11 +17,43 @@ namespace CoinSpotDotNet
     /// </summary>
     public abstract class BaseClient
     {
+        protected CoinSpotSettings Settings
+        {
+            get
+            {
+                return options?.CurrentValue ?? settings;
+            }
+        }
 
+        protected readonly CoinSpotSettings settings;
         protected readonly IOptionsMonitor<CoinSpotSettings> options;
         protected readonly ILogger logger;
         protected readonly HttpClient client;
-        protected readonly JsonSerializerOptions jsonOptions;
+        protected readonly JsonSerializerOptions jsonOptions = new JsonSerializerOptions
+        {
+            AllowTrailingCommas = true,
+            IgnoreNullValues = true,
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = new LowerCaseNamingPolicy(),
+            WriteIndented = false,
+            Converters =
+                {
+                    new CoinSpotDateTimeJsonConverter(),
+                    new CoinSpotStringToDoubleJsonConverter()
+                }
+        };
+
+        protected BaseClient(CoinSpotSettings settings)
+        {
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri("https://www.coinspot.com.au", UriKind.Absolute)
+            };
+            this.settings = settings;
+            this.client = client;
+            this.logger = new InternalLogger(GetType().Name);
+
+        }
 
         protected BaseClient(IOptionsMonitor<CoinSpotSettings> options, ILogger logger, HttpClient client)
         {
@@ -28,19 +61,6 @@ namespace CoinSpotDotNet
             this.options = options;
             this.logger = logger;
             this.client = client;
-            this.jsonOptions = new JsonSerializerOptions
-            {
-                AllowTrailingCommas = true,
-                IgnoreNullValues = true,
-                PropertyNameCaseInsensitive = true,
-                PropertyNamingPolicy = new LowerCaseNamingPolicy(),
-                WriteIndented = false,
-                Converters =
-                {
-                    new CoinSpotDateTimeJsonConverter(),
-                    new CoinSpotStringToDoubleJsonConverter()
-                }
-            };
         }
 
         protected async Task<HttpResponseMessage> Post(Uri requestUri, string postData, string sign)
@@ -56,7 +76,7 @@ namespace CoinSpotDotNet
 
             return response;
         }
-        
+
         protected async Task<HttpResponseMessage> Get(Uri requestUri, string bodyContent, string sign)
         {
             using var request = new HttpRequestMessage
@@ -64,7 +84,7 @@ namespace CoinSpotDotNet
                 RequestUri = requestUri,
                 Method = HttpMethod.Get,
             };
-            
+
             if (!string.IsNullOrWhiteSpace(bodyContent))
             {
                 request.Content = new StringContent(bodyContent, Encoding.UTF8, "application/json");
@@ -74,12 +94,12 @@ namespace CoinSpotDotNet
 
             return response;
         }
-        
+
         private async Task<HttpResponseMessage> Send(HttpRequestMessage request, string sign)
         {
             if (!string.IsNullOrWhiteSpace(sign))
             {
-                request.Headers.Add("key", options.CurrentValue.ReadOnlyKey);
+                request.Headers.Add("key", Settings.ReadOnlyKey);
                 request.Headers.Add("sign", sign);
             }
 
@@ -92,7 +112,7 @@ namespace CoinSpotDotNet
 
             return response;
         }
-        
+
     }
 }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

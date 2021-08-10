@@ -1,5 +1,4 @@
-﻿using CoinSpotDotNet.Common;
-using CoinSpotDotNet.Requests;
+﻿using CoinSpotDotNet.Requests;
 using CoinSpotDotNet.Responses;
 using CoinSpotDotNet.Settings;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -61,7 +59,15 @@ namespace CoinSpotDotNet
         private const string PublicPathLatestPrices = "/pubapi/latest";
         
         /// <summary>
-        /// Constructor. Requires a registered <see cref="IOptions{TOptions}"/> where TOptions == <see cref="CoinSpotSettings"/> containing your CoinSpot API credentials
+        /// Constructor for use in non-ASP.NET scenarios where Dependency Injection is not available. Requires only a <see cref="CoinSpotSettings"/> object initialised with your API Credentials
+        /// </summary>
+        /// <param name="settings">An <see cref="CoinSpotSettings"/> containing your CoinSpot API credentials</param>
+        public CoinSpotClient(CoinSpotSettings settings) : base(settings)
+        { 
+        }
+        
+        /// <summary>
+        /// Constructor. For use in ASP.NET projects with Dependency Injection enabled. Requires a registered <see cref="IOptions{TOptions}"/> where TOptions == <see cref="CoinSpotSettings"/> containing your CoinSpot API credentials
         /// </summary>
         /// <param name="options">An <see cref="IOptionsMonitor{TOptions}"/> where TOptions == <see cref="CoinSpotSettings"/></param>
         /// <param name="logger"><see cref="ILogger{TCategoryName}"/> for error logging</param>
@@ -91,9 +97,13 @@ namespace CoinSpotDotNet
         {
             var path = new Uri(PathMyBalances, UriKind.Relative);
             var postData = SignUtility.CreatePostData(new CoinSpotRequest());
-            var sign = SignUtility.Sign(postData, options.CurrentValue.ReadOnlySecret);
+            var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
 
             using var response = await Post(path, postData, sign);
+            if (!response.IsSuccessStatusCode)
+            {
+                return null;
+            }
 
             var balance = await JsonSerializer.DeserializeAsync<MyBalancesResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return balance;
@@ -103,14 +113,19 @@ namespace CoinSpotDotNet
         public async Task<MyDepositsResponse> ListMyDeposits(DateTime? startDate = null, DateTime? endDate = null)
         {
             var path = new Uri(PathMyDeposits, UriKind.Relative);
-            var postData = SignUtility.CreatePostData(new MyDepositsRequest
+            var postData = SignUtility.CreatePostData(new DateRangeRequest
             {
                 StartDate = startDate,
                 EndDate = endDate
             });
-            var sign = SignUtility.Sign(postData, options.CurrentValue.ReadOnlySecret);
+            var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
 
             using var response = await Post(path, postData, sign);
+            
+            if (!response.IsSuccessStatusCode)
+            {
+                return null;
+            }
 
             var deposits = await JsonSerializer.DeserializeAsync<MyDepositsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return deposits;
