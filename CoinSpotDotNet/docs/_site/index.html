@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CoinSpotDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="CoinSpotDotNet ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="/" class="navbar-brand">CoinSpotDotNet</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="coinspotdotnet">CoinSpotDotNet</h1>
+
+<p><a href="https://www.nuget.org/packages/CoinSpotDotNet"><img src="https://img.shields.io/nuget/v/CoinSpotDotNet?style=plastic" alt="Nuget Badge"></a></p>
+<blockquote>
+<p>A .NET Standard 2.0 compatible class library for CoinSpot API. Supports API versions 1 and 2</p>
+</blockquote>
+<h3 id="disclaimer">Disclaimer</h3>
+<p>This library is in a pre-alpha state and currently only supports the read-only <a href="https://coinspot.com.au/api#rosummary" target="_blank">v1 API</a> and <a href="https://coinspot.com.au/v2/api#rosummary" target="_blank">v2 API</a>.</p>
+<h2 id="demo">Demo</h2>
+<p>There is a Sample ASP.NET Web API project with a swagger you can use to test out the library and as a usage example.</p>
+<h3 id="demo-setup-instructions">Demo setup instructions</h3>
+<ol>
+<li>Clone the project
+<pre><code class="lang-sh">git clone https://github.com/liamwhan/CoinSpotDotNet
+</code></pre>
+</li>
+<li>Add your CoinSpot read-only API key and secret as a user secret with the dotnet CLI
+<pre><code class="lang-sh">cd CoinSpotDotNet/CoinSpotDotNet.Samples
+dotnet user-secrets init
+dotnet user-secrets set &quot;CoinSpot:ReadOnlyKey&quot; &quot;{YOUR_READ_ONLY_KEY}&quot;
+dotnet user-secrets set &quot;CoinSpot:ReadOnlySecret&quot; &quot;{YOUR_READ_ONLY_SECRET}&quot;
+</code></pre>
+</li>
+<li>Open the solution in Visual Studio and start debugging the CoinSpotDotNet.Samples project</li>
+<li>Explore the swagger API documentation</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="nuget-install">Nuget Install</h3>
+<pre><code class="lang-pwsh">Install-Package CoinSpotDotNet -Version 0.0.1
+</code></pre>
+<h3 id="dotnet-cli-install"><code>dotnet</code> CLI Install</h3>
+<pre><code class="lang-bat">dotnet add package CoinSpotDotNet --version 0.0.1
+</code></pre>
+<h3 id="aspnet-web-application">ASP.NET Web Application</h3>
+<blockquote>
+<p><strong>NOTE:</strong> Both V1 and V2 clients are used side-by-side in the examples below to demonstrate usage, while this won't cause any problems, in practice you would probably only want one or the other.</p>
+</blockquote>
+<p>If you're building an ASP.NET Web application then getting started is as simple as:</p>
+<ol>
+<li><p>Add your <a href="https://www.coinspot.com.au/my/api" target="_blank">CoinSpot API credentials</a> to the applications <code>IConfiguration</code> under the section <code>CoinSpot</code></p>
+<p>This can be done in any way you like, (i.e. User secrets, secure storage etc.) but we recommend you read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-5.0" target="_blank">safe storage of secrets in ASP.NET</a></p>
+<p>For example, here is what the credentials would look like in an <code>appsettings.json</code> file (which we don't recommend, but are using here to demonstrate the structure that the CoinSpotDotNet expects):</p>
+<pre><code class="lang-json"> {
+     &quot;CoinSpot&quot;: 
+     {
+         &quot;ReadOnlyKey&quot;: &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,
+         &quot;ReadOnlySecret&quot;: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
+     }
+ }
+</code></pre>
+</li>
+<li><p>Register CoinSpotDotNet in the .NET DI Container. Example <code>Startup.cs</code> class</p>
+<pre><code class="lang-cs"> using CoinSpotDotNet;
+
+ namespace MyProject 
+ {
+     public class Startup 
+     {
+         public IConfiguration Configuration { get; set; }
+
+         public Startup(IConfiguration config)
+         {
+             Configuration = config;
+         }
+
+         public void ConfigureServices(IServiceCollection services)
+         {
+             // ... Standard .NET service setup
+             services.AddCoinSpotV1(Configuration); // Registers ICoinSpotClient for CoinSpot v1 API;
+             services.AddCoinSpotV2(Configuration); // Registers ICoinSpotClientV2 for CoinSpot v2 API;
+
+         }
+     }
+ }
+</code></pre>
+<p>This will register <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#how-to-use-typed-clients-with-ihttpclientfactory" target="_blank">a typed <code>HttpClient</code></a> into the DI Container</p>
+</li>
+<li><p>Inject <code>ICoinSpotClient</code> or <code>ICoinSpotClientV2</code> into your consuming services.</p>
+<pre><code class="lang-cs"> using CoinSpotDotNet;
+ namespace MyProject.Services 
+ {
+
+     public class MyService 
+     {
+         private readonly ICoinSpotClient clientV1;
+         private readonly ICoinSpotClientV2 clientV2;
+
+         public MyService(ICoinSpotClient clientV1, ICoinSpotClientV2 clientV2)
+         {
+             this.clientV1 = clientV1;
+             this.clientV2 = clientV2;
+         }
+
+         public async Task MyMethod()
+         {
+             var balancesV1 = await clientV1.ListMyBalances();
+             var balancesV2 = await clientV2.ListMyBalances();
+
+         }
+     }
+
+ }
+
+</code></pre>
+</li>
+</ol>
+<h2 id="general-notes">General Notes</h2>
+<h4 id="coinspotclient-classes">CoinSpotClient classes</h4>
+<p>CoinSpotDotNet exposes 2 primary classes of interest to consuming applications:</p>
+<ul>
+<li><code>ICoinSpotClient</code> - calls CoinSpot API v1 endpoints</li>
+<li><code>ICoinSpotClientV2</code> - calls CoinSpot API v2 endpoints</li>
+</ul>
+<p>They are independent classes and can be used interchangably and they expose mostly the same methods at the moment (the v2 API has more endpoints so the client has more corresponding methods).</p>
+<h4 id="dependencies">Dependencies</h4>
+<p>The target framework is .NET Standard 2.0 and the only dependencies are Microsoft .NET libraries. There are no 3rd-party dependencies.</p>
+<p>The library does currently require <code>IOptions&lt;TOptions&gt;</code> support (Microsoft.Extensions.Options) and assumes logging has been configured and <code>ILogger&lt;T&gt;</code> (Microsoft.Extensions.Logging.Abstractions) instances are available.</p>
+<p>If you are using this library in other contexts (i.e. Console applications), please lodge a ticket on the <a href="https://github.com/liamwhan/CoinSpotDotNet">GitHub repo</a> and I will consider removing these dependencies.</p>
+<h2 id="license">License</h2>
+<p>MIT License</p>
+<p>Copyright (c) 2021 Liam Whan</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/docs/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="toggle-mode">
+                <div class="icon">
+                  <i aria-hidden="true">☀</i>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="switch-style">
+                  <span class="slider round"></span>
+                </label>
+                <div class="icon">
+                  <i aria-hidden="true">☾</i>
+                </div>
+              </div>
+          
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <h5>In This Article</h5>
+              <div></div>
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <div class="pull-left">
+              
+              <span>Generated by <strong>DocFX</strong></span>
+            </div>
+            <div class="toggle-mode pull-right visible-sm visible-xs">
+              <div class="icon">
+                <i aria-hidden="true">☀</i>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="switch-style-m">
+                <span class="slider round"></span>
+              </label>
+              <div class="icon">
+                <i aria-hidden="true">☾</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="styles/toggle-theme.js"></script>
+      </footer>    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

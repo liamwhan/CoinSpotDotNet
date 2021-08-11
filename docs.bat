@@ -1,5 +1,5 @@
 @echo off
 
-pushd docs
+pushd CoinSpotDotNet\docs
 docfx
 popd

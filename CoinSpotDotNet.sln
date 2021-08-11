@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinSpotDotNet", "CoinSpotDotNet.csproj", "{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinSpotDotNet", "CoinSpotDotNet\CoinSpotDotNet.csproj", "{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinSpotDotNet.Samples", "CoinSpotDotNet.Samples\CoinSpotDotNet.Samples.csproj", "{C36C70F2-E53A-4963-9447-A2882A98FD56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,21 +16,36 @@ Global
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Debug|x64.Build.0 = Debug|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Debug|x86.Build.0 = Debug|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Release|x64.ActiveCfg = Release|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Release|x64.Build.0 = Release|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Release|x86.ActiveCfg = Release|Any CPU
+		{A23C3436-8CC2-4CBF-A32B-6B02460E1C12}.Release|x86.Build.0 = Release|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Debug|x64.Build.0 = Debug|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Debug|x86.Build.0 = Debug|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Release|x64.ActiveCfg = Release|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Release|x64.Build.0 = Release|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Release|x86.ActiveCfg = Release|Any CPU
+		{C36C70F2-E53A-4963-9447-A2882A98FD56}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Debug|x64.Build.0 = Debug|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Debug|x86.Build.0 = Debug|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Release|x64.ActiveCfg = Release|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Release|x64.Build.0 = Release|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Release|x86.ActiveCfg = Release|Any CPU
-		{F9452225-AE0F-4906-BDF0-E4ABB3FC3BB6}.Release|x86.Build.0 = Release|Any CPU
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9478309-2A5F-4DCA-9166-551787204CB7}
 	EndGlobalSection
 EndGlobal
