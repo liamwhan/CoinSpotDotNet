@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 using CoinSpotDotNet.Common;
 using CoinSpotDotNet.Internal;
+using CoinSpotDotNet.Requests;
 using CoinSpotDotNet.Settings;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -67,6 +68,15 @@ namespace CoinSpotDotNet
             this.client = client;
         }
 
+        protected async Task<HttpResponseMessage> Post<TRequest>(Uri requestUri, TRequest request)
+            where TRequest : CoinSpotRequest
+        {
+            var postData = SignUtility.CreatePostData(request, jsonOptions);
+            var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
+
+            return await Post(requestUri, postData, sign);
+        }
+
         protected async Task<HttpResponseMessage> Post(Uri requestUri, string postData, string sign)
         {
             using var request = new HttpRequestMessage
@@ -79,6 +89,16 @@ namespace CoinSpotDotNet
             var response = await Send(request, sign);
 
             return response;
+        }
+
+
+        protected async Task<HttpResponseMessage> Get<TRequest>(Uri requestUri, TRequest request)
+            where TRequest : CoinSpotRequest
+        {
+            var bodyContent = SignUtility.CreatePostData(request, jsonOptions);
+            var sign = SignUtility.Sign(bodyContent, Settings.ReadOnlySecret);
+
+            return await Get(requestUri, bodyContent, sign);
         }
 
         protected async Task<HttpResponseMessage> Get(Uri requestUri, string bodyContent, string sign)

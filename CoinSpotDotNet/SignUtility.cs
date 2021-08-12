@@ -11,7 +11,7 @@ namespace CoinSpotDotNet
     /// <summary>
     /// Static helper methods to generate request signatures
     /// </summary>
-    public static class SignUtility
+    internal static class SignUtility
     {
         /// <summary>
         /// Creates standard CoinSpot POST body with a single JSON property "nonce"
@@ -22,7 +22,7 @@ namespace CoinSpotDotNet
         /// <param name="nonceValue">Optional. Provide a custom nonce value to use. If omitted Unix timestamp is used</param>
         /// <param name="jsonOptions">Optional. Provide custom <see cref="JsonSerializerOptions"/>. If omitted the best case options are used.</param>
         /// <returns><see cref="string"/> containing the serialised JSON to include in the POST body. This value is also used for the signature.</returns>
-        public static string CreatePostData(long? nonceValue = null, JsonSerializerOptions jsonOptions = null)
+        internal static string CreatePostData(long? nonceValue = null, JsonSerializerOptions jsonOptions = null)
         {
             var nonce = nonceValue ?? DateTime.UtcNow.ToUnixTimestamp();
             jsonOptions ??= new JsonSerializerOptions
@@ -51,7 +51,7 @@ namespace CoinSpotDotNet
         /// <param name="request">The request body object to serialise</param>
         /// <param name="jsonOptions">Optional. Provide custom <see cref="JsonSerializerOptions"/>. If omitted the best case options are used.</param>
         /// <returns><see cref="string"/> containing the serialised JSON to include in the POST body. This value is also used for the signature.</returns>
-        public static string CreatePostData<TRequest>(TRequest request, JsonSerializerOptions jsonOptions = null)
+        internal static string CreatePostData<TRequest>(TRequest request, JsonSerializerOptions jsonOptions = null)
             where TRequest : CoinSpotRequest
         {
             jsonOptions ??= new JsonSerializerOptions
@@ -82,7 +82,7 @@ namespace CoinSpotDotNet
         /// <param name="postData">The JSON string to sign</param>
         /// <param name="secret">Your CoinSpot Secret Key</param>
         /// <returns>The HMACSHA512 hash of <paramref name="postData"/> encoded in hexadecimal</returns>
-        public static string Sign(string postData, string secret)
+        internal static string Sign(string postData, string secret)
         {
             var postDataBytes = Encoding.UTF8.GetBytes(postData);
             var postDataHash = ComputeHash(postDataBytes, secret);

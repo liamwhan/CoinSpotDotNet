@@ -9,7 +9,7 @@ namespace CoinSpotDotNet.Responses
     /// See <see href="https://www.coinspot.com.au/api#rotransaction"/>
     /// </para>
     /// </summary>
-    public class MyTransactionsResponse : CoinSpotResponse
+    public class TransactionsResponse : CoinSpotResponse
     {
         /// <summary>
         /// Array containing your buy order history

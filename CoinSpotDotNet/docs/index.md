@@ -54,7 +54,6 @@ There is a Sample ASP.NET Web API project with a swagger you can use to test out
 
 
 ## Getting Started
-
 ### Installation
 #### Nuget
 ```pwsh

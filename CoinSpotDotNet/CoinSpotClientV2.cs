@@ -31,8 +31,8 @@ namespace CoinSpotDotNet
         /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/balance/{cointype}</c> 
         /// </summary>
         /// <param name="coinType">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-        /// <returns><see cref="MyCoinBalanceV2Response"/></returns>
-        Task<MyCoinBalanceV2Response> MyCoinBalance(string coinType);
+        /// <returns><see cref="CoinBalanceV2Response"/></returns>
+        Task<CoinBalanceV2Response> CoinBalance(string coinType);
 
         /// <summary>
         /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/balances</c> 
@@ -40,8 +40,8 @@ namespace CoinSpotDotNet
         /// See <see href="https://www.coinspot.com.au/v2/api#romybalances"/>
         /// </para>
         /// </summary>
-        /// <returns><see cref="MyBalancesV2Response"/></returns>
-        Task<MyBalancesV2Response> ListMyBalances();
+        /// <returns><see cref="BalancesV2Response"/></returns>
+        Task<BalancesV2Response> ListBalances();
 
         /// <summary>
         /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/deposits</c> 
@@ -51,8 +51,8 @@ namespace CoinSpotDotNet
         /// </summary>
         /// <param name="startDate">Optional. Start of date range</param>
         /// <param name="endDate">Optional. End of date range</param>
-        /// <returns><see cref="MyDepositsV2Response"/></returns>
-        Task<MyDepositsV2Response> ListMyDeposits(DateTime? startDate = null, DateTime? endDate = null);
+        /// <returns><see cref="DepositsV2Response"/></returns>
+        Task<DepositsV2Response> ListDeposits(DateTime? startDate = null, DateTime? endDate = null);
 
         /// <summary>
         /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/deposits</c> 
@@ -62,8 +62,21 @@ namespace CoinSpotDotNet
         /// </summary>
         /// <param name="startDate">Optional. Start of date range</param>
         /// <param name="endDate">Optional. End of date range</param>
-        /// <returns><see cref="MyWithdrawalsV2Response"/></returns>
-        Task<MyWithdrawalsV2Response> ListMyWithdrawals(DateTime? startDate = null, DateTime? endDate = null);
+        /// <returns><see cref="WithdrawalsV2Response"/></returns>
+        Task<WithdrawalsV2Response> ListWithdrawals(DateTime? startDate = null, DateTime? endDate = null);
+
+        /// <summary>
+        /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/deposits</c> 
+        /// <para>
+        /// See <see href="https://www.coinspot.com.au/v2/api#rotransaction"/>
+        /// </para>
+        /// </summary>
+        /// <param name="coinType">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
+        /// <param name="marketType">Market coin short name, example value 'USDT' (only for available markets)</param>
+        /// <param name="startDate">Optional. Start of date range</param>
+        /// <param name="endDate">Optional. End of date range</param>
+        /// <returns><see cref="WithdrawalsV2Response"/></returns>
+        Task<MarketOrderV2Response> MarketOrderHistory(string coinType = null, string marketType = null, DateTime? startDate = null, DateTime? endDate = null);
         #endregion
 
 
@@ -190,11 +203,12 @@ namespace CoinSpotDotNet
     public class CoinSpotClientV2 : BaseClient, ICoinSpotClientV2
     {
        
-        private const string PathMyBalances = "/api/v2/ro/my/balances";
-        private const string PathMyDeposits = "/api/v2/ro/my/deposits";
-        private const string PathMyWithdrawals = "/api/v2/ro/my/withdrawals";
+        private const string PathBalances = "/api/v2/ro/my/balances";
+        private const string PathDeposits = "/api/v2/ro/my/deposits";
+        private const string PathWithdrawals = "/api/v2/ro/my/withdrawals";
         private const string PathReadOnlyStatusCheck = "/api/v2/ro/status";
-        private const string PathMyCoinBalance = "/api/v2/ro/my/balance/{0}";
+        private const string PathCoinBalance = "/api/v2/ro/my/balance/{0}";
+        private const string PathMarketOrderHistory = "/api/v2/ro/my/orders/market/completed";
 
         private const string PublicPathLatestPrices = "/pubapi/v2/latest";
         private const string PublicPathLatestCoinPrices = "/pubapi/v2/latest/{0}";
@@ -381,40 +395,40 @@ namespace CoinSpotDotNet
         }
 
         /// <inheritdoc/>
-        public async Task<MyCoinBalanceV2Response> MyCoinBalance(string coinType)
+        public async Task<CoinBalanceV2Response> CoinBalance(string coinType)
         {
             coinType = invalidCharRegex.Replace(coinType, string.Empty);
 
-            var path = new Uri(PathMyCoinBalance.Format(coinType), UriKind.Relative);
+            var path = new Uri(PathCoinBalance.Format(coinType), UriKind.Relative);
             var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
             var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
 
             var response = await Post(path, postData, sign);
             if (!response.IsSuccessStatusCode) return null;
-            return await JsonSerializer.DeserializeAsync<MyCoinBalanceV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            return await JsonSerializer.DeserializeAsync<CoinBalanceV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
         }
 
        
         /// <inheritdoc/>
-        public async Task<MyBalancesV2Response> ListMyBalances()
+        public async Task<BalancesV2Response> ListBalances()
         {
-            var path = new Uri(PathMyBalances, UriKind.Relative);
+            var path = new Uri(PathBalances, UriKind.Relative);
             var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
             var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
 
             using var response = await Post(path, postData, sign);
             if (!response.IsSuccessStatusCode) return null;
 
-            var balance = await JsonSerializer.DeserializeAsync<MyBalancesV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var balance = await JsonSerializer.DeserializeAsync<BalancesV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return balance;
         }
 
 
 
         /// <inheritdoc/>
-        public async Task<MyDepositsV2Response> ListMyDeposits(DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<DepositsV2Response> ListDeposits(DateTime? startDate = null, DateTime? endDate = null)
         {
-            var path = new Uri(PathMyDeposits, UriKind.Relative);
+            var path = new Uri(PathDeposits, UriKind.Relative);
             var postData = SignUtility.CreatePostData(new DateRangeRequest
             {
                 StartDate = startDate,
@@ -426,28 +440,43 @@ namespace CoinSpotDotNet
 
             if (!response.IsSuccessStatusCode) return null;
 
-            var deposits = await JsonSerializer.DeserializeAsync<MyDepositsV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var deposits = await JsonSerializer.DeserializeAsync<DepositsV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return deposits;
 
         }
         
         /// <inheritdoc/>
-        public async Task<MyWithdrawalsV2Response> ListMyWithdrawals(DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<WithdrawalsV2Response> ListWithdrawals(DateTime? startDate = null, DateTime? endDate = null)
         {
-            var path = new Uri(PathMyWithdrawals, UriKind.Relative);
-            var postData = SignUtility.CreatePostData(new DateRangeRequest
+            var path = new Uri(PathWithdrawals, UriKind.Relative);
+
+            using var response = await Post(path, new DateRangeRequest
             {
                 StartDate = startDate,
                 EndDate = endDate
-            }, jsonOptions);
-            var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
-
-            using var response = await Post(path, postData, sign);
+            });
             if (!response.IsSuccessStatusCode) return null;
 
-            var withdrawals = await JsonSerializer.DeserializeAsync<MyWithdrawalsV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var withdrawals = await JsonSerializer.DeserializeAsync<WithdrawalsV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return withdrawals;
 
+        }
+
+        /// <inheritdoc/>
+        public async Task<MarketOrderV2Response> MarketOrderHistory(string coinType = null, string marketType = null, DateTime? startDate = null, DateTime? endDate = null)
+        {
+           using var response = await Post(new Uri(PathMarketOrderHistory, UriKind.Relative), new MarketOrderHistoryRequest
+            {
+                CoinType = coinType,
+                MarketType = marketType,
+                StartDate = startDate,
+                EndDate = endDate
+            });
+
+            if (!response.IsSuccessStatusCode) return null;
+
+            var orders = await JsonSerializer.DeserializeAsync<MarketOrderV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            return orders;
         }
 
         #endregion

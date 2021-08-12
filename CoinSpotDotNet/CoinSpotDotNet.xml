@@ -14,16 +14,16 @@
             A typed <see cref="T:System.Net.Http.HttpClient"/> that abstracts CoinSpot API v1 calls and handles request signing.
             </summary>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyBalances">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListBalances">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/balances</c> 
             <para>
             See <see href="https://www.coinspot.com.au/api#romybalances"/>
             </para>
             </summary>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyBalancesResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.BalancesResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <code>/api/ro/my/deposits</code> 
             <para>
@@ -32,9 +32,9 @@
             </summary>
             <param name="startDate">Optional. Start of date range</param>
             <param name="endDate">Optional. End of date range</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyDepositsResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.DepositsResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <code>/api/ro/my/withdrawals</code> 
             <para>
@@ -43,40 +43,40 @@
             </summary>
             <param name="startDate">Optional. Start of date range</param>
             <param name="endDate">Optional. End of date range</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyWithdrawalsResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.WithdrawalsResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.MyCoinBalance(System.String)">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.CoinBalance(System.String)">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/balance/:cointype</c> 
             </summary>
             <param name="coinType">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyCoinBalanceResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.CoinBalanceResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyTransactionHistory">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListTransactionHistory">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions</c> 
             </summary>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyTransactionsResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyCoinTransactionHistory(System.String)">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListCoinTransactionHistory(System.String)">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/:cointype</c> 
             </summary>
             <param name="cointype">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyTransactionsResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyOpenTransactions">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListOpenTransactions">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/open</c> 
             </summary>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyTransactionsResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListMyOpenCoinTransactions(System.String)">
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListOpenCoinTransactions(System.String)">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/:cointype/open</c> 
             </summary>
             <param name="cointype">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.MyTransactionsResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
         </member>
         <member name="T:CoinSpotDotNet.CoinSpotClient">
             <summary>
@@ -100,28 +100,28 @@
         <member name="M:CoinSpotDotNet.CoinSpotClient.LatestPrices">
             <inheritdoc />
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyBalances">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListBalances">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.MyCoinBalance(System.String)">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.CoinBalance(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyTransactionHistory">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListTransactionHistory">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyCoinTransactionHistory(System.String)">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListCoinTransactionHistory(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyOpenTransactions">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListOpenTransactions">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClient.ListMyOpenCoinTransactions(System.String)">
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListOpenCoinTransactions(System.String)">
             <inheritdoc/>
         </member>
         <member name="T:CoinSpotDotNet.ICoinSpotClientV2">
@@ -135,23 +135,23 @@
             </summary>
             <returns><see cref="T:CoinSpotDotNet.Responses.CoinSpotResponse"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.MyCoinBalance(System.String)">
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.CoinBalance(System.String)">
             <summary>
             Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/balance/{cointype}</c> 
             </summary>
             <param name="coinType">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.V2.MyCoinBalanceV2Response"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.CoinBalanceV2Response"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListMyBalances">
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListBalances">
             <summary>
             Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/balances</c> 
             <para>
             See <see href="https://www.coinspot.com.au/v2/api#romybalances"/>
             </para>
             </summary>
-            <returns><see cref="T:CoinSpotDotNet.Responses.V2.MyBalancesV2Response"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.BalancesV2Response"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <summary>
             Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/deposits</c> 
             <para>
@@ -160,9 +160,9 @@
             </summary>
             <param name="startDate">Optional. Start of date range</param>
             <param name="endDate">Optional. End of date range</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.V2.MyDepositsV2Response"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.DepositsV2Response"/></returns>
         </member>
-        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ListWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <summary>
             Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/deposits</c> 
             <para>
@@ -171,7 +171,20 @@
             </summary>
             <param name="startDate">Optional. Start of date range</param>
             <param name="endDate">Optional. End of date range</param>
-            <returns><see cref="T:CoinSpotDotNet.Responses.V2.MyWithdrawalsV2Response"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.WithdrawalsV2Response"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.MarketOrderHistory(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/deposits</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rotransaction"/>
+            </para>
+            </summary>
+            <param name="coinType">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
+            <param name="marketType">Market coin short name, example value 'USDT' (only for available markets)</param>
+            <param name="startDate">Optional. Start of date range</param>
+            <param name="endDate">Optional. End of date range</param>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.WithdrawalsV2Response"/></returns>
         </member>
         <member name="M:CoinSpotDotNet.ICoinSpotClientV2.LatestPrices">
             <summary>
@@ -343,16 +356,19 @@
         <member name="M:CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck">
             <inheritdoc />
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClientV2.MyCoinBalance(System.String)">
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.CoinBalance(System.String)">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListMyBalances">
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListBalances">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <inheritdoc/>
         </member>
-        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ListWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.MarketOrderHistory(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
             <inheritdoc/>
         </member>
         <member name="T:CoinSpotDotNet.Common.CoinSpotDateTimeJsonConverter">
@@ -434,6 +450,31 @@
             </para>
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Requests.MarketOrderHistoryRequest">
+            <summary>
+            Request body for v2 endpoint <c>/api/v2/ro/my/orders/market/completed</c>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Requests.MarketOrderHistoryRequest.CoinType">
+            <summary>
+            (optional) coin short name, example value 'BTC', 'LTC', 'DOGE'
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Requests.MarketOrderHistoryRequest.MarketType">
+            <summary>
+            (optional, available markets only) market coin short name, example values 'AUD', 'USDT'
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Requests.MarketOrderHistoryRequest.StartDate">
+            <summary>
+            (optional, note: date is UTC date or UNIX EPOCH time) format 'YYYY-MM-DD' or e.g. 1614824116
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Requests.MarketOrderHistoryRequest.EndDate">
+            <summary>
+            (optional, note: date is UTC date or UNIX EPOCH time) format 'YYYY-MM-DD' or e.g. 1614824116
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Requests.OrderHistoryRequest">
             <summary>
             Request body for CoinSpot read-only API endpoint <c>/api/v2/ro/my/orders/completed</c>
@@ -449,6 +490,21 @@
             (Optional, available markets only) market coin short name, example values 'AUD', 'USDT'
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.AffiliatePayment">
+            <summary>
+            Affliate payment record
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.AffiliatePayment.Amount">
+            <summary>
+            Amount paid
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.AffiliatePayment.Month">
+            <summary>
+            Payment month
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.AffiliatePaymentResponse">
             <summary>
             CoinSpot read-only API response for endpoint <c>/api/ro/my/affiliatepayments</c>
@@ -461,9 +517,29 @@
             NOTE: I have no affliate payments on my coinspot account and there are no example responses in the 
             v1 CoinSpot API documentation, so this response shape is based on the Example Response for the v2 api
             which you can see here: <see href="https://www.coinspot.com.au/v2/api#roaffpay"/> but I have no way of
-            testing that this is correct. I have lodged a ticket with CoinSpot support to get some feedback about this.
+            testing that this is correct.
             </para>
             </remarks>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.AffiliatePaymentResponse.Payments">
+            <summary>
+            Array containing one object for each completed affiliate payment
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.BalancesResponse">
+            <summary>
+            Response model for /ro/my/balances
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.BalancesResponse.Balances">
+            <summary>
+            Array of currency balances identified with currency identifier
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.BalancesResponse.BalancesFlattened">
+            <summary>
+            Helper getter to flatten the Balances that CoinSpot returns
+            </summary>
         </member>
         <member name="T:CoinSpotDotNet.Responses.BuyOrder">
             <summary>
@@ -537,6 +613,24 @@
             <param name="coinType">The coin type identifier e.g. "BTC", "ETH" etc.</param>
             <param name="balance">The coin balance</param>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.CoinBalanceResponse">
+            <summary>
+            Response model for <c>/api/ro/my/balance/:cointype</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rocoinsbalance"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinBalanceResponse.Balance">
+            <summary>
+            The coin balance
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.CoinBalanceResponse.CoinBalance">
+            <summary>
+            Gets the first value in the dictionary (for this endpoint there will only be one)
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.CoinPrice">
             <summary>
             Coin price
@@ -595,6 +689,19 @@
             Deposit reference id.
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.DepositsResponse">
+            <summary>
+            CoinSpot read-only API List Deposit History response
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rodeposit"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.DepositsResponse.Deposits">
+            <summary>
+            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Deposit"/> history
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.LatestPricesResponse">
             <summary>
             Public API Latest Prices response
@@ -608,81 +715,57 @@
             Dictionary of prices where the key is the coin indentifier
             </summary>
         </member>
-        <member name="T:CoinSpotDotNet.Responses.MyBalancesResponse">
+        <member name="T:CoinSpotDotNet.Responses.MarketOrder">
             <summary>
-            Response model for /ro/my/balances
-            </summary>
-        </member>
-        <member name="P:CoinSpotDotNet.Responses.MyBalancesResponse.Balances">
-            <summary>
-            Array of currency balances identified with currency identifier
-            </summary>
-        </member>
-        <member name="P:CoinSpotDotNet.Responses.MyBalancesResponse.BalancesFlattened">
-            <summary>
-            Helper getter to flatten the Balances that CoinSpot returns
-            </summary>
-        </member>
-        <member name="T:CoinSpotDotNet.Responses.MyCoinBalanceResponse">
-            <summary>
-            Response model for <c>/api/ro/my/balance/:cointype</c>
+            Market order record
             <para>
-            See <see href="https://www.coinspot.com.au/api#rocoinsbalance"/>
+            See <see href="https://www.coinspot.com.au/v2/api#rotransaction" />
             </para>
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.MyCoinBalanceResponse.Balance">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.Coin">
             <summary>
-            The coin balance
+            Coin short name, example value 'BTC', 'LTC', 'DOGE'
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.MyCoinBalanceResponse.CoinBalance">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.Market">
             <summary>
-            Gets the first value in the dictionary (for this endpoint there will only be one)
+            Market coin short name, example values 'AUD', 'USDT'
             </summary>
         </member>
-        <member name="T:CoinSpotDotNet.Responses.MyDepositsResponse">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.Rate">
             <summary>
-            CoinSpot read-only API List Deposit History response
-            <para>
-            See <see href="https://www.coinspot.com.au/api#rodeposit"/>
-            </para>
+            Coin rate
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.MyDepositsResponse.Deposits">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.Amount">
             <summary>
-            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Deposit"/> history
+            Coin amount
             </summary>
         </member>
-        <member name="T:CoinSpotDotNet.Responses.MyTransactionsResponse">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.Total">
             <summary>
-            Response model for <c>/api/ro/my/transactions</c>
-            <para>
-            See <see href="https://www.coinspot.com.au/api#rotransaction"/>
-            </para>
+            Total
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.MyTransactionsResponse.BuyOrders">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.SoldDate">
             <summary>
-            Array containing your buy order history
+            Sold date
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.MyTransactionsResponse.SellOrders">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.AudFeeExGst">
             <summary>
-            Array containing your sell order history
+            CoinSpot fee in AUD ex GST
             </summary>
         </member>
-        <member name="T:CoinSpotDotNet.Responses.MyWithdrawalsResponse">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.AudGst">
             <summary>
-            CoinSpot read-only API v1 My Withdrawl History response <c>/api/ro/my/withdrawals</c>
-            <para>
-            See <see href="https://www.coinspot.com.au/api#rowithdrawal"/>
-            </para>
+            Fee GST in AUD
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.MyWithdrawalsResponse.Withdrawals">
+        <member name="P:CoinSpotDotNet.Responses.MarketOrder.AudTotal">
             <summary>
-            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Withdrawal"/> history
+            AUD total
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.Responses.OpenOrder">
@@ -734,6 +817,52 @@
             Market short name
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.ReferralPayment">
+            <summary>
+            Referral payment record
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.ReferralPayment.Amount">
+            <summary>
+            Payment amount in coins
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.ReferralPayment.Coin">
+            <summary>
+            Coin short name, example value 'BTC', 'LTC', 'DOGE'
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.ReferralPayment.AudAmount">
+            <summary>
+            Payment amount in AUD
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.ReferralPayment.Timestamp">
+            <summary>
+            Payment timestamp 
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.ReferralPaymentResponse">
+            <summary>
+            CoinSpot read-only API response for endpoint <c>/api/ro/my/referralpayments</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rorefpay"/>
+            </para>
+            </summary>
+            <remarks>
+            <para>
+            NOTE: I have no referral payments on my coinspot account and there are no example responses in the 
+            v1 CoinSpot API documentation, so this response shape is based on the Example Response for the v2 api
+            which you can see here: <see href="https://www.coinspot.com.au/v2/api#rorefpay"/> but I have no way of
+            testing that this is correct.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.ReferralPaymentResponse.Payments">
+            <summary>
+            Array containing one object for each completed referral payment
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.SellOrder">
             <summary>
             Sell Transaction
@@ -759,6 +888,60 @@
             Deposit date
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.TransactionsResponse">
+            <summary>
+            Response model for <c>/api/ro/my/transactions</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rotransaction"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.TransactionsResponse.BuyOrders">
+            <summary>
+            Array containing your buy order history
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.TransactionsResponse.SellOrders">
+            <summary>
+            Array containing your sell order history
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.BalancesV2Response">
+            <summary>
+            Response model for <c>v2/ro/my/balances</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#romybalances"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.BalancesV2Response.Balances">
+            <summary>
+            Array of currency balances identified with currency identifier
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.BalancesV2Response.BalancesFlattened">
+            <summary>
+            Helper getter to flatten the Balances that CoinSpot returns into a single dictionary
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.CoinBalanceV2Response">
+            <summary>
+            Response model for <c>/api/v2/ro/my/balance/{cointype}</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rocoinsbalance"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.CoinBalanceV2Response.Balance">
+            <summary>
+            The coin balance
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.CoinBalanceV2Response.CoinBalance">
+            <summary>
+            Gets the first value in the dictionary (for this endpoint there will only be one)
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.V2.CoinSpotV2Response">
             <summary>
             Base class for CoinSpot API v2 Responses
@@ -782,6 +965,19 @@
         <member name="P:CoinSpotDotNet.Responses.V2.CompletedOrdersV2Response.SellOrders">
             <summary>
             List of top 100 completed sell orders for the given coin / market
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.DepositsV2Response">
+            <summary>
+            CoinSpot read-only API v2 List Deposit History response
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rodeposit"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.DepositsV2Response.Deposits">
+            <summary>
+            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Deposit"/> history
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.Responses.V2.LatestCoinPriceV2Response">
@@ -810,66 +1006,22 @@
             Dictionary of prices where the key is the coin indentifier
             </summary>
         </member>
-        <member name="T:CoinSpotDotNet.Responses.V2.MyBalancesV2Response">
+        <member name="T:CoinSpotDotNet.Responses.V2.MarketOrderV2Response">
             <summary>
-            Response model for <c>v2/ro/my/balances</c>
+            Market Order History response
             <para>
-            See <see href="https://www.coinspot.com.au/v2/api#romybalances"/>
+            See <see href="https://www.coinspot.com.au/v2/api#rotransaction"/>
             </para>
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.V2.MyBalancesV2Response.Balances">
+        <member name="P:CoinSpotDotNet.Responses.V2.MarketOrderV2Response.BuyOrders">
             <summary>
-            Array of currency balances identified with currency identifier
+            Array containing your buy order history
             </summary>
         </member>
-        <member name="P:CoinSpotDotNet.Responses.V2.MyBalancesV2Response.BalancesFlattened">
+        <member name="P:CoinSpotDotNet.Responses.V2.MarketOrderV2Response.SellOrders">
             <summary>
-            Helper getter to flatten the Balances that CoinSpot returns into a single dictionary
-            </summary>
-        </member>
-        <member name="T:CoinSpotDotNet.Responses.V2.MyCoinBalanceV2Response">
-            <summary>
-            Response model for <c>/api/v2/ro/my/balance/{cointype}</c>
-            <para>
-            See <see href="https://www.coinspot.com.au/v2/api#rocoinsbalance"/>
-            </para>
-            </summary>
-        </member>
-        <member name="P:CoinSpotDotNet.Responses.V2.MyCoinBalanceV2Response.Balance">
-            <summary>
-            The coin balance
-            </summary>
-        </member>
-        <member name="P:CoinSpotDotNet.Responses.V2.MyCoinBalanceV2Response.CoinBalance">
-            <summary>
-            Gets the first value in the dictionary (for this endpoint there will only be one)
-            </summary>
-        </member>
-        <member name="T:CoinSpotDotNet.Responses.V2.MyDepositsV2Response">
-            <summary>
-            CoinSpot read-only API v2 List Deposit History response
-            <para>
-            See <see href="https://www.coinspot.com.au/v2/api#rodeposit"/>
-            </para>
-            </summary>
-        </member>
-        <member name="P:CoinSpotDotNet.Responses.V2.MyDepositsV2Response.Deposits">
-            <summary>
-            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Deposit"/> history
-            </summary>
-        </member>
-        <member name="T:CoinSpotDotNet.Responses.V2.MyWithdrawalsV2Response">
-            <summary>
-            CoinSpot read-only API v1 My Withdrawl History response <c>/api/ro/my/withdrawals</c>
-            <para>
-            See <see href="https://www.coinspot.com.au/api#rowithdrawal"/>
-            </para>
-            </summary>
-        </member>
-        <member name="P:CoinSpotDotNet.Responses.V2.MyWithdrawalsV2Response.Withdrawals">
-            <summary>
-            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Withdrawal"/> history
+            array containing your sell order history
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.Responses.V2.OpenOrdersV2Response">
@@ -923,9 +1075,35 @@
             Deposit status. e.g. "completed"
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.WithdrawalsV2Response">
+            <summary>
+            CoinSpot read-only API v1 My Withdrawl History response <c>/api/ro/my/withdrawals</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rowithdrawal"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.WithdrawalsV2Response.Withdrawals">
+            <summary>
+            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Withdrawal"/> history
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.Withdrawal">
             <summary>
             Record of a withdrawal from CoinSpot
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.WithdrawalsResponse">
+            <summary>
+            CoinSpot read-only API v1 My Withdrawl History response <c>/api/ro/my/withdrawals</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rowithdrawal"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.WithdrawalsResponse.Withdrawals">
+            <summary>
+            Array containing your AUD <see cref="T:CoinSpotDotNet.Responses.Withdrawal"/> history
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.ServiceCollectionExtensions">

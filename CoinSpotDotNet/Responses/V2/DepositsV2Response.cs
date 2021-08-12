@@ -9,7 +9,7 @@ namespace CoinSpotDotNet.Responses.V2
     /// See <see href="https://www.coinspot.com.au/v2/api#rodeposit"/>
     /// </para>
     /// </summary>
-    public class MyDepositsV2Response : CoinSpotV2Response
+    public class DepositsV2Response : CoinSpotV2Response
     {
         /// <summary>
         /// Array containing your AUD <see cref="Deposit"/> history

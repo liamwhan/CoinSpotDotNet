@@ -10,7 +10,7 @@ namespace CoinSpotDotNet.Responses.V2
     /// See <see href="https://www.coinspot.com.au/v2/api#rocoinsbalance"/>
     /// </para>
     /// </summary>
-    public class MyCoinBalanceV2Response : CoinSpotV2Response
+    public class CoinBalanceV2Response : CoinSpotV2Response
     {
         /// <summary>
         /// The coin balance

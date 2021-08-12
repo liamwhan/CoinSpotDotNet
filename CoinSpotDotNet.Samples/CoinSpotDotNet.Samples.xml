@@ -129,5 +129,14 @@
             <param name="startDate">Optional. Specify date range start</param>
             <param name="endDate">Optional. Specify date range end</param>
         </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyWithdrawalsV2(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Read Only API v2 - My Market Order History
+            </summary>
+            <param name="cointype"></param>
+            <param name="markettype"></param>
+            <param name="startDate">Optional. Specify date range start</param>
+            <param name="endDate">Optional. Specify date range end</param>
+        </member>
     </members>
 </doc>

@@ -25,8 +25,8 @@ namespace CoinSpotDotNet
         /// See <see href="https://www.coinspot.com.au/api#romybalances"/>
         /// </para>
         /// </summary>
-        /// <returns><see cref="MyBalancesResponse"/></returns>
-        Task<MyBalancesResponse> ListMyBalances();
+        /// <returns><see cref="BalancesResponse"/></returns>
+        Task<BalancesResponse> ListBalances();
 
         /// <summary>
         /// Calls CoinSpot read-only API v1 Endpoint: <code>/api/ro/my/deposits</code> 
@@ -36,8 +36,8 @@ namespace CoinSpotDotNet
         /// </summary>
         /// <param name="startDate">Optional. Start of date range</param>
         /// <param name="endDate">Optional. End of date range</param>
-        /// <returns><see cref="MyDepositsResponse"/></returns>
-        Task<MyDepositsResponse> ListMyDeposits(DateTime? startDate = null, DateTime? endDate = null);
+        /// <returns><see cref="DepositsResponse"/></returns>
+        Task<DepositsResponse> ListDeposits(DateTime? startDate = null, DateTime? endDate = null);
 
         /// <summary>
         /// Calls CoinSpot read-only API v1 Endpoint: <code>/api/ro/my/withdrawals</code> 
@@ -47,41 +47,41 @@ namespace CoinSpotDotNet
         /// </summary>
         /// <param name="startDate">Optional. Start of date range</param>
         /// <param name="endDate">Optional. End of date range</param>
-        /// <returns><see cref="MyWithdrawalsResponse"/></returns>
-        Task<MyWithdrawalsResponse> ListMyWithdrawals(DateTime? startDate = null, DateTime? endDate = null);
+        /// <returns><see cref="WithdrawalsResponse"/></returns>
+        Task<WithdrawalsResponse> ListWithdrawals(DateTime? startDate = null, DateTime? endDate = null);
 
         /// <summary>
         /// Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/balance/:cointype</c> 
         /// </summary>
         /// <param name="coinType">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-        /// <returns><see cref="MyCoinBalanceResponse"/></returns>
-        Task<MyCoinBalanceResponse> MyCoinBalance(string coinType);
+        /// <returns><see cref="CoinBalanceResponse"/></returns>
+        Task<CoinBalanceResponse> CoinBalance(string coinType);
 
         /// <summary>
         /// Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions</c> 
         /// </summary>
-        /// <returns><see cref="MyTransactionsResponse"/></returns>
-        Task<MyTransactionsResponse> ListMyTransactionHistory();
+        /// <returns><see cref="TransactionsResponse"/></returns>
+        Task<TransactionsResponse> ListTransactionHistory();
         
         /// <summary>
         /// Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/:cointype</c> 
         /// </summary>
         /// <param name="cointype">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-        /// <returns><see cref="MyTransactionsResponse"/></returns>
-        Task<MyTransactionsResponse> ListMyCoinTransactionHistory(string cointype);
+        /// <returns><see cref="TransactionsResponse"/></returns>
+        Task<TransactionsResponse> ListCoinTransactionHistory(string cointype);
         
         /// <summary>
         /// Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/open</c> 
         /// </summary>
-        /// <returns><see cref="MyTransactionsResponse"/></returns>
-        Task<MyTransactionsResponse> ListMyOpenTransactions();
+        /// <returns><see cref="TransactionsResponse"/></returns>
+        Task<TransactionsResponse> ListOpenTransactions();
         
         /// <summary>
         /// Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/:cointype/open</c> 
         /// </summary>
         /// <param name="cointype">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
-        /// <returns><see cref="MyTransactionsResponse"/></returns>
-        Task<MyTransactionsResponse> ListMyOpenCoinTransactions(string cointype);
+        /// <returns><see cref="TransactionsResponse"/></returns>
+        Task<TransactionsResponse> ListOpenCoinTransactions(string cointype);
         
         
         
@@ -141,7 +141,7 @@ namespace CoinSpotDotNet
 
         #region Read Only API
         /// <inheritdoc/>
-        public async Task<MyBalancesResponse> ListMyBalances()
+        public async Task<BalancesResponse> ListBalances()
         {
             var path = new Uri(PathMyBalances, UriKind.Relative);
             var postData = SignUtility.CreatePostData(new CoinSpotRequest());
@@ -150,12 +150,12 @@ namespace CoinSpotDotNet
             using var response = await Post(path, postData, sign);
             if (!response.IsSuccessStatusCode) return null;
 
-            var balance = await JsonSerializer.DeserializeAsync<MyBalancesResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var balance = await JsonSerializer.DeserializeAsync<BalancesResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return balance;
         }
 
         /// <inheritdoc/>
-        public async Task<MyDepositsResponse> ListMyDeposits(DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<DepositsResponse> ListDeposits(DateTime? startDate = null, DateTime? endDate = null)
         {
             var path = new Uri(PathMyDeposits, UriKind.Relative);
             var postData = SignUtility.CreatePostData(new DateRangeRequest
@@ -169,12 +169,12 @@ namespace CoinSpotDotNet
             
             if (!response.IsSuccessStatusCode) return null;
 
-            var deposits = await JsonSerializer.DeserializeAsync<MyDepositsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var deposits = await JsonSerializer.DeserializeAsync<DepositsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return deposits;
         }
         
         /// <inheritdoc/>
-        public async Task<MyWithdrawalsResponse> ListMyWithdrawals(DateTime? startDate = null, DateTime? endDate = null)
+        public async Task<WithdrawalsResponse> ListWithdrawals(DateTime? startDate = null, DateTime? endDate = null)
         {
             var path = new Uri(PathMyWithdrawals, UriKind.Relative);
             var postData = SignUtility.CreatePostData(new DateRangeRequest
@@ -188,12 +188,12 @@ namespace CoinSpotDotNet
             
             if (!response.IsSuccessStatusCode) return null;
 
-            var withdrawals = await JsonSerializer.DeserializeAsync<MyWithdrawalsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var withdrawals = await JsonSerializer.DeserializeAsync<WithdrawalsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return withdrawals;
         }
 
         /// <inheritdoc/>
-        public async Task<MyCoinBalanceResponse> MyCoinBalance(string coinType)
+        public async Task<CoinBalanceResponse> CoinBalance(string coinType)
         {
             coinType = invalidCharRegex.Replace(coinType, string.Empty);
             var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
@@ -203,12 +203,12 @@ namespace CoinSpotDotNet
 
             if (!response.IsSuccessStatusCode) return null;
 
-            var balance = await JsonSerializer.DeserializeAsync<MyCoinBalanceResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var balance = await JsonSerializer.DeserializeAsync<CoinBalanceResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return balance;
         }
 
         /// <inheritdoc/>
-        public async Task<MyTransactionsResponse> ListMyTransactionHistory()
+        public async Task<TransactionsResponse> ListTransactionHistory()
         {
             var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
             var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
@@ -217,12 +217,12 @@ namespace CoinSpotDotNet
 
             if (!response.IsSuccessStatusCode) return null;
 
-            var transactions = await JsonSerializer.DeserializeAsync<MyTransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var transactions = await JsonSerializer.DeserializeAsync<TransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return transactions;
         }
 
         /// <inheritdoc/>
-        public async Task<MyTransactionsResponse> ListMyCoinTransactionHistory(string coinType)
+        public async Task<TransactionsResponse> ListCoinTransactionHistory(string coinType)
         {
             coinType = invalidCharRegex.Replace(coinType, string.Empty);
             var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
@@ -232,12 +232,12 @@ namespace CoinSpotDotNet
 
             if (!response.IsSuccessStatusCode) return null;
 
-            var transactions = await JsonSerializer.DeserializeAsync<MyTransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var transactions = await JsonSerializer.DeserializeAsync<TransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return transactions;
         }
 
         /// <inheritdoc/>
-        public async Task<MyTransactionsResponse> ListMyOpenTransactions()
+        public async Task<TransactionsResponse> ListOpenTransactions()
         {
             var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
             var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
@@ -246,12 +246,12 @@ namespace CoinSpotDotNet
 
             if (!response.IsSuccessStatusCode) return null;
 
-            var transactions = await JsonSerializer.DeserializeAsync<MyTransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var transactions = await JsonSerializer.DeserializeAsync<TransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return transactions;
         }
 
         /// <inheritdoc/>
-        public async Task<MyTransactionsResponse> ListMyOpenCoinTransactions(string coinType)
+        public async Task<TransactionsResponse> ListOpenCoinTransactions(string coinType)
         {
             coinType = invalidCharRegex.Replace(coinType, string.Empty);
             var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
@@ -261,7 +261,7 @@ namespace CoinSpotDotNet
 
             if (!response.IsSuccessStatusCode) return null;
 
-            var transactions = await JsonSerializer.DeserializeAsync<MyTransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            var transactions = await JsonSerializer.DeserializeAsync<TransactionsResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return transactions;
         }
 

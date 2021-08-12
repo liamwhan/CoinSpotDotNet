@@ -2,15 +2,12 @@
 using System.Linq;
 using System.Text.Json.Serialization;
 
-namespace CoinSpotDotNet.Responses.V2
+namespace CoinSpotDotNet.Responses
 {
     /// <summary>
-    /// Response model for <c>v2/ro/my/balances</c>
-    /// <para>
-    /// See <see href="https://www.coinspot.com.au/v2/api#romybalances"/>
-    /// </para>
+    /// Response model for /ro/my/balances
     /// </summary>
-    public class MyBalancesV2Response : CoinSpotV2Response
+    public class BalancesResponse : CoinSpotResponse
     {
         /// <summary>
         /// Array of currency balances identified with currency identifier
@@ -19,7 +16,7 @@ namespace CoinSpotDotNet.Responses.V2
         public Dictionary<string, CoinBalance>[] Balances { get; set; }
 
         /// <summary>
-        /// Helper getter to flatten the Balances that CoinSpot returns into a single dictionary
+        /// Helper getter to flatten the Balances that CoinSpot returns
         /// </summary>
         [JsonIgnore]
         public Dictionary<string, CoinBalance> BalancesFlattened => Balances.SelectMany(d => d).ToDictionary(pair => pair.Key, pair => pair.Value);
