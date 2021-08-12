@@ -5,7 +5,7 @@
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Liam Whan</Authors>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Description>A .NET Standard 2.0 compatible class library for CoinSpot API. Supports API versions 1 and 2</Description>
     <Copyright>2021 Liam Whan</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
@@ -15,8 +15,8 @@
 
   <PropertyGroup>
     <DocumentationFile>CoinSpotDotNet.xml</DocumentationFile>
-    <PackageReleaseNotes>0.1.0
-- Alpha release, v2 Public API implemented
+    <PackageReleaseNotes>0.2.0
+- Alpha release, v2 Public and read-only APIs implemented
 </PackageReleaseNotes>
   </PropertyGroup>
 
