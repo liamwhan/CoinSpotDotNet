@@ -8,6 +8,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CoinSpotDotNet
@@ -43,6 +44,8 @@ namespace CoinSpotDotNet
                     new CoinSpotDateTimeResponseJsonConverter()
                 }
         };
+
+        protected static readonly Regex invalidCharRegex = new("[^a-zA-Z0-9 /-]", RegexOptions.Compiled | RegexOptions.Multiline | RegexOptions.CultureInvariant);
 
         protected BaseClient(CoinSpotSettings settings)
         {
@@ -92,10 +95,7 @@ namespace CoinSpotDotNet
             }
 
             var response = await Send(request, sign);
-#if DEBUG
-            var responseString = await response.Content.ReadAsStringAsync();
-            logger.LogInformation(responseString);
-#endif
+
             return response;
         }
 
@@ -108,6 +108,10 @@ namespace CoinSpotDotNet
             }
 
             var response = await client.SendAsync(request);
+#if TRACE
+            var responseString = await response.Content.ReadAsStringAsync();
+            logger.LogInformation(responseString);
+#endif
             if (!response.IsSuccessStatusCode)
             {
                 var responseBody = await response.Content.ReadAsStringAsync();

@@ -19,11 +19,5 @@ namespace CoinSpotDotNet.Responses
         /// </summary>
         [JsonPropertyName("created")]
         public DateTime Created { get; set; }
-
-        /// <summary>
-        /// Deposit status. e.g. "completed"
-        /// </summary>
-        [JsonPropertyName("status")]
-        public string Status { get; set; }
     }
 }

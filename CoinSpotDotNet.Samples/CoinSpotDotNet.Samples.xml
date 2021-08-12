@@ -60,15 +60,74 @@
             <param name="cointype">Coin short name, example value 'BTC', 'LTC', 'DOGE'</param>
             <param name="markettype">Market coin short name, example value 'USDT' (only for available markets)</param>
         </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyBalances">
+            <summary>
+            Read Only API v1 - List My Balances
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyCoinBalance(System.String)">
+            <summary>
+            Read Only API v1 - Balance by coin type
+            </summary>
+            <remarks>
+            NOTE: The V1 API currently returns a 404 Not Found for this request, and I suppose, as v2 is currently in beta this may not ever be fixed
+            </remarks>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Read Only API v1 - List My Deposits
+            </summary>
+            <param name="startDate">Optional. Specify date range start</param>
+            <param name="endDate">Optional. Specify date range end</param>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyTransactions">
+            <summary>
+            Read Only API v1 - My Transactions
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyCoinTransactions(System.String)">
+            <summary>
+            Read Only API v1 - My Coin Transactions
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyOpenTransactions">
+            <summary>
+            Read Only API v1 - My Open Transactions
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyOpenCoinTransactions(System.String)">
+            <summary>
+            Read Only API v1 - My Open Coin Transactions
+            </summary>
+        </member>
         <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.ReadOnlyStatusCheck">
             <summary>
-            Read Only API - Status Check - Useful for confirming your Key and Secret are working correctly
+            Read Only API v2 - Status Check - Useful for confirming your Key and Secret are working correctly
             </summary>
         </member>
         <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyBalancesV2">
             <summary>
-            Read Only API - List My Balances
+            Read Only API v2 - List My Balances
             </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyCoinBalanceV2(System.String)">
+            <summary>
+            Read Only API - Balance by coin type
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyDepositsV2(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Read Only API v2 - List My Deposits
+            </summary>
+            <param name="startDate">Optional. Specify date range start</param>
+            <param name="endDate">Optional. Specify date range end</param>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MyWithdrawalsV2(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            Read Only API v2 - List My Withdrawals
+            </summary>
+            <param name="startDate">Optional. Specify date range start</param>
+            <param name="endDate">Optional. Specify date range end</param>
         </member>
     </members>
 </doc>

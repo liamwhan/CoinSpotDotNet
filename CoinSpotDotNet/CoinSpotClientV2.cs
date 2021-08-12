@@ -20,7 +20,7 @@ namespace CoinSpotDotNet
     /// </summary>
     public interface ICoinSpotClientV2
     {
-
+        #region Read only API
         /// <summary>
         /// Calls the status check endpoint for the read-only API. Useful to validate your API Key / Secret values are correct
         /// </summary>
@@ -64,8 +64,10 @@ namespace CoinSpotDotNet
         /// <param name="endDate">Optional. End of date range</param>
         /// <returns><see cref="MyWithdrawalsV2Response"/></returns>
         Task<MyWithdrawalsV2Response> ListMyWithdrawals(DateTime? startDate = null, DateTime? endDate = null);
+        #endregion
 
 
+        #region Public API
         /// <summary>
         /// Get Latest Prices from the CoinSpot public API v2
         /// <para>
@@ -178,6 +180,8 @@ namespace CoinSpotDotNet
         /// <param name="marketType">Market coin short name, example value 'USDT' (only for available markets)</param>
         /// <returns><see cref="CompletedOrdersV2Response"/></returns>
         Task<CompletedOrdersV2Response> CompletedOrdersByCoinMarket(string coinType, string marketType);
+
+        #endregion
     }
 
     /// <summary>
@@ -192,7 +196,6 @@ namespace CoinSpotDotNet
         private const string PathReadOnlyStatusCheck = "/api/v2/ro/status";
         private const string PathMyCoinBalance = "/api/v2/ro/my/balance/{0}";
 
-
         private const string PublicPathLatestPrices = "/pubapi/v2/latest";
         private const string PublicPathLatestCoinPrices = "/pubapi/v2/latest/{0}";
         private const string PublicPathLatestCoinMarketPrices = "/pubapi/v2/latest/{0}/{1}";
@@ -204,8 +207,6 @@ namespace CoinSpotDotNet
         private const string PublicPathOpenOrdersByCoinMarket = "/pubapi/v2/orders/open/{0}/{1}";
         private const string PublicPathCompletedOrdersByCoin = "/pubapi/v2/orders/completed/{0}";
         private const string PublicPathCompletedOrdersByCoinMarket = "/pubapi/v2/orders/completed/{0}/{1}";
-
-        private static readonly Regex invalidCharRegex = new("[^a-zA-Z0-9 /-]", RegexOptions.Compiled | RegexOptions.Multiline | RegexOptions.CultureInvariant);
 
         /// <summary>
         /// Constructor for use in non-ASP.NET and/or integration and unit testing scenarios where Dependency Injection is not available and this class must be manually constructed. Requires only a <see cref="CoinSpotSettings"/> object initialised with your API Credentials
@@ -227,23 +228,8 @@ namespace CoinSpotDotNet
         public CoinSpotClientV2(IOptionsMonitor<CoinSpotSettings> options, ILogger<CoinSpotClientV2> logger, HttpClient client) : base(options, logger, client)
         {
         }
-
         
-        /// <inheritdoc />
-        public async Task<CoinSpotResponse> ReadOnlyStatusCheck()
-        {
-            var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
-            var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
-            using var response = await Post(new Uri(PathReadOnlyStatusCheck, UriKind.Relative), postData, sign);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var status = await JsonSerializer.DeserializeAsync<CoinSpotResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
-            return status;
-
-
-        }
-
+        #region Public API
         /// <inheritdoc />
         public async Task<CompletedOrdersV2Response> CompletedOrdersByCoinMarket(string coinType, string marketType)
         {
@@ -375,6 +361,24 @@ namespace CoinSpotDotNet
             var prices = await JsonSerializer.DeserializeAsync<LatestPricesV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return prices;
         }
+        #endregion
+
+
+        #region Read only API
+        /// <inheritdoc />
+        public async Task<CoinSpotResponse> ReadOnlyStatusCheck()
+        {
+            var postData = SignUtility.CreatePostData(new CoinSpotRequest(), jsonOptions);
+            var sign = SignUtility.Sign(postData, Settings.ReadOnlySecret);
+            using var response = await Post(new Uri(PathReadOnlyStatusCheck, UriKind.Relative), postData, sign);
+
+            if (!response.IsSuccessStatusCode) return null;
+
+            var status = await JsonSerializer.DeserializeAsync<CoinSpotResponse>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            return status;
+
+
+        }
 
         /// <inheritdoc/>
         public async Task<MyCoinBalanceV2Response> MyCoinBalance(string coinType)
@@ -445,6 +449,8 @@ namespace CoinSpotDotNet
             return withdrawals;
 
         }
+
+        #endregion
 
     }
 }

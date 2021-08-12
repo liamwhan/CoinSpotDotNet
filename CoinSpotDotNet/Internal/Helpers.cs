@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CoinSpotDotNet.Internal
+﻿namespace CoinSpotDotNet.Internal
 {
     internal static class Helpers
     {

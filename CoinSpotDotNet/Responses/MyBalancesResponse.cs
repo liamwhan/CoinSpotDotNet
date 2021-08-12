@@ -18,6 +18,7 @@ namespace CoinSpotDotNet.Responses
         /// <summary>
         /// Helper getter to flatten the Balances that CoinSpot returns
         /// </summary>
+        [JsonIgnore]
         public Dictionary<string, CoinBalance> BalancesFlattened => Balances.SelectMany(d => d).ToDictionary(pair => pair.Key, pair => pair.Value);
     }
 

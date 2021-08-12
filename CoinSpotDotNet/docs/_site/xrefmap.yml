@@ -54,6 +54,12 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.BaseClient.Get
   nameWithType: BaseClient.Get
+- uid: CoinSpotDotNet.BaseClient.invalidCharRegex
+  name: invalidCharRegex
+  href: api/CoinSpotDotNet.BaseClient.html#CoinSpotDotNet_BaseClient_invalidCharRegex
+  commentId: F:CoinSpotDotNet.BaseClient.invalidCharRegex
+  fullName: CoinSpotDotNet.BaseClient.invalidCharRegex
+  nameWithType: BaseClient.invalidCharRegex
 - uid: CoinSpotDotNet.BaseClient.jsonOptions
   name: jsonOptions
   href: api/CoinSpotDotNet.BaseClient.html#CoinSpotDotNet_BaseClient_jsonOptions
@@ -158,6 +164,19 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.CoinSpotClient.ListMyBalances
   nameWithType: CoinSpotClient.ListMyBalances
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyCoinTransactionHistory(System.String)
+  name: ListMyCoinTransactionHistory(String)
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyCoinTransactionHistory_System_String_
+  commentId: M:CoinSpotDotNet.CoinSpotClient.ListMyCoinTransactionHistory(System.String)
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyCoinTransactionHistory(System.String)
+  nameWithType: CoinSpotClient.ListMyCoinTransactionHistory(String)
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyCoinTransactionHistory*
+  name: ListMyCoinTransactionHistory
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyCoinTransactionHistory_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClient.ListMyCoinTransactionHistory
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyCoinTransactionHistory
+  nameWithType: CoinSpotClient.ListMyCoinTransactionHistory
 - uid: CoinSpotDotNet.CoinSpotClient.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})
   name: ListMyDeposits(Nullable<DateTime>, Nullable<DateTime>)
   href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyDeposits_System_Nullable_System_DateTime__System_Nullable_System_DateTime__
@@ -174,6 +193,74 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.CoinSpotClient.ListMyDeposits
   nameWithType: CoinSpotClient.ListMyDeposits
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyOpenCoinTransactions(System.String)
+  name: ListMyOpenCoinTransactions(String)
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyOpenCoinTransactions_System_String_
+  commentId: M:CoinSpotDotNet.CoinSpotClient.ListMyOpenCoinTransactions(System.String)
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyOpenCoinTransactions(System.String)
+  nameWithType: CoinSpotClient.ListMyOpenCoinTransactions(String)
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyOpenCoinTransactions*
+  name: ListMyOpenCoinTransactions
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyOpenCoinTransactions_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClient.ListMyOpenCoinTransactions
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyOpenCoinTransactions
+  nameWithType: CoinSpotClient.ListMyOpenCoinTransactions
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyOpenTransactions
+  name: ListMyOpenTransactions()
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyOpenTransactions
+  commentId: M:CoinSpotDotNet.CoinSpotClient.ListMyOpenTransactions
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyOpenTransactions()
+  nameWithType: CoinSpotClient.ListMyOpenTransactions()
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyOpenTransactions*
+  name: ListMyOpenTransactions
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyOpenTransactions_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClient.ListMyOpenTransactions
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyOpenTransactions
+  nameWithType: CoinSpotClient.ListMyOpenTransactions
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyTransactionHistory
+  name: ListMyTransactionHistory()
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyTransactionHistory
+  commentId: M:CoinSpotDotNet.CoinSpotClient.ListMyTransactionHistory
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyTransactionHistory()
+  nameWithType: CoinSpotClient.ListMyTransactionHistory()
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyTransactionHistory*
+  name: ListMyTransactionHistory
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyTransactionHistory_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClient.ListMyTransactionHistory
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyTransactionHistory
+  nameWithType: CoinSpotClient.ListMyTransactionHistory
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})
+  name: ListMyWithdrawals(Nullable<DateTime>, Nullable<DateTime>)
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyWithdrawals_System_Nullable_System_DateTime__System_Nullable_System_DateTime__
+  commentId: M:CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})
+  name.vb: ListMyWithdrawals(Nullable(Of DateTime), Nullable(Of DateTime))
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals(System.Nullable<System.DateTime>, System.Nullable<System.DateTime>)
+  fullName.vb: CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals(System.Nullable(Of System.DateTime), System.Nullable(Of System.DateTime))
+  nameWithType: CoinSpotClient.ListMyWithdrawals(Nullable<DateTime>, Nullable<DateTime>)
+  nameWithType.vb: CoinSpotClient.ListMyWithdrawals(Nullable(Of DateTime), Nullable(Of DateTime))
+- uid: CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals*
+  name: ListMyWithdrawals
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_ListMyWithdrawals_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClient.ListMyWithdrawals
+  nameWithType: CoinSpotClient.ListMyWithdrawals
+- uid: CoinSpotDotNet.CoinSpotClient.MyCoinBalance(System.String)
+  name: MyCoinBalance(String)
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_MyCoinBalance_System_String_
+  commentId: M:CoinSpotDotNet.CoinSpotClient.MyCoinBalance(System.String)
+  fullName: CoinSpotDotNet.CoinSpotClient.MyCoinBalance(System.String)
+  nameWithType: CoinSpotClient.MyCoinBalance(String)
+- uid: CoinSpotDotNet.CoinSpotClient.MyCoinBalance*
+  name: MyCoinBalance
+  href: api/CoinSpotDotNet.CoinSpotClient.html#CoinSpotDotNet_CoinSpotClient_MyCoinBalance_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClient.MyCoinBalance
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClient.MyCoinBalance
+  nameWithType: CoinSpotClient.MyCoinBalance
 - uid: CoinSpotDotNet.CoinSpotClientV2
   name: CoinSpotClientV2
   href: api/CoinSpotDotNet.CoinSpotClientV2.html
@@ -422,19 +509,6 @@ references:
   commentId: T:CoinSpotDotNet.ICoinSpotClient
   fullName: CoinSpotDotNet.ICoinSpotClient
   nameWithType: ICoinSpotClient
-- uid: CoinSpotDotNet.ICoinSpotClient.LatestPrices
-  name: LatestPrices()
-  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_LatestPrices
-  commentId: M:CoinSpotDotNet.ICoinSpotClient.LatestPrices
-  fullName: CoinSpotDotNet.ICoinSpotClient.LatestPrices()
-  nameWithType: ICoinSpotClient.LatestPrices()
-- uid: CoinSpotDotNet.ICoinSpotClient.LatestPrices*
-  name: LatestPrices
-  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_LatestPrices_
-  commentId: Overload:CoinSpotDotNet.ICoinSpotClient.LatestPrices
-  isSpec: "True"
-  fullName: CoinSpotDotNet.ICoinSpotClient.LatestPrices
-  nameWithType: ICoinSpotClient.LatestPrices
 - uid: CoinSpotDotNet.ICoinSpotClient.ListMyBalances
   name: ListMyBalances()
   href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyBalances
@@ -448,6 +522,19 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.ICoinSpotClient.ListMyBalances
   nameWithType: ICoinSpotClient.ListMyBalances
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyCoinTransactionHistory(System.String)
+  name: ListMyCoinTransactionHistory(String)
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyCoinTransactionHistory_System_String_
+  commentId: M:CoinSpotDotNet.ICoinSpotClient.ListMyCoinTransactionHistory(System.String)
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyCoinTransactionHistory(System.String)
+  nameWithType: ICoinSpotClient.ListMyCoinTransactionHistory(String)
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyCoinTransactionHistory*
+  name: ListMyCoinTransactionHistory
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyCoinTransactionHistory_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClient.ListMyCoinTransactionHistory
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyCoinTransactionHistory
+  nameWithType: ICoinSpotClient.ListMyCoinTransactionHistory
 - uid: CoinSpotDotNet.ICoinSpotClient.ListMyDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})
   name: ListMyDeposits(Nullable<DateTime>, Nullable<DateTime>)
   href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyDeposits_System_Nullable_System_DateTime__System_Nullable_System_DateTime__
@@ -464,6 +551,74 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.ICoinSpotClient.ListMyDeposits
   nameWithType: ICoinSpotClient.ListMyDeposits
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyOpenCoinTransactions(System.String)
+  name: ListMyOpenCoinTransactions(String)
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyOpenCoinTransactions_System_String_
+  commentId: M:CoinSpotDotNet.ICoinSpotClient.ListMyOpenCoinTransactions(System.String)
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyOpenCoinTransactions(System.String)
+  nameWithType: ICoinSpotClient.ListMyOpenCoinTransactions(String)
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyOpenCoinTransactions*
+  name: ListMyOpenCoinTransactions
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyOpenCoinTransactions_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClient.ListMyOpenCoinTransactions
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyOpenCoinTransactions
+  nameWithType: ICoinSpotClient.ListMyOpenCoinTransactions
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyOpenTransactions
+  name: ListMyOpenTransactions()
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyOpenTransactions
+  commentId: M:CoinSpotDotNet.ICoinSpotClient.ListMyOpenTransactions
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyOpenTransactions()
+  nameWithType: ICoinSpotClient.ListMyOpenTransactions()
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyOpenTransactions*
+  name: ListMyOpenTransactions
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyOpenTransactions_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClient.ListMyOpenTransactions
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyOpenTransactions
+  nameWithType: ICoinSpotClient.ListMyOpenTransactions
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyTransactionHistory
+  name: ListMyTransactionHistory()
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyTransactionHistory
+  commentId: M:CoinSpotDotNet.ICoinSpotClient.ListMyTransactionHistory
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyTransactionHistory()
+  nameWithType: ICoinSpotClient.ListMyTransactionHistory()
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyTransactionHistory*
+  name: ListMyTransactionHistory
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyTransactionHistory_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClient.ListMyTransactionHistory
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyTransactionHistory
+  nameWithType: ICoinSpotClient.ListMyTransactionHistory
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})
+  name: ListMyWithdrawals(Nullable<DateTime>, Nullable<DateTime>)
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyWithdrawals_System_Nullable_System_DateTime__System_Nullable_System_DateTime__
+  commentId: M:CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})
+  name.vb: ListMyWithdrawals(Nullable(Of DateTime), Nullable(Of DateTime))
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals(System.Nullable<System.DateTime>, System.Nullable<System.DateTime>)
+  fullName.vb: CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals(System.Nullable(Of System.DateTime), System.Nullable(Of System.DateTime))
+  nameWithType: ICoinSpotClient.ListMyWithdrawals(Nullable<DateTime>, Nullable<DateTime>)
+  nameWithType.vb: ICoinSpotClient.ListMyWithdrawals(Nullable(Of DateTime), Nullable(Of DateTime))
+- uid: CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals*
+  name: ListMyWithdrawals
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_ListMyWithdrawals_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClient.ListMyWithdrawals
+  nameWithType: ICoinSpotClient.ListMyWithdrawals
+- uid: CoinSpotDotNet.ICoinSpotClient.MyCoinBalance(System.String)
+  name: MyCoinBalance(String)
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_MyCoinBalance_System_String_
+  commentId: M:CoinSpotDotNet.ICoinSpotClient.MyCoinBalance(System.String)
+  fullName: CoinSpotDotNet.ICoinSpotClient.MyCoinBalance(System.String)
+  nameWithType: ICoinSpotClient.MyCoinBalance(String)
+- uid: CoinSpotDotNet.ICoinSpotClient.MyCoinBalance*
+  name: MyCoinBalance
+  href: api/CoinSpotDotNet.ICoinSpotClient.html#CoinSpotDotNet_ICoinSpotClient_MyCoinBalance_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClient.MyCoinBalance
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClient.MyCoinBalance
+  nameWithType: ICoinSpotClient.MyCoinBalance
 - uid: CoinSpotDotNet.ICoinSpotClientV2
   name: ICoinSpotClientV2
   href: api/CoinSpotDotNet.ICoinSpotClientV2.html
@@ -779,6 +934,83 @@ references:
   commentId: N:CoinSpotDotNet.Responses
   fullName: CoinSpotDotNet.Responses
   nameWithType: CoinSpotDotNet.Responses
+- uid: CoinSpotDotNet.Responses.AffiliatePaymentResponse
+  name: AffiliatePaymentResponse
+  href: api/CoinSpotDotNet.Responses.AffiliatePaymentResponse.html
+  commentId: T:CoinSpotDotNet.Responses.AffiliatePaymentResponse
+  fullName: CoinSpotDotNet.Responses.AffiliatePaymentResponse
+  nameWithType: AffiliatePaymentResponse
+- uid: CoinSpotDotNet.Responses.BuyOrder
+  name: BuyOrder
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html
+  commentId: T:CoinSpotDotNet.Responses.BuyOrder
+  fullName: CoinSpotDotNet.Responses.BuyOrder
+  nameWithType: BuyOrder
+- uid: CoinSpotDotNet.Responses.BuyOrder.AudFeeExGst
+  name: AudFeeExGst
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_AudFeeExGst
+  commentId: P:CoinSpotDotNet.Responses.BuyOrder.AudFeeExGst
+  fullName: CoinSpotDotNet.Responses.BuyOrder.AudFeeExGst
+  nameWithType: BuyOrder.AudFeeExGst
+- uid: CoinSpotDotNet.Responses.BuyOrder.AudFeeExGst*
+  name: AudFeeExGst
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_AudFeeExGst_
+  commentId: Overload:CoinSpotDotNet.Responses.BuyOrder.AudFeeExGst
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.BuyOrder.AudFeeExGst
+  nameWithType: BuyOrder.AudFeeExGst
+- uid: CoinSpotDotNet.Responses.BuyOrder.AudGst
+  name: AudGst
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_AudGst
+  commentId: P:CoinSpotDotNet.Responses.BuyOrder.AudGst
+  fullName: CoinSpotDotNet.Responses.BuyOrder.AudGst
+  nameWithType: BuyOrder.AudGst
+- uid: CoinSpotDotNet.Responses.BuyOrder.AudGst*
+  name: AudGst
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_AudGst_
+  commentId: Overload:CoinSpotDotNet.Responses.BuyOrder.AudGst
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.BuyOrder.AudGst
+  nameWithType: BuyOrder.AudGst
+- uid: CoinSpotDotNet.Responses.BuyOrder.AudTotal
+  name: AudTotal
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_AudTotal
+  commentId: P:CoinSpotDotNet.Responses.BuyOrder.AudTotal
+  fullName: CoinSpotDotNet.Responses.BuyOrder.AudTotal
+  nameWithType: BuyOrder.AudTotal
+- uid: CoinSpotDotNet.Responses.BuyOrder.AudTotal*
+  name: AudTotal
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_AudTotal_
+  commentId: Overload:CoinSpotDotNet.Responses.BuyOrder.AudTotal
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.BuyOrder.AudTotal
+  nameWithType: BuyOrder.AudTotal
+- uid: CoinSpotDotNet.Responses.BuyOrder.Market
+  name: Market
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_Market
+  commentId: P:CoinSpotDotNet.Responses.BuyOrder.Market
+  fullName: CoinSpotDotNet.Responses.BuyOrder.Market
+  nameWithType: BuyOrder.Market
+- uid: CoinSpotDotNet.Responses.BuyOrder.Market*
+  name: Market
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_Market_
+  commentId: Overload:CoinSpotDotNet.Responses.BuyOrder.Market
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.BuyOrder.Market
+  nameWithType: BuyOrder.Market
+- uid: CoinSpotDotNet.Responses.BuyOrder.Otc
+  name: Otc
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_Otc
+  commentId: P:CoinSpotDotNet.Responses.BuyOrder.Otc
+  fullName: CoinSpotDotNet.Responses.BuyOrder.Otc
+  nameWithType: BuyOrder.Otc
+- uid: CoinSpotDotNet.Responses.BuyOrder.Otc*
+  name: Otc
+  href: api/CoinSpotDotNet.Responses.BuyOrder.html#CoinSpotDotNet_Responses_BuyOrder_Otc_
+  commentId: Overload:CoinSpotDotNet.Responses.BuyOrder.Otc
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.BuyOrder.Otc
+  nameWithType: BuyOrder.Otc
 - uid: CoinSpotDotNet.Responses.CoinBalance
   name: CoinBalance
   href: api/CoinSpotDotNet.Responses.CoinBalance.html
@@ -1028,6 +1260,38 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.MyBalancesResponse.BalancesFlattened
   nameWithType: MyBalancesResponse.BalancesFlattened
+- uid: CoinSpotDotNet.Responses.MyCoinBalanceResponse
+  name: MyCoinBalanceResponse
+  href: api/CoinSpotDotNet.Responses.MyCoinBalanceResponse.html
+  commentId: T:CoinSpotDotNet.Responses.MyCoinBalanceResponse
+  fullName: CoinSpotDotNet.Responses.MyCoinBalanceResponse
+  nameWithType: MyCoinBalanceResponse
+- uid: CoinSpotDotNet.Responses.MyCoinBalanceResponse.Balance
+  name: Balance
+  href: api/CoinSpotDotNet.Responses.MyCoinBalanceResponse.html#CoinSpotDotNet_Responses_MyCoinBalanceResponse_Balance
+  commentId: P:CoinSpotDotNet.Responses.MyCoinBalanceResponse.Balance
+  fullName: CoinSpotDotNet.Responses.MyCoinBalanceResponse.Balance
+  nameWithType: MyCoinBalanceResponse.Balance
+- uid: CoinSpotDotNet.Responses.MyCoinBalanceResponse.Balance*
+  name: Balance
+  href: api/CoinSpotDotNet.Responses.MyCoinBalanceResponse.html#CoinSpotDotNet_Responses_MyCoinBalanceResponse_Balance_
+  commentId: Overload:CoinSpotDotNet.Responses.MyCoinBalanceResponse.Balance
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.MyCoinBalanceResponse.Balance
+  nameWithType: MyCoinBalanceResponse.Balance
+- uid: CoinSpotDotNet.Responses.MyCoinBalanceResponse.CoinBalance
+  name: CoinBalance
+  href: api/CoinSpotDotNet.Responses.MyCoinBalanceResponse.html#CoinSpotDotNet_Responses_MyCoinBalanceResponse_CoinBalance
+  commentId: P:CoinSpotDotNet.Responses.MyCoinBalanceResponse.CoinBalance
+  fullName: CoinSpotDotNet.Responses.MyCoinBalanceResponse.CoinBalance
+  nameWithType: MyCoinBalanceResponse.CoinBalance
+- uid: CoinSpotDotNet.Responses.MyCoinBalanceResponse.CoinBalance*
+  name: CoinBalance
+  href: api/CoinSpotDotNet.Responses.MyCoinBalanceResponse.html#CoinSpotDotNet_Responses_MyCoinBalanceResponse_CoinBalance_
+  commentId: Overload:CoinSpotDotNet.Responses.MyCoinBalanceResponse.CoinBalance
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.MyCoinBalanceResponse.CoinBalance
+  nameWithType: MyCoinBalanceResponse.CoinBalance
 - uid: CoinSpotDotNet.Responses.MyDepositsResponse
   name: MyDepositsResponse
   href: api/CoinSpotDotNet.Responses.MyDepositsResponse.html
@@ -1047,6 +1311,38 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.MyDepositsResponse.Deposits
   nameWithType: MyDepositsResponse.Deposits
+- uid: CoinSpotDotNet.Responses.MyTransactionsResponse
+  name: MyTransactionsResponse
+  href: api/CoinSpotDotNet.Responses.MyTransactionsResponse.html
+  commentId: T:CoinSpotDotNet.Responses.MyTransactionsResponse
+  fullName: CoinSpotDotNet.Responses.MyTransactionsResponse
+  nameWithType: MyTransactionsResponse
+- uid: CoinSpotDotNet.Responses.MyTransactionsResponse.BuyOrders
+  name: BuyOrders
+  href: api/CoinSpotDotNet.Responses.MyTransactionsResponse.html#CoinSpotDotNet_Responses_MyTransactionsResponse_BuyOrders
+  commentId: P:CoinSpotDotNet.Responses.MyTransactionsResponse.BuyOrders
+  fullName: CoinSpotDotNet.Responses.MyTransactionsResponse.BuyOrders
+  nameWithType: MyTransactionsResponse.BuyOrders
+- uid: CoinSpotDotNet.Responses.MyTransactionsResponse.BuyOrders*
+  name: BuyOrders
+  href: api/CoinSpotDotNet.Responses.MyTransactionsResponse.html#CoinSpotDotNet_Responses_MyTransactionsResponse_BuyOrders_
+  commentId: Overload:CoinSpotDotNet.Responses.MyTransactionsResponse.BuyOrders
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.MyTransactionsResponse.BuyOrders
+  nameWithType: MyTransactionsResponse.BuyOrders
+- uid: CoinSpotDotNet.Responses.MyTransactionsResponse.SellOrders
+  name: SellOrders
+  href: api/CoinSpotDotNet.Responses.MyTransactionsResponse.html#CoinSpotDotNet_Responses_MyTransactionsResponse_SellOrders
+  commentId: P:CoinSpotDotNet.Responses.MyTransactionsResponse.SellOrders
+  fullName: CoinSpotDotNet.Responses.MyTransactionsResponse.SellOrders
+  nameWithType: MyTransactionsResponse.SellOrders
+- uid: CoinSpotDotNet.Responses.MyTransactionsResponse.SellOrders*
+  name: SellOrders
+  href: api/CoinSpotDotNet.Responses.MyTransactionsResponse.html#CoinSpotDotNet_Responses_MyTransactionsResponse_SellOrders_
+  commentId: Overload:CoinSpotDotNet.Responses.MyTransactionsResponse.SellOrders
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.MyTransactionsResponse.SellOrders
+  nameWithType: MyTransactionsResponse.SellOrders
 - uid: CoinSpotDotNet.Responses.MyWithdrawalsResponse
   name: MyWithdrawalsResponse
   href: api/CoinSpotDotNet.Responses.MyWithdrawalsResponse.html
@@ -1156,6 +1452,25 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.Order.Total
   nameWithType: Order.Total
+- uid: CoinSpotDotNet.Responses.SellOrder
+  name: SellOrder
+  href: api/CoinSpotDotNet.Responses.SellOrder.html
+  commentId: T:CoinSpotDotNet.Responses.SellOrder
+  fullName: CoinSpotDotNet.Responses.SellOrder
+  nameWithType: SellOrder
+- uid: CoinSpotDotNet.Responses.SellOrder.Total
+  name: Total
+  href: api/CoinSpotDotNet.Responses.SellOrder.html#CoinSpotDotNet_Responses_SellOrder_Total
+  commentId: P:CoinSpotDotNet.Responses.SellOrder.Total
+  fullName: CoinSpotDotNet.Responses.SellOrder.Total
+  nameWithType: SellOrder.Total
+- uid: CoinSpotDotNet.Responses.SellOrder.Total*
+  name: Total
+  href: api/CoinSpotDotNet.Responses.SellOrder.html#CoinSpotDotNet_Responses_SellOrder_Total_
+  commentId: Overload:CoinSpotDotNet.Responses.SellOrder.Total
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.SellOrder.Total
+  nameWithType: SellOrder.Total
 - uid: CoinSpotDotNet.Responses.Transaction
   name: Transaction
   href: api/CoinSpotDotNet.Responses.Transaction.html
@@ -1188,19 +1503,6 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.Transaction.Created
   nameWithType: Transaction.Created
-- uid: CoinSpotDotNet.Responses.Transaction.Status
-  name: Status
-  href: api/CoinSpotDotNet.Responses.Transaction.html#CoinSpotDotNet_Responses_Transaction_Status
-  commentId: P:CoinSpotDotNet.Responses.Transaction.Status
-  fullName: CoinSpotDotNet.Responses.Transaction.Status
-  nameWithType: Transaction.Status
-- uid: CoinSpotDotNet.Responses.Transaction.Status*
-  name: Status
-  href: api/CoinSpotDotNet.Responses.Transaction.html#CoinSpotDotNet_Responses_Transaction_Status_
-  commentId: Overload:CoinSpotDotNet.Responses.Transaction.Status
-  isSpec: "True"
-  fullName: CoinSpotDotNet.Responses.Transaction.Status
-  nameWithType: Transaction.Status
 - uid: CoinSpotDotNet.Responses.V2
   name: CoinSpotDotNet.Responses.V2
   href: api/CoinSpotDotNet.Responses.V2.html
@@ -1462,6 +1764,25 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.V2.RateMarketPriceV2Response.Rate
   nameWithType: RateMarketPriceV2Response.Rate
+- uid: CoinSpotDotNet.Responses.V2.TransactionV2
+  name: TransactionV2
+  href: api/CoinSpotDotNet.Responses.V2.TransactionV2.html
+  commentId: T:CoinSpotDotNet.Responses.V2.TransactionV2
+  fullName: CoinSpotDotNet.Responses.V2.TransactionV2
+  nameWithType: TransactionV2
+- uid: CoinSpotDotNet.Responses.V2.TransactionV2.Status
+  name: Status
+  href: api/CoinSpotDotNet.Responses.V2.TransactionV2.html#CoinSpotDotNet_Responses_V2_TransactionV2_Status
+  commentId: P:CoinSpotDotNet.Responses.V2.TransactionV2.Status
+  fullName: CoinSpotDotNet.Responses.V2.TransactionV2.Status
+  nameWithType: TransactionV2.Status
+- uid: CoinSpotDotNet.Responses.V2.TransactionV2.Status*
+  name: Status
+  href: api/CoinSpotDotNet.Responses.V2.TransactionV2.html#CoinSpotDotNet_Responses_V2_TransactionV2_Status_
+  commentId: Overload:CoinSpotDotNet.Responses.V2.TransactionV2.Status
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.V2.TransactionV2.Status
+  nameWithType: TransactionV2.Status
 - uid: CoinSpotDotNet.Responses.Withdrawal
   name: Withdrawal
   href: api/CoinSpotDotNet.Responses.Withdrawal.html

@@ -2,7 +2,7 @@
 using CoinSpotDotNet.Responses.V2;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System;
 using System.Threading.Tasks;
 
 namespace CoinSpotDotNet.Samples.Controllers
@@ -10,18 +10,27 @@ namespace CoinSpotDotNet.Samples.Controllers
     [ApiController]
     public class SamplesController : ControllerBase
     {
+        private readonly ICoinSpotClient clientV1;
         private readonly ICoinSpotClientV2 clientV2;
 
-        public SamplesController(ICoinSpotClientV2 clientV2)
+        public SamplesController(
+            ICoinSpotClient clientV1,
+            ICoinSpotClientV2 clientV2
+            )
         {
+            this.clientV1 = clientV1;
             this.clientV2 = clientV2;
         }
 
+        #region Public API v1
+        #endregion
+
+        #region Public API v2
         /// <summary>
         /// Public API - Latest prices
         /// </summary>
         [HttpGet("pubapi/v2/latest")]
-        [ProducesResponseType(200, Type = typeof(LatestPricesV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LatestPricesV2Response))]
         [Produces("application/json")]
         public async Task<IActionResult> LatestPrices()
         {
@@ -33,7 +42,7 @@ namespace CoinSpotDotNet.Samples.Controllers
         /// Public API - Latest coin prices
         /// </summary>
         [HttpGet("pubapi/v2/latest/{cointype}")]
-        [ProducesResponseType(200, Type = typeof(LatestPricesV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LatestPricesV2Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> LatestCoinPrices(string cointype)
@@ -65,7 +74,7 @@ namespace CoinSpotDotNet.Samples.Controllers
         /// </summary>
         /// <param name="cointype">Coin short name, example value 'BTC', 'LTC', 'DOGE'</param>
         [HttpGet("pubapi/v2/buyprice/{cointype}")]
-        [ProducesResponseType(200, Type = typeof(RateMarketPriceV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RateMarketPriceV2Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> LatestBuyPrice(string cointype)
@@ -81,7 +90,7 @@ namespace CoinSpotDotNet.Samples.Controllers
         /// <param name="cointype">Coin short name, example value 'BTC', 'LTC', 'DOGE'</param>
         /// <param name="markettype">Market coin short name, example value 'USDT' (only for available markets)</param>
         [HttpGet("pubapi/v2/buyprice/{cointype}/{markettype}")]
-        [ProducesResponseType(200, Type = typeof(RateMarketPriceV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RateMarketPriceV2Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> LatestBuyPriceMarket(string cointype, string markettype)
@@ -96,7 +105,7 @@ namespace CoinSpotDotNet.Samples.Controllers
         /// </summary>
         /// <param name="cointype">Coin short name, example value 'BTC', 'LTC', 'DOGE'</param>
         [HttpGet("pubapi/v2/sellprice/{cointype}")]
-        [ProducesResponseType(200, Type = typeof(RateMarketPriceV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RateMarketPriceV2Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> LatestSellPrice(string cointype)
@@ -112,7 +121,7 @@ namespace CoinSpotDotNet.Samples.Controllers
         /// <param name="cointype">Coin short name, example value 'BTC', 'LTC', 'DOGE'</param>
         /// <param name="markettype">Market coin short name, example value 'USDT' (only for available markets)</param>
         [HttpGet("pubapi/v2/sellprice/{cointype}/{markettype}")]
-        [ProducesResponseType(200, Type = typeof(RateMarketPriceV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RateMarketPriceV2Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> LatestSellPriceMarket(string cointype, string markettype)
@@ -127,7 +136,7 @@ namespace CoinSpotDotNet.Samples.Controllers
         /// </summary>
         /// <param name="cointype">Coin short name, example value 'BTC', 'LTC', 'DOGE'</param>
         [HttpGet("pubapi/v2/orders/open/{cointype}")]
-        [ProducesResponseType(200, Type = typeof(OpenOrdersV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OpenOrdersV2Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> OpenOrdersByCoin(string cointype)
@@ -143,7 +152,7 @@ namespace CoinSpotDotNet.Samples.Controllers
         /// <param name="cointype">Coin short name, example value 'BTC', 'LTC', 'DOGE'</param>
         /// <param name="markettype">Market coin short name, example value 'USDT' (only for available markets)</param>
         [HttpGet("pubapi/v2/orders/open/{cointype}/{markettype}")]
-        [ProducesResponseType(200, Type = typeof(OpenOrdersV2Response))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OpenOrdersV2Response))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> OpenOrdersByCoin(string cointype, string markettype)
@@ -152,15 +161,123 @@ namespace CoinSpotDotNet.Samples.Controllers
             if (orders == null) return NotFound();
             return new JsonResult(orders);
         }
+        #endregion
 
 
+        #region Read only API v1
+        /// <summary>
+        /// Read Only API v1 - List My Balances
+        /// </summary>
+        [HttpGet("ro/my/balances")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyBalancesResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyBalances()
+        {
+            var balances = await clientV1.ListMyBalances();
+            if (balances == null) return NotFound();
+            return new JsonResult(balances);
+        }
 
 
         /// <summary>
-        /// Read Only API - Status Check - Useful for confirming your Key and Secret are working correctly
+        /// Read Only API v1 - Balance by coin type
+        /// </summary>
+        /// <remarks>
+        /// NOTE: The V1 API currently returns a 404 Not Found for this request, and I suppose, as v2 is currently in beta this may not ever be fixed
+        /// </remarks>
+        [HttpGet("ro/my/balances/{cointype}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyCoinBalanceResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyCoinBalance(string cointype)
+        {
+            var balances = await clientV1.MyCoinBalance(cointype);
+            if (balances == null) return NotFound();
+            return new JsonResult(balances);
+        }
+
+        /// <summary>
+        /// Read Only API v1 - List My Deposits
+        /// </summary>
+        /// <param name="startDate">Optional. Specify date range start</param>
+        /// <param name="endDate">Optional. Specify date range end</param>
+        [HttpGet("ro/my/deposits")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyDepositsResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyDeposits([FromQuery(Name = "startdate")] DateTime? startDate = null, [FromQuery(Name = "enddate")] DateTime? endDate = null)
+        {
+            var deposits = await clientV1.ListMyDeposits(startDate, endDate);
+            if (deposits == null) return NotFound();
+            return new JsonResult(deposits);
+        }
+
+        /// <summary>
+        /// Read Only API v1 - My Transactions
+        /// </summary>
+        [HttpGet("ro/my/transactions")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyTransactionsResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyTransactions()
+        {
+            var transactions = await clientV1.ListMyTransactionHistory();
+            if (transactions == null) return NotFound();
+            return new JsonResult(transactions);
+        }
+
+        /// <summary>
+        /// Read Only API v1 - My Coin Transactions
+        /// </summary>
+        [HttpGet("ro/my/transactions/{cointype}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyTransactionsResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyCoinTransactions(string cointype)
+        {
+            var transactions = await clientV1.ListMyCoinTransactionHistory(cointype);
+            if (transactions == null) return NotFound();
+            return new JsonResult(transactions);
+        }
+        
+        /// <summary>
+        /// Read Only API v1 - My Open Transactions
+        /// </summary>
+        [HttpGet("ro/my/transactions/open")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyTransactionsResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyOpenTransactions()
+        {
+            var transactions = await clientV1.ListMyOpenTransactions();
+            if (transactions == null) return NotFound();
+            return new JsonResult(transactions);
+        }
+        
+        /// <summary>
+        /// Read Only API v1 - My Open Coin Transactions
+        /// </summary>
+        [HttpGet("ro/my/transactions/{cointype}/open")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyTransactionsResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyOpenCoinTransactions(string cointype)
+        {
+            var transactions = await clientV1.ListMyOpenCoinTransactions(cointype);
+            if (transactions == null) return NotFound();
+            return new JsonResult(transactions);
+        }
+
+        #endregion
+
+        #region Read only API v2
+        /// <summary>
+        /// Read Only API v2 - Status Check - Useful for confirming your Key and Secret are working correctly
         /// </summary>
         [HttpGet("v2/ro/status")]
-        [ProducesResponseType(200, Type = typeof(CoinSpotResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CoinSpotResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> ReadOnlyStatusCheck()
         {
@@ -169,10 +286,11 @@ namespace CoinSpotDotNet.Samples.Controllers
         }
         
         /// <summary>
-        /// Read Only API - List My Balances
+        /// Read Only API v2 - List My Balances
         /// </summary>
         [HttpGet("v2/ro/my/balances")]
-        [ProducesResponseType(200, Type = typeof(MyBalancesV2Response)) ]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyBalancesV2Response)) ]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
         [Produces("application/json")]
         public async Task<IActionResult> MyBalancesV2()
         {
@@ -180,8 +298,49 @@ namespace CoinSpotDotNet.Samples.Controllers
             return new JsonResult(balances);
         }
         
-       
-
         
+        /// <summary>
+        /// Read Only API - Balance by coin type
+        /// </summary>
+        [HttpGet("v2/ro/my/balances/{cointype}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyCoinBalanceV2Response)) ]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyCoinBalanceV2(string cointype)
+        {
+            var balances = await clientV2.MyCoinBalance(cointype);
+            return new JsonResult(balances);
+        }
+
+        /// <summary>
+        /// Read Only API v2 - List My Deposits
+        /// </summary>
+        /// <param name="startDate">Optional. Specify date range start</param>
+        /// <param name="endDate">Optional. Specify date range end</param>
+        [HttpGet("v2/ro/my/deposits")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyDepositsV2Response)) ]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyDepositsV2([FromQuery(Name = "startdate")]DateTime? startDate = null, [FromQuery(Name = "enddate")]DateTime? endDate = null)
+        {
+            var deposits = await clientV2.ListMyDeposits(startDate, endDate);
+            return new JsonResult(deposits);
+        }
+        
+        /// <summary>
+        /// Read Only API v2 - List My Withdrawals
+        /// </summary>
+        /// <param name="startDate">Optional. Specify date range start</param>
+        /// <param name="endDate">Optional. Specify date range end</param>
+        [HttpGet("v2/ro/my/withdrawls")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MyWithdrawalsV2Response)) ]
+        [Produces("application/json")]
+        public async Task<IActionResult> MyWithdrawalsV2([FromQuery(Name = "startdate")]DateTime? startDate = null, [FromQuery(Name = "enddate")]DateTime? endDate = null)
+        {
+            var deposits = await clientV2.ListMyWithdrawals(startDate, endDate);
+            return new JsonResult(deposits);
+        }
+        #endregion
+
+
     }
 }

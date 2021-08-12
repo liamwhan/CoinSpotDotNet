@@ -21,10 +21,11 @@
         "files": [
           "api/**.yml",
           "api/index.md",
-          "articles/**.md",
-          "articles/**/toc.yml",
           "toc.yml",
           "*.md"
+        ],
+        "exclude": [
+          "articles/**/*"
         ]
       }
     ],

@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.BaseClient.html",
-          "hash": "1tcXrBYWRosPtrESPGvL7qzoB746fmTvCHHDyNY60p4="
+          "hash": "fGyIIkZlFbsXAuWYS9ZIPtkOlVqL6r3G7/t/Rz/TIvU="
         }
       },
       "is_incremental": true,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.CoinSpotClient.html",
-          "hash": "daSZQKefYKkGYx9r6D2Q6XPLnbioF4BE86LXEIwpw2w="
+          "hash": "gMHqnBvf882hAbIjEnGu5p10lOyZKcjHUc2D+kDGbh8="
         }
       },
       "is_incremental": true,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.CoinSpotClientV2.html",
-          "hash": "3WQIn9hCIpYdzrP5MW5ETlh3fmAw45Of48SzQd56yR8="
+          "hash": "cAT09WfbiUZQemCnWANyqyCkO+E0pWqRe8Y1AjcL4So="
         }
       },
       "is_incremental": true,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.ICoinSpotClient.html",
-          "hash": "Koz3O4Kd2sOrK/DhUUDDpba2kAlkqbZ3cNdBDwD9PD4="
+          "hash": "4QJTC4OhymPfJlbGOG7z8i67/akIzinAoB6BYtRYzXk="
         }
       },
       "is_incremental": true,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.ICoinSpotClientV2.html",
-          "hash": "zVzu6w8ojyG6kgW0JBe4wxYVeEt86xNz0+86gWFptsA="
+          "hash": "Oj7EoZ7A4If7v87A5TYIGr4AIGZ1XWdKyRMfdh4viGQ="
         }
       },
       "is_incremental": true,
@@ -113,6 +113,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.AffiliatePaymentResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.AffiliatePaymentResponse.html",
+          "hash": "2njw/VWAmcZLkpZ786D5ir3IppP7bHJrHP9eYeuc2wk="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.BuyOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.BuyOrder.html",
+          "hash": "1DusAjn+sMUBMpNqEB7xmWsh8MYPt3Xa9rvs8Oxzdq8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CoinSpotDotNet.Responses.CoinBalance.yml",
       "output": {
         ".html": {
@@ -153,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.CoinSpotResponse.html",
-          "hash": "2jCVFVKsueR79veXSekVznmh8u+vYYwk6C7723cV694="
+          "hash": "OcdwxX9Nm6U1dg5IzH+R5tlfzzbwZV/M/AjQH7WqJnw="
         }
       },
       "is_incremental": true,
@@ -177,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.Deposit.html",
-          "hash": "0nD0u87c9SBmuyIrOAhPDE/Bll79Q3gbrrGrHNu56JU="
+          "hash": "ZD2T52S5P2g1bE/ZL53U6yO6GiDCb3ukEJDh7dY5IS4="
         }
       },
       "is_incremental": true,
@@ -201,7 +225,19 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.MyBalancesResponse.html",
-          "hash": "IO5Vx0XREcuNcTxU5uOKCDdOzajf1XpWkrDQAsm8/po="
+          "hash": "e6e2itRVyslHL+JfhcX1fEJ0M7CvjTWJ079TMdPq5oo="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.MyCoinBalanceResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.MyCoinBalanceResponse.html",
+          "hash": "YQer8dWyXmhBR49Hht63XrVkI3YiOknTL+iIsFBVhGI="
         }
       },
       "is_incremental": true,
@@ -214,6 +250,18 @@
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.MyDepositsResponse.html",
           "hash": "Fg8r1PfdD1useQubBQGKALpLsf6QW6I7IaWKLEQVtdw="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.MyTransactionsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.MyTransactionsResponse.html",
+          "hash": "I5bb4LvLqhPiNeRwgJSJlyfuDTx0rqi2Xmxe9QrY1Os="
         }
       },
       "is_incremental": true,
@@ -257,11 +305,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.SellOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.SellOrder.html",
+          "hash": "sHjqpvfn/Ybnae3S9wvc+2JFllJ2VSCe/io53b0FS5A="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CoinSpotDotNet.Responses.Transaction.yml",
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.Transaction.html",
-          "hash": "OTl8hkln/jvm5M3trhAYQDPAWp0vvWZENG+VfzpEO1I="
+          "hash": "1eH2z/Ebbk7vYGSva17QFvIs9RCawB9ib48QvqmFDPo="
         }
       },
       "is_incremental": true,
@@ -333,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.V2.MyCoinBalanceV2Response.html",
-          "hash": "+9SutNb5JJN/wHLv6EgIp1t+gbxCmmvG82DHfiyy8U0="
+          "hash": "B1igReYvy4DeTgZteBvbd+tUU/6GtmLD4v9vMFx9Cyg="
         }
       },
       "is_incremental": true,
@@ -389,11 +449,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/CoinSpotDotNet.Responses.V2.TransactionV2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CoinSpotDotNet.Responses.V2.TransactionV2.html",
+          "hash": "diFe+h9iNJ/ya/+BKjJYyonn1MrlV9hCuFaeudSYtXg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/CoinSpotDotNet.Responses.V2.yml",
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.V2.html",
-          "hash": "PzbFW+s1JMHjOXlCixUa9UQRLovvgNhX1/Rdji7sJcg="
+          "hash": "8EF8s2gfKFDUzy8YfY5IUW4yCQm2tdEXXM07ppEaNyg="
         }
       },
       "is_incremental": true,
@@ -405,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.Withdrawal.html",
-          "hash": "KXi88D8fIae/en630YNzj8ujxlIYgoUPavLjsWiJSM8="
+          "hash": "vGn2qVgVFllLkMGyTIYBL43odzXJHXWqlOpcFPzUNh4="
         }
       },
       "is_incremental": true,
@@ -417,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/CoinSpotDotNet.Responses.html",
-          "hash": "EAi+NRS4kGr+PKTbcnveXfyikeFaX53ko9K5e08nrZg="
+          "hash": "BhgTPSArIgh+f70ub+KHemM+gAMy597IOOpEMjk0LoY="
         }
       },
       "is_incremental": true,
@@ -492,7 +564,7 @@
           "hash": "d7tr9Pakaj3Vw18STw9Akb7MYt78FFGuMUKPeB/RAKs="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -501,31 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "hX9JGSm3eU4tuquBQT5yfHU+LuXPTVwGjQYc8XNGuQk="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/intro.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/intro.html",
-          "hash": "695bSx5cYS/Ai8jC1zR38lfNGPtwTmYjNb2WnV9B9sA="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "articles/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "articles/toc.html",
-          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+          "hash": "FYy25wofADGv58TtvXP8vtPGVYX3JQZKzZOxsQvWFiI="
         }
       },
       "is_incremental": false,
@@ -537,10 +585,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "vIYHZ8T+ryo87fLplbH9ddg01hbNqYVDwrWhDWUM1es="
+          "hash": "tcfl/zXBh6yNOaMleUmuydR3HLWudfEYyWe4ML3UWoI="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -549,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+          "hash": "h44BL+k3mfHlQoPzLfIcTO2dwgypIc0r7JF1Qi53MZc="
         }
       },
       "is_incremental": false,
@@ -568,14 +616,14 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 2
+          "total_file_count": 2,
+          "skipped_file_count": 1
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 40,
-          "skipped_file_count": 40
+          "total_file_count": 46,
+          "skipped_file_count": 46
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

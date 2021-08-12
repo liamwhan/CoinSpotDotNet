@@ -62,11 +62,61 @@
 <blockquote>
 <p>A .NET Standard 2.0 compatible class library for CoinSpot API. Supports API versions 1 and 2</p>
 </blockquote>
-<h3 id="disclaimer">Disclaimer</h3>
-<p>This library is in a pre-alpha state and currently only supports the read-only <a href="https://coinspot.com.au/api#rosummary" target="_blank">v1 API</a> and <a href="https://coinspot.com.au/v2/api#rosummary" target="_blank">v2 API</a>.</p>
-<h2 id="demo">Demo</h2>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#coinspotdotnet">CoinSpotDotNet</a>
+<ul>
+<li><a href="#contents">Contents</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#documentation">Documentation</a>
+<ul>
+<li><a href="#demo">Demo</a>
+<ul>
+<li><a href="#demo-setup-instructions">Demo setup instructions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#getting-started">Getting Started</a>
+<ul>
+<li><a href="#installation">Installation</a>
+<ul>
+<li><a href="#nuget">Nuget</a></li>
+<li><a href="#dotnet-cli"><code>dotnet</code> CLI</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#aspnet-web-application">ASP.NET Web Application</a></li>
+<li><a href="#console-applications-and-other-scenarios">Console applications and other scenarios</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#general-notes">General Notes</a>
+<ul>
+<li><a href="#api-support">API Support</a></li>
+<li><a href="#coinspotclient-classes">CoinSpotClient classes</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>.NET Standard 2.0 target</li>
+<li>No 3rd-party dependencies (no <code>Newtonsoft.Json</code>, this library uses the <code>System.Text.Json</code> serialiser out of the box)</li>
+<li>Supports both Console and ASP.NET web application scenarios, and probably loads of others.</li>
+<li>Modern fully <code>async</code> C# library</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>This source code has been documented extensively and the <a href="https://docs.lilypod.tools/api/index.html">full API documentation is a available here</a>.</p>
+<p>Additionally a <a href="#demo-setup-instructions">Demo project</a> is included in this repo and contains Swagger/Open API documentation for all of the supported CoinSpot API endpoints that you can easily set up and try out CoinSpotDotNet</p>
+<h3 id="demo">Demo</h3>
 <p>There is a Sample ASP.NET Web API project with a swagger you can use to test out the library and as a usage example.</p>
-<h3 id="demo-setup-instructions">Demo setup instructions</h3>
+<h4 id="demo-setup-instructions">Demo setup instructions</h4>
 <ol>
 <li>Clone the project
 <pre><code class="lang-sh">git clone https://github.com/liamwhan/CoinSpotDotNet
@@ -80,24 +130,26 @@ dotnet user-secrets set &quot;CoinSpot:ReadOnlySecret&quot; &quot;{YOUR_READ_ONL
 </code></pre>
 </li>
 <li>Open the solution in Visual Studio and start debugging the CoinSpotDotNet.Samples project</li>
-<li>Explore the swagger API documentation</li>
+<li>Start debugging/run the project and open a browser to <code>http://localhost:5000/swagger/index.html</code></li>
 </ol>
 <h2 id="getting-started">Getting Started</h2>
-<h3 id="nuget-install">Nuget Install</h3>
+<h3 id="installation">Installation</h3>
+<h4 id="nuget">Nuget</h4>
 <pre><code class="lang-pwsh">Install-Package CoinSpotDotNet -Version 0.0.1
 </code></pre>
-<h3 id="dotnet-cli-install"><code>dotnet</code> CLI Install</h3>
+<h4 id="dotnet-cli"><code>dotnet</code> CLI</h4>
 <pre><code class="lang-bat">dotnet add package CoinSpotDotNet --version 0.0.1
 </code></pre>
-<h3 id="aspnet-web-application">ASP.NET Web Application</h3>
+<h3 id="usage">Usage</h3>
+<h4 id="aspnet-web-application">ASP.NET Web Application</h4>
 <blockquote>
 <p><strong>NOTE:</strong> Both V1 and V2 clients are used side-by-side in the examples below to demonstrate usage, while this won't cause any problems, in practice you would probably only want one or the other.</p>
 </blockquote>
 <p>If you're building an ASP.NET Web application then getting started is as simple as:</p>
 <ol>
-<li><p>Add your <a href="https://www.coinspot.com.au/my/api" target="_blank">CoinSpot API credentials</a> to the applications <code>IConfiguration</code> under the section <code>CoinSpot</code></p>
-<p>This can be done in any way you like, (i.e. User secrets, secure storage etc.) but we recommend you read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-5.0" target="_blank">safe storage of secrets in ASP.NET</a></p>
-<p>For example, here is what the credentials would look like in an <code>appsettings.json</code> file (which we don't recommend, but are using here to demonstrate the structure that the CoinSpotDotNet expects):</p>
+<li><p>Add your <a href="https://www.coinspot.com.au/my/api">CoinSpot API credentials</a> to the applications <code>IConfiguration</code> under the section <code>CoinSpot</code></p>
+<p>This can be done in any way you like, (i.e. User secrets, secure storage etc.) but we recommend you read up on <a href="https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-5.0">safe storage of secrets in ASP.NET</a></p>
+<p>For example, here is what the credentials would look like in an <code>appsettings.json</code> file (which we don't recommend, but are using here to demonstrate the structure that CoinSpotDotNet expects):</p>
 <pre><code class="lang-json"> {
      &quot;CoinSpot&quot;: 
      {
@@ -131,7 +183,7 @@ dotnet user-secrets set &quot;CoinSpot:ReadOnlySecret&quot; &quot;{YOUR_READ_ONL
      }
  }
 </code></pre>
-<p>This will register <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#how-to-use-typed-clients-with-ihttpclientfactory" target="_blank">a typed <code>HttpClient</code></a> into the DI Container</p>
+<p>This will register <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#how-to-use-typed-clients-with-ihttpclientfactory">a typed <code>HttpClient</code></a> into the DI Container. See <a href="https://docs.lilypod.tools/api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2__ctor_Microsoft_Extensions_Options_IOptionsMonitor_CoinSpotDotNet_Settings_CoinSpotSettings__Microsoft_Extensions_Logging_ILogger_CoinSpotDotNet_CoinSpotClientV2__System_Net_Http_HttpClient_">the CoinSpotClient DI constructor API documentation</a> for more information.</p>
 </li>
 <li><p>Inject <code>ICoinSpotClient</code> or <code>ICoinSpotClientV2</code> into your consuming services.</p>
 <pre><code class="lang-cs"> using CoinSpotDotNet;
@@ -162,7 +214,39 @@ dotnet user-secrets set &quot;CoinSpot:ReadOnlySecret&quot; &quot;{YOUR_READ_ONL
 </code></pre>
 </li>
 </ol>
+<h4 id="console-applications-and-other-scenarios">Console applications and other scenarios</h4>
+<p>If you're not using ASP.NET then constructing a Client is arguably even simpler:</p>
+<pre><code class="lang-cs">using CoinSpotDotNet;
+
+namespace MyConsoleApp 
+{
+
+    public class Program
+    {
+        public static Main(string[] args)
+        {
+            CoinSpotSettings settings = new()
+            {
+                ReadOnlyKey = &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;,
+                ReadOnlySecret = &quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
+            };
+            var clientV1 = new CoinSpotClient(settings);
+            var clientV2 = new CoinSpotClientV2(settings);
+        }
+    }
+
+}
+
+</code></pre>
 <h2 id="general-notes">General Notes</h2>
+<h4 id="api-support">API Support</h4>
+<p>The current CoinSpot API documentation and developer tools are limited and this library is not officially supported by, or affiliated with CoinSpot in any way. This makes some parts of the API very  difficult to test, especially where my personal account does not have any data to test with, e.g. the affiliate and referral payments endpoints. As a result this library currently only supports:</p>
+<ul>
+<li>The read-only <a href="https://coinspot.com.au/api#rosummary">v1 API</a> endpoints</li>
+<li>The read-only <a href="https://coinspot.com.au/v2/api#rosummary">v2 API</a> endpoints</li>
+<li>The public <a href="https://coinspot.com.au/api#latestprices">v1 API</a> endpoints</li>
+<li>The public <a href="https://www.coinspot.com.au/v2/api#latestprices">v2 API</a> endpoints</li>
+</ul>
 <h4 id="coinspotclient-classes">CoinSpotClient classes</h4>
 <p>CoinSpotDotNet exposes 2 primary classes of interest to consuming applications:</p>
 <ul>
@@ -172,8 +256,7 @@ dotnet user-secrets set &quot;CoinSpot:ReadOnlySecret&quot; &quot;{YOUR_READ_ONL
 <p>They are independent classes and can be used interchangably and they expose mostly the same methods at the moment (the v2 API has more endpoints so the client has more corresponding methods).</p>
 <h4 id="dependencies">Dependencies</h4>
 <p>The target framework is .NET Standard 2.0 and the only dependencies are Microsoft .NET libraries. There are no 3rd-party dependencies.</p>
-<p>The library does currently require <code>IOptions&lt;TOptions&gt;</code> support (Microsoft.Extensions.Options) and assumes logging has been configured and <code>ILogger&lt;T&gt;</code> (Microsoft.Extensions.Logging.Abstractions) instances are available.</p>
-<p>If you are using this library in other contexts (i.e. Console applications), please lodge a ticket on the <a href="https://github.com/liamwhan/CoinSpotDotNet">GitHub repo</a> and I will consider removing these dependencies.</p>
+<p>You can use this library in a console app (or other non-ASP environment) by using the <a href="https://docs.lilypod.tools/api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2__ctor_CoinSpotDotNet_Settings_CoinSpotSettings_">simple constructor</a></p>
 <h2 id="license">License</h2>
 <p>MIT License</p>
 <p>Copyright (c) 2021 Liam Whan</p>

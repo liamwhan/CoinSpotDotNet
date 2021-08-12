@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoinSpotDotNet.Responses.V2;
+using System;
 using System.Text.Json.Serialization;
 
 namespace CoinSpotDotNet.Responses
@@ -7,7 +8,7 @@ namespace CoinSpotDotNet.Responses
     /// <summary>
     /// Record of a deposit to CoinSpot
     /// </summary>
-    public class Deposit : Transaction
+    public class Deposit : TransactionV2
     {
 
         /// <summary>
