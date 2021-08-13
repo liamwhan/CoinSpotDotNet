@@ -100,6 +100,23 @@
             Read Only API v1 - My Open Coin Transactions
             </summary>
         </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.MySendReceiveTransactions">
+            <summary>
+            Read Only API v1 - My Send/Receive Transactions
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.AffiliatePayments">
+            <summary>
+            Read Only API v1 - My Affiliate Payments
+            </summary>
+            <remarks>https://www.coinspot.com.au/api#roaffpay</remarks>
+        </member>
+        <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.ReferralPayments">
+            <summary>
+            Read Only API v1 - My Referral Payments
+            </summary>
+            <remarks>https://www.coinspot.com.au/api#rorefpay</remarks>
+        </member>
         <member name="M:CoinSpotDotNet.Samples.Controllers.SamplesController.ReadOnlyStatusCheck">
             <summary>
             Read Only API v2 - Status Check - Useful for confirming your Key and Secret are working correctly

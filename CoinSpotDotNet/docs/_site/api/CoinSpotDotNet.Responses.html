@@ -73,11 +73,17 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.AffiliatePayment.html">AffiliatePayment</a></h4>
+      <section><p>Affliate payment record</p>
+</section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.AffiliatePaymentResponse.html">AffiliatePaymentResponse</a></h4>
       <section><p>CoinSpot read-only API response for endpoint <code>/api/ro/my/affiliatepayments</code></p>
 <p>
 See <a href="https://www.coinspot.com.au/api#roaffpay">https://www.coinspot.com.au/api#roaffpay</a>
 </p>
+</section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.BalancesResponse.html">BalancesResponse</a></h4>
+      <section><p>Response model for /ro/my/balances</p>
 </section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.BuyOrder.html">BuyOrder</a></h4>
       <section><p>Buy Transaction</p>
@@ -87,6 +93,12 @@ See <a href="https://www.coinspot.com.au/api#roaffpay">https://www.coinspot.com.
 </section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.CoinBalanceId.html">CoinBalanceId</a></h4>
       <section><p>Convenience class that flattens a dictionary object returned from the API and returns the coin type in the <a class="xref" href="CoinSpotDotNet.Responses.CoinBalanceId.html#CoinSpotDotNet_Responses_CoinBalanceId_CoinType">CoinType</a></p>
+</section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.CoinBalanceResponse.html">CoinBalanceResponse</a></h4>
+      <section><p>Response model for <code>/api/ro/my/balance/:cointype</code></p>
+<p>
+See <a href="https://www.coinspot.com.au/api#rocoinsbalance">https://www.coinspot.com.au/api#rocoinsbalance</a>
+</p>
 </section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.CoinPrice.html">CoinPrice</a></h4>
       <section><p>Coin price</p>
@@ -103,37 +115,22 @@ See <a href="https://www.coinspot.com.au/v2/api#historders">https://www.coinspot
       <h4><a class="xref" href="CoinSpotDotNet.Responses.Deposit.html">Deposit</a></h4>
       <section><p>Record of a deposit to CoinSpot</p>
 </section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.DepositsResponse.html">DepositsResponse</a></h4>
+      <section><p>CoinSpot read-only API List Deposit History response</p>
+<p>
+See <a href="https://www.coinspot.com.au/api#rodeposit">https://www.coinspot.com.au/api#rodeposit</a>
+</p>
+</section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.LatestPricesResponse.html">LatestPricesResponse</a></h4>
       <section><p>Public API Latest Prices response</p>
 <p>
 See <a href="https://www.coinspot.com.au/api#latestprices">https://www.coinspot.com.au/api#latestprices</a>
 </p>
 </section>
-      <h4><a class="xref" href="CoinSpotDotNet.Responses.MyBalancesResponse.html">MyBalancesResponse</a></h4>
-      <section><p>Response model for /ro/my/balances</p>
-</section>
-      <h4><a class="xref" href="CoinSpotDotNet.Responses.MyCoinBalanceResponse.html">MyCoinBalanceResponse</a></h4>
-      <section><p>Response model for <code>/api/ro/my/balance/:cointype</code></p>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.MarketOrder.html">MarketOrder</a></h4>
+      <section><p>Market order record</p>
 <p>
-See <a href="https://www.coinspot.com.au/api#rocoinsbalance">https://www.coinspot.com.au/api#rocoinsbalance</a>
-</p>
-</section>
-      <h4><a class="xref" href="CoinSpotDotNet.Responses.MyDepositsResponse.html">MyDepositsResponse</a></h4>
-      <section><p>CoinSpot read-only API List Deposit History response</p>
-<p>
-See <a href="https://www.coinspot.com.au/api#rodeposit">https://www.coinspot.com.au/api#rodeposit</a>
-</p>
-</section>
-      <h4><a class="xref" href="CoinSpotDotNet.Responses.MyTransactionsResponse.html">MyTransactionsResponse</a></h4>
-      <section><p>Response model for <code>/api/ro/my/transactions</code></p>
-<p>
-See <a href="https://www.coinspot.com.au/api#rotransaction">https://www.coinspot.com.au/api#rotransaction</a>
-</p>
-</section>
-      <h4><a class="xref" href="CoinSpotDotNet.Responses.MyWithdrawalsResponse.html">MyWithdrawalsResponse</a></h4>
-      <section><p>CoinSpot read-only API v1 My Withdrawl History response <code>/api/ro/my/withdrawals</code></p>
-<p>
-See <a href="https://www.coinspot.com.au/api#rowithdrawal">https://www.coinspot.com.au/api#rowithdrawal</a>
+See <a href="https://www.coinspot.com.au/v2/api#rotransaction">https://www.coinspot.com.au/v2/api#rotransaction</a>
 </p>
 </section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.OpenOrder.html">OpenOrder</a></h4>
@@ -148,14 +145,44 @@ See <a href="https://www.coinspot.com.au/v2/api#openorders">https://www.coinspot
 See <a href="https://www.coinspot.com.au/v2/api#openorders">https://www.coinspot.com.au/v2/api#openorders</a>
 </p>
 </section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.ReferralPayment.html">ReferralPayment</a></h4>
+      <section><p>Referral payment record</p>
+</section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.ReferralPaymentResponse.html">ReferralPaymentResponse</a></h4>
+      <section><p>CoinSpot read-only API response for endpoint <code>/api/ro/my/referralpayments</code></p>
+<p>
+See <a href="https://www.coinspot.com.au/api#rorefpay">https://www.coinspot.com.au/api#rorefpay</a>
+</p>
+</section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.SellOrder.html">SellOrder</a></h4>
       <section><p>Sell Transaction</p>
+</section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.SendReceiveResponse.html">SendReceiveResponse</a></h4>
+      <section><p>Send and Receive Transaction History</p>
+<p>
+See <a href="https://www.coinspot.com.au/api#rosendreceive">https://www.coinspot.com.au/api#rosendreceive</a>
+</p>
+</section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.SendReceiveTransaction.html">SendReceiveTransaction</a></h4>
+      <section><p>Send or receive transaction record</p>
 </section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.Transaction.html">Transaction</a></h4>
       <section><p>Base model for Deposits and Withdrawal API response types</p>
 </section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.TransactionsResponse.html">TransactionsResponse</a></h4>
+      <section><p>Response model for <code>/api/ro/my/transactions</code></p>
+<p>
+See <a href="https://www.coinspot.com.au/api#rotransaction">https://www.coinspot.com.au/api#rotransaction</a>
+</p>
+</section>
       <h4><a class="xref" href="CoinSpotDotNet.Responses.Withdrawal.html">Withdrawal</a></h4>
       <section><p>Record of a withdrawal from CoinSpot</p>
+</section>
+      <h4><a class="xref" href="CoinSpotDotNet.Responses.WithdrawalsResponse.html">WithdrawalsResponse</a></h4>
+      <section><p>CoinSpot read-only API v1 My Withdrawl History response <code>/api/ro/my/withdrawals</code></p>
+<p>
+See <a href="https://www.coinspot.com.au/api#rowithdrawal">https://www.coinspot.com.au/api#rowithdrawal</a>
+</p>
 </section>
 </article>
           </div>

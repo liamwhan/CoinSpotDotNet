@@ -268,6 +268,52 @@ namespace CoinSpotDotNet.Samples.Controllers
             if (transactions == null) return NotFound();
             return new JsonResult(transactions);
         }
+        
+        /// <summary>
+        /// Read Only API v1 - My Send/Receive Transactions
+        /// </summary>
+        [HttpGet("ro/my/sendreceive")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(SendReceiveResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> MySendReceiveTransactions()
+        {
+            var transactions = await clientV1.ListSendReceiveTransactions();
+            if (transactions == null) return NotFound();
+            return new JsonResult(transactions);
+        }
+
+        /// <summary>
+        /// Read Only API v1 - My Affiliate Payments
+        /// </summary>
+        /// <remarks>https://www.coinspot.com.au/api#roaffpay</remarks>
+        [HttpGet("ro/my/affiliatepayments")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AffiliatePaymentResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> AffiliatePayments()
+        {
+            var transactions = await clientV1.ListAffiliatePayments();
+            if (transactions == null) return NotFound();
+            return new JsonResult(transactions);
+        }
+
+        /// <summary>
+        /// Read Only API v1 - My Referral Payments
+        /// </summary>
+        /// <remarks>https://www.coinspot.com.au/api#rorefpay</remarks>
+        [HttpGet("ro/my/referralpayments")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ReferralPaymentResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ValidationProblemDetails))]
+        [Produces("application/json")]
+        public async Task<IActionResult> ReferralPayments()
+        {
+            var transactions = await clientV1.ListReferralPayments();
+            if (transactions == null) return NotFound();
+            return new JsonResult(transactions);
+        }
+
+
 
         #endregion
 

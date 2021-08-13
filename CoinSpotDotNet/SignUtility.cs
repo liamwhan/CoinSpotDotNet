@@ -43,7 +43,7 @@ namespace CoinSpotDotNet
         }
         
         /// <summary>
-        /// Creates standard CoinSpot POST body with a single JSON property "nonce"
+        /// Creates CoinSpot POST body from signable model (i.e. derived from <see cref="CoinSpotRequest"/>)
         /// <para>
         /// See <see href="https://www.coinspot.com.au/api#security"/>
         /// </para>

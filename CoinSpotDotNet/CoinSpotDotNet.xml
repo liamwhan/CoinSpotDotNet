@@ -48,6 +48,9 @@
         <member name="M:CoinSpotDotNet.ICoinSpotClient.CoinBalance(System.String)">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/balance/:cointype</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rocoinsbalance"/>
+            </para>
             </summary>
             <param name="coinType">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
             <returns><see cref="T:CoinSpotDotNet.Responses.CoinBalanceResponse"/></returns>
@@ -55,12 +58,18 @@
         <member name="M:CoinSpotDotNet.ICoinSpotClient.ListTransactionHistory">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rotransaction"/>
+            </para>
             </summary>
             <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
         </member>
         <member name="M:CoinSpotDotNet.ICoinSpotClient.ListCoinTransactionHistory(System.String)">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/:cointype</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rocointransaction"/>
+            </para>
             </summary>
             <param name="cointype">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
             <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
@@ -68,15 +77,48 @@
         <member name="M:CoinSpotDotNet.ICoinSpotClient.ListOpenTransactions">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/open</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#roopentransactions"/>
+            </para>
             </summary>
             <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
         </member>
         <member name="M:CoinSpotDotNet.ICoinSpotClient.ListOpenCoinTransactions(System.String)">
             <summary>
             Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/transactions/:cointype/open</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rocoinopentransactions"/>
+            </para>
             </summary>
             <param name="cointype">Coin short name e.g. "ETH", "BTC" etc. used as the <c>cointype</c> url parameter</param>
             <returns><see cref="T:CoinSpotDotNet.Responses.TransactionsResponse"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListSendReceiveTransactions">
+            <summary>
+            Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/sendreceive</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rosendreceive"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.SendReceiveResponse"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListAffiliatePayments">
+            <summary>
+            Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/affiliatepayments</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#roaffpay"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.AffiliatePaymentResponse"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClient.ListReferralPayments">
+            <summary>
+            Calls CoinSpot read-only API v1 Endpoint: <c>/api/ro/my/referralpayments</c> 
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rorefpay"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.AffiliatePaymentResponse"/></returns>
         </member>
         <member name="T:CoinSpotDotNet.CoinSpotClient">
             <summary>
@@ -122,6 +164,15 @@
             <inheritdoc/>
         </member>
         <member name="M:CoinSpotDotNet.CoinSpotClient.ListOpenCoinTransactions(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListSendReceiveTransactions">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListAffiliatePayments">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClient.ListReferralPayments">
             <inheritdoc/>
         </member>
         <member name="T:CoinSpotDotNet.ICoinSpotClientV2">
@@ -873,6 +924,54 @@
             Transaction total
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.SendReceiveResponse">
+            <summary>
+            Send and Receive Transaction History
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rosendreceive"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.SendReceiveResponse.SendTransactions">
+            <summary>
+            Array containing your coin send transaction history
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.SendReceiveResponse.ReceiveTransactions">
+            <summary>
+            Array containing your coin receive transaction history
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.SendReceiveTransaction">
+            <summary>
+            Send or receive transaction record
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.SendReceiveTransaction.Timestamp">
+            <summary>
+            Timestamp of the transaction
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.SendReceiveTransaction.Amount">
+            <summary>
+            Amount of coin
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.SendReceiveTransaction.Coin">
+            <summary>
+            Coin short name, example value 'BTC', 'LTC', 'DOGE'
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.SendReceiveTransaction.Address">
+            <summary>
+            Destination address
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.SendReceiveTransaction.Aud">
+            <summary>
+            Value in AUD
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.Transaction">
             <summary>
             Base model for Deposits and Withdrawal API response types
@@ -1065,6 +1164,24 @@
             Market coin is trading in
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.SendReceiveV2Response">
+            <summary>
+            Send receive history response
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rosendreceive"/>
+            </para>
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.SendReceiveV2Response.SendTransactions">
+            <summary>
+            array containing your coin send transaction history
+            </summary>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.SendReceiveV2Response.ReceiveTransactions">
+            <summary>
+            array containing your coin receive transaction history
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.V2.TransactionV2">
             <summary>
             Base model for Deposits and Withdrawal API response types from the V2 API
@@ -1213,7 +1330,7 @@
         </member>
         <member name="M:CoinSpotDotNet.SignUtility.CreatePostData``1(``0,System.Text.Json.JsonSerializerOptions)">
             <summary>
-            Creates standard CoinSpot POST body with a single JSON property "nonce"
+            Creates CoinSpot POST body from signable model (i.e. derived from <see cref="T:CoinSpotDotNet.Requests.CoinSpotRequest"/>)
             <para>
             See <see href="https://www.coinspot.com.au/api#security"/>
             </para>
