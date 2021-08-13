@@ -109,7 +109,7 @@
             See <see href="https://www.coinspot.com.au/api#roaffpay"/>
             </para>
             </summary>
-            <returns><see cref="T:CoinSpotDotNet.Responses.AffiliatePaymentResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response"/></returns>
         </member>
         <member name="M:CoinSpotDotNet.ICoinSpotClient.ListReferralPayments">
             <summary>
@@ -118,7 +118,7 @@
             See <see href="https://www.coinspot.com.au/api#rorefpay"/>
             </para>
             </summary>
-            <returns><see cref="T:CoinSpotDotNet.Responses.AffiliatePaymentResponse"/></returns>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response"/></returns>
         </member>
         <member name="T:CoinSpotDotNet.CoinSpotClient">
             <summary>
@@ -236,6 +236,33 @@
             <param name="startDate">Optional. Start of date range</param>
             <param name="endDate">Optional. End of date range</param>
             <returns><see cref="T:CoinSpotDotNet.Responses.V2.WithdrawalsV2Response"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.SendReceiveHistory">
+            <summary>
+            Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/sendreceive</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rosendreceive"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.SendReceiveV2Response"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.AffiliatePayments">
+            <summary>
+            Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/affiliatepayments</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#roaffpay"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response"/></returns>
+        </member>
+        <member name="M:CoinSpotDotNet.ICoinSpotClientV2.ReferralPayments">
+            <summary>
+            Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/referralpayments</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/v2/api#rorefpay"/>
+            </para>
+            </summary>
+            <returns><see cref="T:CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response"/></returns>
         </member>
         <member name="M:CoinSpotDotNet.ICoinSpotClientV2.LatestPrices">
             <summary>
@@ -420,6 +447,15 @@
             <inheritdoc/>
         </member>
         <member name="M:CoinSpotDotNet.CoinSpotClientV2.MarketOrderHistory(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments">
+            <inheritdoc/>
+        </member>
+        <member name="M:CoinSpotDotNet.CoinSpotClientV2.ReferralPayments">
             <inheritdoc/>
         </member>
         <member name="T:CoinSpotDotNet.Common.CoinSpotDateTimeJsonConverter">
@@ -1005,6 +1041,27 @@
             Array containing your sell order history
             </summary>
         </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response">
+            <summary>
+            CoinSpot read-only API response for endpoint <c>/api/ro/my/affiliatepayments</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#roaffpay"/>
+            </para>
+            </summary>
+            <remarks>
+            <para>
+            NOTE: I have no affliate payments on my coinspot account and there are no example responses in the 
+            v1 CoinSpot API documentation, so this response shape is based on the Example Response for the v2 api
+            which you can see here: <see href="https://www.coinspot.com.au/v2/api#roaffpay"/> but I have no way of
+            testing that this is correct.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.Payments">
+            <summary>
+            Array containing one object for each completed affiliate payment
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.V2.BalancesV2Response">
             <summary>
             Response model for <c>v2/ro/my/balances</c>
@@ -1162,6 +1219,27 @@
         <member name="P:CoinSpotDotNet.Responses.V2.RateMarketPriceV2Response.Market">
             <summary>
             Market coin is trading in
+            </summary>
+        </member>
+        <member name="T:CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response">
+            <summary>
+            CoinSpot read-only API response for endpoint <c>/api/ro/my/referralpayments</c>
+            <para>
+            See <see href="https://www.coinspot.com.au/api#rorefpay"/>
+            </para>
+            </summary>
+            <remarks>
+            <para>
+            NOTE: I have no referral payments on my coinspot account and there are no example responses in the 
+            v1 CoinSpot API documentation, so this response shape is based on the Example Response for the v2 api
+            which you can see here: <see href="https://www.coinspot.com.au/v2/api#rorefpay"/> but I have no way of
+            testing that this is correct.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.Payments">
+            <summary>
+            Array containing one object for each completed referral payment
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.Responses.V2.SendReceiveV2Response">

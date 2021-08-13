@@ -9,6 +9,7 @@ using System;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
+using CoinSpotDotNet.Responses.V2;
 
 namespace CoinSpotDotNet
 {
@@ -113,7 +114,7 @@ namespace CoinSpotDotNet
         /// See <see href="https://www.coinspot.com.au/api#roaffpay"/>
         /// </para>
         /// </summary>
-        /// <returns><see cref="AffiliatePaymentResponse"/></returns>
+        /// <returns><see cref="AffiliatePaymentV2Response"/></returns>
         Task<AffiliatePaymentResponse> ListAffiliatePayments();
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace CoinSpotDotNet
         /// See <see href="https://www.coinspot.com.au/api#rorefpay"/>
         /// </para>
         /// </summary>
-        /// <returns><see cref="AffiliatePaymentResponse"/></returns>
+        /// <returns><see cref="AffiliatePaymentV2Response"/></returns>
         Task<ReferralPaymentResponse> ListReferralPayments();
         #endregion
 

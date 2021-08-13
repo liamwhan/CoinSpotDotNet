@@ -131,7 +131,7 @@
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2__ctor_CoinSpotDotNet_Settings_CoinSpotSettings_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.%23ctor(CoinSpotDotNet.Settings.CoinSpotSettings)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L229">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L262">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2__ctor_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2__ctor_CoinSpotDotNet_Settings_CoinSpotSettings_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor(CoinSpotDotNet.Settings.CoinSpotSettings)">CoinSpotClientV2(CoinSpotSettings)</h4>
@@ -165,7 +165,7 @@
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2__ctor_Microsoft_Extensions_Options_IOptionsMonitor_CoinSpotDotNet_Settings_CoinSpotSettings__Microsoft_Extensions_Logging_ILogger_CoinSpotDotNet_CoinSpotClientV2__System_Net_Http_HttpClient_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.%23ctor(Microsoft.Extensions.Options.IOptionsMonitor%7BCoinSpotDotNet.Settings.CoinSpotSettings%7D%2CMicrosoft.Extensions.Logging.ILogger%7BCoinSpotDotNet.CoinSpotClientV2%7D%2CSystem.Net.Http.HttpClient)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L242">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L275">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2__ctor_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2__ctor_Microsoft_Extensions_Options_IOptionsMonitor_CoinSpotDotNet_Settings_CoinSpotSettings__Microsoft_Extensions_Logging_ILogger_CoinSpotDotNet_CoinSpotClientV2__System_Net_Http_HttpClient_" data-uid="CoinSpotDotNet.CoinSpotClientV2.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{CoinSpotDotNet.Settings.CoinSpotSettings},Microsoft.Extensions.Logging.ILogger{CoinSpotDotNet.CoinSpotClientV2},System.Net.Http.HttpClient)">CoinSpotClientV2(IOptionsMonitor&lt;CoinSpotSettings&gt;, ILogger&lt;CoinSpotClientV2&gt;, HttpClient)</h4>
@@ -213,10 +213,45 @@ or <a class="xref" href="CoinSpotDotNet.ServiceCollectionExtensions.html#CoinSpo
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_AffiliatePayments.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L527">View Source</a>
+  </span>
+  <a id="CoinSpotDotNet_CoinSpotClientV2_AffiliatePayments_" data-uid="CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments*"></a>
+  <h4 id="CoinSpotDotNet_CoinSpotClientV2_AffiliatePayments" data-uid="CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments">AffiliatePayments()</h4>
+  <div class="markdown level1 summary"><p>Calls CoinSpot read-only API v2 Endpoint: <code>/api/v2/ro/my/affiliatepayments</code></p>
+<p>
+See <a href="https://www.coinspot.com.au/v2/api#roaffpay">https://www.coinspot.com.au/v2/api#roaffpay</a>
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;AffiliatePaymentV2Response&gt; AffiliatePayments()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.html">AffiliatePaymentV2Response</a>&gt;</td>
+        <td><p><a class="xref" href="CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.html">AffiliatePaymentV2Response</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_CoinBalance_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.CoinBalance(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L398">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L431">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_CoinBalance_" data-uid="CoinSpotDotNet.CoinSpotClientV2.CoinBalance*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_CoinBalance_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.CoinBalance(System.String)">CoinBalance(String)</h4>
@@ -266,7 +301,7 @@ or <a class="xref" href="CoinSpotDotNet.ServiceCollectionExtensions.html#CoinSpo
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_CompletedOrdersByCoin_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.CompletedOrdersByCoin(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L260">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L293">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_CompletedOrdersByCoin_" data-uid="CoinSpotDotNet.CoinSpotClientV2.CompletedOrdersByCoin*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_CompletedOrdersByCoin_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.CompletedOrdersByCoin(System.String)">CompletedOrdersByCoin(String)</h4>
@@ -317,7 +352,7 @@ or <a class="xref" href="CoinSpotDotNet.ServiceCollectionExtensions.html#CoinSpo
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_CompletedOrdersByCoinMarket_System_String_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.CompletedOrdersByCoinMarket(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L248">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L281">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_CompletedOrdersByCoinMarket_" data-uid="CoinSpotDotNet.CoinSpotClientV2.CompletedOrdersByCoinMarket*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_CompletedOrdersByCoinMarket_System_String_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.CompletedOrdersByCoinMarket(System.String,System.String)">CompletedOrdersByCoinMarket(String, String)</h4>
@@ -373,7 +408,7 @@ or <a class="xref" href="CoinSpotDotNet.ServiceCollectionExtensions.html#CoinSpo
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestBuyPrice_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestBuyPrice(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L333">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L366">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestBuyPrice_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestBuyPrice*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestBuyPrice_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestBuyPrice(System.String)">LatestBuyPrice(String)</h4>
@@ -426,7 +461,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestbuyprice">https://www.coin
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestBuyPriceMarket_System_String_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestBuyPriceMarket(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L320">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L353">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestBuyPriceMarket_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestBuyPriceMarket*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestBuyPriceMarket_System_String_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestBuyPriceMarket(System.String,System.String)">LatestBuyPriceMarket(String, String)</h4>
@@ -488,7 +523,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestbuypricenonaud">https://ww
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestCoinMarketPrices_System_String_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestCoinMarketPrices(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L344">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L377">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestCoinMarketPrices_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestCoinMarketPrices*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestCoinMarketPrices_System_String_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestCoinMarketPrices(System.String,System.String)">LatestCoinMarketPrices(String, String)</h4>
@@ -547,7 +582,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestpricescoinmarket">https://
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestCoinPrices_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestCoinPrices(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L357">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L390">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestCoinPrices_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestCoinPrices*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestCoinPrices_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestCoinPrices(System.String)">LatestCoinPrices(String)</h4>
@@ -600,7 +635,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestpricescoin">https://www.co
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestPrices.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestPrices%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L369">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L402">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestPrices_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestPrices*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestPrices" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestPrices">LatestPrices()</h4>
@@ -635,7 +670,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestprices">https://www.coinsp
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestSellPrice_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestSellPrice(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L309">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L342">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestSellPrice_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestSellPrice*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestSellPrice_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestSellPrice(System.String)">LatestSellPrice(String)</h4>
@@ -688,7 +723,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestsellprice">https://www.coi
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_LatestSellPriceMarket_System_String_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.LatestSellPriceMarket(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L295">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L328">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_LatestSellPriceMarket_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestSellPriceMarket*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_LatestSellPriceMarket_System_String_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.LatestSellPriceMarket(System.String,System.String)">LatestSellPriceMarket(String, String)</h4>
@@ -747,7 +782,7 @@ See <a href="https://www.coinspot.com.au/v2/api#latestsellpricenonaud">https://w
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ListBalances.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ListBalances%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L413">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L446">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_ListBalances_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListBalances*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_ListBalances" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListBalances">ListBalances()</h4>
@@ -782,7 +817,7 @@ See <a href="https://www.coinspot.com.au/v2/api#romybalances">https://www.coinsp
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ListDeposits_System_Nullable_System_DateTime__System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ListDeposits(System.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L429">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L462">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_ListDeposits_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListDeposits*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_ListDeposits_System_Nullable_System_DateTime__System_Nullable_System_DateTime__" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListDeposits(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">ListDeposits(Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;)</h4>
@@ -841,7 +876,7 @@ See <a href="https://www.coinspot.com.au/v2/api#rodeposit">https://www.coinspot.
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ListWithdrawals_System_Nullable_System_DateTime__System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ListWithdrawals(System.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L449">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L482">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_ListWithdrawals_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListWithdrawals*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_ListWithdrawals_System_Nullable_System_DateTime__System_Nullable_System_DateTime__" data-uid="CoinSpotDotNet.CoinSpotClientV2.ListWithdrawals(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">ListWithdrawals(Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;)</h4>
@@ -900,7 +935,7 @@ See <a href="https://www.coinspot.com.au/v2/api#rowithdrawal">https://www.coinsp
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_MarketOrderHistory_System_String_System_String_System_Nullable_System_DateTime__System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.MarketOrderHistory(System.String%2CSystem.String%2CSystem.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L466">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L499">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_MarketOrderHistory_" data-uid="CoinSpotDotNet.CoinSpotClientV2.MarketOrderHistory*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_MarketOrderHistory_System_String_System_String_System_Nullable_System_DateTime__System_Nullable_System_DateTime__" data-uid="CoinSpotDotNet.CoinSpotClientV2.MarketOrderHistory(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">MarketOrderHistory(String, String, Nullable&lt;DateTime&gt;, Nullable&lt;DateTime&gt;)</h4>
@@ -971,7 +1006,7 @@ See <a href="https://www.coinspot.com.au/v2/api#rotransaction">https://www.coins
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_OpenOrdersByCoin_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.OpenOrdersByCoin(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L283">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L316">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_OpenOrdersByCoin_" data-uid="CoinSpotDotNet.CoinSpotClientV2.OpenOrdersByCoin*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_OpenOrdersByCoin_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.OpenOrdersByCoin(System.String)">OpenOrdersByCoin(String)</h4>
@@ -1024,7 +1059,7 @@ See <a href="https://www.coinspot.com.au/v2/api#openorders">https://www.coinspot
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_OpenOrdersByCoinMarket_System_String_System_String_.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.OpenOrdersByCoinMarket(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L271">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L304">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_OpenOrdersByCoinMarket_" data-uid="CoinSpotDotNet.CoinSpotClientV2.OpenOrdersByCoinMarket*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_OpenOrdersByCoinMarket_System_String_System_String_" data-uid="CoinSpotDotNet.CoinSpotClientV2.OpenOrdersByCoinMarket(System.String,System.String)">OpenOrdersByCoinMarket(String, String)</h4>
@@ -1083,7 +1118,7 @@ See <a href="https://www.coinspot.com.au/v2/api#openordersmarket">https://www.co
     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ReadOnlyStatusCheck.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L383">View Source</a>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L416">View Source</a>
   </span>
   <a id="CoinSpotDotNet_CoinSpotClientV2_ReadOnlyStatusCheck_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck*"></a>
   <h4 id="CoinSpotDotNet_CoinSpotClientV2_ReadOnlyStatusCheck" data-uid="CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck">ReadOnlyStatusCheck()</h4>
@@ -1110,6 +1145,76 @@ See <a href="https://www.coinspot.com.au/v2/api#openordersmarket">https://www.co
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_ReferralPayments.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.ReferralPayments%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L538">View Source</a>
+  </span>
+  <a id="CoinSpotDotNet_CoinSpotClientV2_ReferralPayments_" data-uid="CoinSpotDotNet.CoinSpotClientV2.ReferralPayments*"></a>
+  <h4 id="CoinSpotDotNet_CoinSpotClientV2_ReferralPayments" data-uid="CoinSpotDotNet.CoinSpotClientV2.ReferralPayments">ReferralPayments()</h4>
+  <div class="markdown level1 summary"><p>Calls CoinSpot read-only API v2 Endpoint: <code>/api/v2/ro/my/referralpayments</code></p>
+<p>
+See <a href="https://www.coinspot.com.au/v2/api#rorefpay">https://www.coinspot.com.au/v2/api#rorefpay</a>
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;ReferralPaymentV2Response&gt; ReferralPayments()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.html">ReferralPaymentV2Response</a>&gt;</td>
+        <td><p><a class="xref" href="CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.html">ReferralPaymentV2Response</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2_SendReceiveHistory.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L516">View Source</a>
+  </span>
+  <a id="CoinSpotDotNet_CoinSpotClientV2_SendReceiveHistory_" data-uid="CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory*"></a>
+  <h4 id="CoinSpotDotNet_CoinSpotClientV2_SendReceiveHistory" data-uid="CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory">SendReceiveHistory()</h4>
+  <div class="markdown level1 summary"><p>Calls CoinSpot read-only API v2 Endpoint: <code>/api/v2/ro/my/sendreceive</code></p>
+<p>
+See <a href="https://www.coinspot.com.au/v2/api#rosendreceive">https://www.coinspot.com.au/v2/api#rosendreceive</a>
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;SendReceiveV2Response&gt; SendReceiveHistory()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="CoinSpotDotNet.Responses.V2.SendReceiveV2Response.html">SendReceiveV2Response</a>&gt;</td>
+        <td><p><a class="xref" href="CoinSpotDotNet.Responses.V2.SendReceiveV2Response.html">SendReceiveV2Response</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="CoinSpotDotNet.ICoinSpotClientV2.html">ICoinSpotClientV2</a>
@@ -1125,7 +1230,7 @@ See <a href="https://www.coinspot.com.au/v2/api#openordersmarket">https://www.co
                     <a href="https://github.com/liamwhan/CoinSpotDotNet/new/main/apiSpec/new?filename=CoinSpotDotNet_CoinSpotClientV2.md&amp;value=---%0Auid%3A%20CoinSpotDotNet.CoinSpotClientV2%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L203" class="contribution-link">View Source</a>
+                    <a href="https://github.com/liamwhan/CoinSpotDotNet/blob/main/CoinSpotDotNet/CoinSpotClientV2.cs/#L233" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

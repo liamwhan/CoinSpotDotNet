@@ -346,6 +346,19 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.CoinSpotClientV2.CoinSpotClientV2
   nameWithType: CoinSpotClientV2.CoinSpotClientV2
+- uid: CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments
+  name: AffiliatePayments()
+  href: api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2_AffiliatePayments
+  commentId: M:CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments
+  fullName: CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments()
+  nameWithType: CoinSpotClientV2.AffiliatePayments()
+- uid: CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments*
+  name: AffiliatePayments
+  href: api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2_AffiliatePayments_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClientV2.AffiliatePayments
+  nameWithType: CoinSpotClientV2.AffiliatePayments
 - uid: CoinSpotDotNet.CoinSpotClientV2.CoinBalance(System.String)
   name: CoinBalance(String)
   href: api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2_CoinBalance_System_String_
@@ -576,6 +589,32 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.CoinSpotClientV2.ReadOnlyStatusCheck
   nameWithType: CoinSpotClientV2.ReadOnlyStatusCheck
+- uid: CoinSpotDotNet.CoinSpotClientV2.ReferralPayments
+  name: ReferralPayments()
+  href: api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2_ReferralPayments
+  commentId: M:CoinSpotDotNet.CoinSpotClientV2.ReferralPayments
+  fullName: CoinSpotDotNet.CoinSpotClientV2.ReferralPayments()
+  nameWithType: CoinSpotClientV2.ReferralPayments()
+- uid: CoinSpotDotNet.CoinSpotClientV2.ReferralPayments*
+  name: ReferralPayments
+  href: api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2_ReferralPayments_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClientV2.ReferralPayments
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClientV2.ReferralPayments
+  nameWithType: CoinSpotClientV2.ReferralPayments
+- uid: CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory
+  name: SendReceiveHistory()
+  href: api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2_SendReceiveHistory
+  commentId: M:CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory
+  fullName: CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory()
+  nameWithType: CoinSpotClientV2.SendReceiveHistory()
+- uid: CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory*
+  name: SendReceiveHistory
+  href: api/CoinSpotDotNet.CoinSpotClientV2.html#CoinSpotDotNet_CoinSpotClientV2_SendReceiveHistory_
+  commentId: Overload:CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory
+  isSpec: "True"
+  fullName: CoinSpotDotNet.CoinSpotClientV2.SendReceiveHistory
+  nameWithType: CoinSpotClientV2.SendReceiveHistory
 - uid: CoinSpotDotNet.ICoinSpotClient
   name: ICoinSpotClient
   href: api/CoinSpotDotNet.ICoinSpotClient.html
@@ -737,6 +776,19 @@ references:
   commentId: T:CoinSpotDotNet.ICoinSpotClientV2
   fullName: CoinSpotDotNet.ICoinSpotClientV2
   nameWithType: ICoinSpotClientV2
+- uid: CoinSpotDotNet.ICoinSpotClientV2.AffiliatePayments
+  name: AffiliatePayments()
+  href: api/CoinSpotDotNet.ICoinSpotClientV2.html#CoinSpotDotNet_ICoinSpotClientV2_AffiliatePayments
+  commentId: M:CoinSpotDotNet.ICoinSpotClientV2.AffiliatePayments
+  fullName: CoinSpotDotNet.ICoinSpotClientV2.AffiliatePayments()
+  nameWithType: ICoinSpotClientV2.AffiliatePayments()
+- uid: CoinSpotDotNet.ICoinSpotClientV2.AffiliatePayments*
+  name: AffiliatePayments
+  href: api/CoinSpotDotNet.ICoinSpotClientV2.html#CoinSpotDotNet_ICoinSpotClientV2_AffiliatePayments_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClientV2.AffiliatePayments
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClientV2.AffiliatePayments
+  nameWithType: ICoinSpotClientV2.AffiliatePayments
 - uid: CoinSpotDotNet.ICoinSpotClientV2.CoinBalance(System.String)
   name: CoinBalance(String)
   href: api/CoinSpotDotNet.ICoinSpotClientV2.html#CoinSpotDotNet_ICoinSpotClientV2_CoinBalance_System_String_
@@ -967,6 +1019,32 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.ICoinSpotClientV2.ReadOnlyStatusCheck
   nameWithType: ICoinSpotClientV2.ReadOnlyStatusCheck
+- uid: CoinSpotDotNet.ICoinSpotClientV2.ReferralPayments
+  name: ReferralPayments()
+  href: api/CoinSpotDotNet.ICoinSpotClientV2.html#CoinSpotDotNet_ICoinSpotClientV2_ReferralPayments
+  commentId: M:CoinSpotDotNet.ICoinSpotClientV2.ReferralPayments
+  fullName: CoinSpotDotNet.ICoinSpotClientV2.ReferralPayments()
+  nameWithType: ICoinSpotClientV2.ReferralPayments()
+- uid: CoinSpotDotNet.ICoinSpotClientV2.ReferralPayments*
+  name: ReferralPayments
+  href: api/CoinSpotDotNet.ICoinSpotClientV2.html#CoinSpotDotNet_ICoinSpotClientV2_ReferralPayments_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClientV2.ReferralPayments
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClientV2.ReferralPayments
+  nameWithType: ICoinSpotClientV2.ReferralPayments
+- uid: CoinSpotDotNet.ICoinSpotClientV2.SendReceiveHistory
+  name: SendReceiveHistory()
+  href: api/CoinSpotDotNet.ICoinSpotClientV2.html#CoinSpotDotNet_ICoinSpotClientV2_SendReceiveHistory
+  commentId: M:CoinSpotDotNet.ICoinSpotClientV2.SendReceiveHistory
+  fullName: CoinSpotDotNet.ICoinSpotClientV2.SendReceiveHistory()
+  nameWithType: ICoinSpotClientV2.SendReceiveHistory()
+- uid: CoinSpotDotNet.ICoinSpotClientV2.SendReceiveHistory*
+  name: SendReceiveHistory
+  href: api/CoinSpotDotNet.ICoinSpotClientV2.html#CoinSpotDotNet_ICoinSpotClientV2_SendReceiveHistory_
+  commentId: Overload:CoinSpotDotNet.ICoinSpotClientV2.SendReceiveHistory
+  isSpec: "True"
+  fullName: CoinSpotDotNet.ICoinSpotClientV2.SendReceiveHistory
+  nameWithType: ICoinSpotClientV2.SendReceiveHistory
 - uid: CoinSpotDotNet.Requests
   name: CoinSpotDotNet.Requests
   href: api/CoinSpotDotNet.Requests.html
@@ -2024,6 +2102,25 @@ references:
   commentId: N:CoinSpotDotNet.Responses.V2
   fullName: CoinSpotDotNet.Responses.V2
   nameWithType: CoinSpotDotNet.Responses.V2
+- uid: CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response
+  name: AffiliatePaymentV2Response
+  href: api/CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.html
+  commentId: T:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response
+  fullName: CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response
+  nameWithType: AffiliatePaymentV2Response
+- uid: CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.Payments
+  name: Payments
+  href: api/CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.html#CoinSpotDotNet_Responses_V2_AffiliatePaymentV2Response_Payments
+  commentId: P:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.Payments
+  fullName: CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.Payments
+  nameWithType: AffiliatePaymentV2Response.Payments
+- uid: CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.Payments*
+  name: Payments
+  href: api/CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.html#CoinSpotDotNet_Responses_V2_AffiliatePaymentV2Response_Payments_
+  commentId: Overload:CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.Payments
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.V2.AffiliatePaymentV2Response.Payments
+  nameWithType: AffiliatePaymentV2Response.Payments
 - uid: CoinSpotDotNet.Responses.V2.BalancesV2Response
   name: BalancesV2Response
   href: api/CoinSpotDotNet.Responses.V2.BalancesV2Response.html
@@ -2292,6 +2389,25 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.V2.RateMarketPriceV2Response.Rate
   nameWithType: RateMarketPriceV2Response.Rate
+- uid: CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response
+  name: ReferralPaymentV2Response
+  href: api/CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.html
+  commentId: T:CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response
+  fullName: CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response
+  nameWithType: ReferralPaymentV2Response
+- uid: CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.Payments
+  name: Payments
+  href: api/CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.html#CoinSpotDotNet_Responses_V2_ReferralPaymentV2Response_Payments
+  commentId: P:CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.Payments
+  fullName: CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.Payments
+  nameWithType: ReferralPaymentV2Response.Payments
+- uid: CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.Payments*
+  name: Payments
+  href: api/CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.html#CoinSpotDotNet_Responses_V2_ReferralPaymentV2Response_Payments_
+  commentId: Overload:CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.Payments
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.V2.ReferralPaymentV2Response.Payments
+  nameWithType: ReferralPaymentV2Response.Payments
 - uid: CoinSpotDotNet.Responses.V2.SendReceiveV2Response
   name: SendReceiveV2Response
   href: api/CoinSpotDotNet.Responses.V2.SendReceiveV2Response.html

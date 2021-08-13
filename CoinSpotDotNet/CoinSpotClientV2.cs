@@ -77,6 +77,36 @@ namespace CoinSpotDotNet
         /// <param name="endDate">Optional. End of date range</param>
         /// <returns><see cref="WithdrawalsV2Response"/></returns>
         Task<MarketOrderV2Response> MarketOrderHistory(string coinType = null, string marketType = null, DateTime? startDate = null, DateTime? endDate = null);
+
+
+        /// <summary>
+        /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/sendreceive</c>
+        /// <para>
+        /// See <see href="https://www.coinspot.com.au/v2/api#rosendreceive"/>
+        /// </para>
+        /// </summary>
+        /// <returns><see cref="SendReceiveV2Response"/></returns>
+        Task<SendReceiveV2Response> SendReceiveHistory();
+
+        /// <summary>
+        /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/affiliatepayments</c>
+        /// <para>
+        /// See <see href="https://www.coinspot.com.au/v2/api#roaffpay"/>
+        /// </para>
+        /// </summary>
+        /// <returns><see cref="AffiliatePaymentV2Response"/></returns>
+        Task<AffiliatePaymentV2Response> AffiliatePayments(); 
+        
+        /// <summary>
+        /// Calls CoinSpot read-only API v2 Endpoint: <c>/api/v2/ro/my/referralpayments</c>
+        /// <para>
+        /// See <see href="https://www.coinspot.com.au/v2/api#rorefpay"/>
+        /// </para>
+        /// </summary>
+        /// <returns><see cref="ReferralPaymentV2Response"/></returns>
+        Task<ReferralPaymentV2Response> ReferralPayments(); 
+        
+        
         #endregion
 
 
@@ -209,6 +239,9 @@ namespace CoinSpotDotNet
         private const string PathReadOnlyStatusCheck = "/api/v2/ro/status";
         private const string PathCoinBalance = "/api/v2/ro/my/balance/{0}";
         private const string PathMarketOrderHistory = "/api/v2/ro/my/orders/market/completed";
+        private const string PathSendReceiveHistory = "/api/v2/ro/my/sendreceive";
+        private const string PathAffiliatePayments = "/api/v2/ro/my/affiliatepayments";
+        private const string PathReferralPayments = "/api/v2/ro/my/referralpayments";
 
         private const string PublicPathLatestPrices = "/pubapi/v2/latest";
         private const string PublicPathLatestCoinPrices = "/pubapi/v2/latest/{0}";
@@ -478,6 +511,40 @@ namespace CoinSpotDotNet
             var orders = await JsonSerializer.DeserializeAsync<MarketOrderV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
             return orders;
         }
+
+        /// <inheritdoc/>
+        public async Task<SendReceiveV2Response> SendReceiveHistory()
+        {
+           using var response = await Post(new Uri(PathSendReceiveHistory, UriKind.Relative), new CoinSpotRequest());
+
+            if (!response.IsSuccessStatusCode) return null;
+
+            var transactions = await JsonSerializer.DeserializeAsync<SendReceiveV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            return transactions;
+        }
+
+        /// <inheritdoc/>
+        public async Task<AffiliatePaymentV2Response> AffiliatePayments()
+        {
+           using var response = await Post(new Uri(PathAffiliatePayments, UriKind.Relative), new CoinSpotRequest());
+
+            if (!response.IsSuccessStatusCode) return null;
+
+            var payments = await JsonSerializer.DeserializeAsync<AffiliatePaymentV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            return payments;
+        }
+
+         /// <inheritdoc/>
+        public async Task<ReferralPaymentV2Response> ReferralPayments()
+        {
+           using var response = await Post(new Uri(PathReferralPayments, UriKind.Relative), new CoinSpotRequest());
+
+            if (!response.IsSuccessStatusCode) return null;
+
+            var payments = await JsonSerializer.DeserializeAsync<ReferralPaymentV2Response>(await response.Content.ReadAsStreamAsync(), jsonOptions);
+            return payments;
+        }
+
 
         #endregion
 
