@@ -5,10 +5,11 @@
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Liam Whan</Authors>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Description>A .NET Standard 2.0 compatible class library for CoinSpot API. Supports API versions 1 and 2</Description>
     <Copyright>2021 Liam Whan</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageReadme>Nuget.md</PackageReadme>
     <PackageProjectUrl>https://github.com/liamwhan/CoinSpotDotNet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/liamwhan/CoinSpotDotNet</RepositoryUrl>
   </PropertyGroup>
@@ -16,8 +17,8 @@
   <PropertyGroup>
     <DocumentationFile>CoinSpotDotNet.xml</DocumentationFile>
     <PackageReleaseNotes>
-      1.0.0 Initial release - Supports v1 and v2 Public and read-only APIs
-</PackageReleaseNotes>
+      1.0.1 Update Nuget README
+    </PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -38,6 +39,11 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="Nuget.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
+
 
 </Project>
