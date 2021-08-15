@@ -29,5 +29,15 @@ namespace CoinSpotDotNet.Responses
         [JsonConverter(typeof(CoinSpotStringToDoubleJsonConverter))]
         public double Last { get; set; }
 
+        /// <summary>
+        /// Allows auto deconstruction of this class
+        /// </summary>
+        public void Deconstruct(out double bid, out double ask, out double last)
+        {
+            bid = Bid;
+            ask = Ask;
+            last = Last;
+        }
+
     }
 }

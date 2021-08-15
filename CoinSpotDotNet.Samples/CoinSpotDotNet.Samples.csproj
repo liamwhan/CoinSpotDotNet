@@ -18,7 +18,7 @@
     <NoWarn>1701;1702;1591;</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
   <ItemGroup>
