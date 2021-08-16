@@ -60,12 +60,12 @@ There is a Sample ASP.NET Web API project with a swagger you can use to test out
 ### Installation
 #### Nuget
 ```pwsh
-Install-Package CoinSpotDotNet -Version 0.0.1
+Install-Package CoinSpotDotNet -Version 1.0.5
 ```
 
 #### `dotnet` CLI
 ```bat
-dotnet add package CoinSpotDotNet --version 0.0.1
+dotnet add package CoinSpotDotNet --version 1.0.5
 ```
 
 ### Usage
