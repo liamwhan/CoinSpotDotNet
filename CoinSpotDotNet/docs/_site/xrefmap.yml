@@ -1435,6 +1435,22 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.CoinBalanceId.CoinType
   nameWithType: CoinBalanceId.CoinType
+- uid: CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct(System.String@,System.Double@,System.Double@,System.Double@)
+  name: Deconstruct(out String, out Double, out Double, out Double)
+  href: api/CoinSpotDotNet.Responses.CoinBalanceId.html#CoinSpotDotNet_Responses_CoinBalanceId_Deconstruct_System_String__System_Double__System_Double__System_Double__
+  commentId: M:CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct(System.String@,System.Double@,System.Double@,System.Double@)
+  name.vb: Deconstruct(ByRef String, ByRef Double, ByRef Double, ByRef Double)
+  fullName: CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct(out System.String, out System.Double, out System.Double, out System.Double)
+  fullName.vb: CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct(ByRef System.String, ByRef System.Double, ByRef System.Double, ByRef System.Double)
+  nameWithType: CoinBalanceId.Deconstruct(out String, out Double, out Double, out Double)
+  nameWithType.vb: CoinBalanceId.Deconstruct(ByRef String, ByRef Double, ByRef Double, ByRef Double)
+- uid: CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct*
+  name: Deconstruct
+  href: api/CoinSpotDotNet.Responses.CoinBalanceId.html#CoinSpotDotNet_Responses_CoinBalanceId_Deconstruct_
+  commentId: Overload:CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct
+  nameWithType: CoinBalanceId.Deconstruct
 - uid: CoinSpotDotNet.Responses.CoinBalanceResponse
   name: CoinBalanceResponse
   href: api/CoinSpotDotNet.Responses.CoinBalanceResponse.html
@@ -1499,6 +1515,22 @@ references:
   isSpec: "True"
   fullName: CoinSpotDotNet.Responses.CoinPrice.Bid
   nameWithType: CoinPrice.Bid
+- uid: CoinSpotDotNet.Responses.CoinPrice.Deconstruct(System.Double@,System.Double@,System.Double@)
+  name: Deconstruct(out Double, out Double, out Double)
+  href: api/CoinSpotDotNet.Responses.CoinPrice.html#CoinSpotDotNet_Responses_CoinPrice_Deconstruct_System_Double__System_Double__System_Double__
+  commentId: M:CoinSpotDotNet.Responses.CoinPrice.Deconstruct(System.Double@,System.Double@,System.Double@)
+  name.vb: Deconstruct(ByRef Double, ByRef Double, ByRef Double)
+  fullName: CoinSpotDotNet.Responses.CoinPrice.Deconstruct(out System.Double, out System.Double, out System.Double)
+  fullName.vb: CoinSpotDotNet.Responses.CoinPrice.Deconstruct(ByRef System.Double, ByRef System.Double, ByRef System.Double)
+  nameWithType: CoinPrice.Deconstruct(out Double, out Double, out Double)
+  nameWithType.vb: CoinPrice.Deconstruct(ByRef Double, ByRef Double, ByRef Double)
+- uid: CoinSpotDotNet.Responses.CoinPrice.Deconstruct*
+  name: Deconstruct
+  href: api/CoinSpotDotNet.Responses.CoinPrice.html#CoinSpotDotNet_Responses_CoinPrice_Deconstruct_
+  commentId: Overload:CoinSpotDotNet.Responses.CoinPrice.Deconstruct
+  isSpec: "True"
+  fullName: CoinSpotDotNet.Responses.CoinPrice.Deconstruct
+  nameWithType: CoinPrice.Deconstruct
 - uid: CoinSpotDotNet.Responses.CoinPrice.Last
   name: Last
   href: api/CoinSpotDotNet.Responses.CoinPrice.html#CoinSpotDotNet_Responses_CoinPrice_Last

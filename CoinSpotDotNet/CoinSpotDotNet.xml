@@ -700,6 +700,11 @@
             <param name="coinType">The coin type identifier e.g. "BTC", "ETH" etc.</param>
             <param name="balance">The coin balance</param>
         </member>
+        <member name="M:CoinSpotDotNet.Responses.CoinBalanceId.Deconstruct(System.String@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Allows Deconstruction of this class
+            </summary>
+        </member>
         <member name="T:CoinSpotDotNet.Responses.CoinBalanceResponse">
             <summary>
             Response model for <c>/api/ro/my/balance/:cointype</c>
@@ -736,6 +741,11 @@
         <member name="P:CoinSpotDotNet.Responses.CoinPrice.Last">
             <summary>
             Last price
+            </summary>
+        </member>
+        <member name="M:CoinSpotDotNet.Responses.CoinPrice.Deconstruct(System.Double@,System.Double@,System.Double@)">
+            <summary>
+            Allows auto deconstruction of this class
             </summary>
         </member>
         <member name="T:CoinSpotDotNet.Responses.CoinSpotResponse">
